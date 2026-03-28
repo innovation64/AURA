@@ -1,0 +1,282 @@
+{
+  "reactive": {
+    "service_failure": {
+      "avg_time_to_awareness": 3.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 12.8,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "file_conflict": {
+      "avg_time_to_awareness": 1.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.0,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "resource_exhaustion": {
+      "avg_time_to_awareness": 2.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 12.8,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "security_alert": {
+      "avg_time_to_awareness": 2.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 13.6,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "cascading_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.4,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "noisy_service_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.0,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "gradual_degradation": {
+      "avg_time_to_awareness": 1.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 12.8,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "multi_source_noise": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.0,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0
+    },
+    "_aggregate": {
+      "avg_time_to_awareness": 1.12,
+      "detection_rate": 1.0,
+      "avg_total_reward": 13.55,
+      "task_completion_rate": 1.0
+    }
+  },
+  "proactive": {
+    "service_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.68,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.838
+    },
+    "file_conflict": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 13.76,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.345
+    },
+    "resource_exhaustion": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.2,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.688
+    },
+    "security_alert": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 16.32,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.839
+    },
+    "cascading_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 16.32,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.859
+    },
+    "noisy_service_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 17.0,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.889
+    },
+    "gradual_degradation": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.04,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.798
+    },
+    "multi_source_noise": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 17.08,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.902
+    },
+    "_aggregate": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.55,
+      "task_completion_rate": 1.0
+    }
+  },
+  "collaborative": {
+    "service_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.46,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.845,
+      "avg_alert_fatigue": 0.155
+    },
+    "file_conflict": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 13.21,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.822,
+      "avg_alert_fatigue": 0.178
+    },
+    "resource_exhaustion": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.51,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.766,
+      "avg_alert_fatigue": 0.234
+    },
+    "security_alert": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.57,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.793,
+      "avg_alert_fatigue": 0.207
+    },
+    "cascading_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.83,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.821,
+      "avg_alert_fatigue": 0.179
+    },
+    "noisy_service_failure": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 16.58,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.916,
+      "avg_alert_fatigue": 0.084
+    },
+    "gradual_degradation": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 14.3,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.843,
+      "avg_alert_fatigue": 0.157
+    },
+    "multi_source_noise": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 16.5,
+      "task_completion_rate": 1.0,
+      "avg_steps": 19.0,
+      "avg_context_hit_rate": 0.895,
+      "avg_alert_fatigue": 0.105
+    },
+    "_aggregate": {
+      "avg_time_to_awareness": 0.0,
+      "detection_rate": 1.0,
+      "avg_total_reward": 15.245,
+      "task_completion_rate": 1.0
+    }
+  },
+  "random_baseline": {
+    "service_failure": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.78,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "file_conflict": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.6,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "resource_exhaustion": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.9,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "security_alert": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.12,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "cascading_failure": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.3,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "noisy_service_failure": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.66,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "gradual_degradation": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.72,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "multi_source_noise": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 5.02,
+      "task_completion_rate": 1.0,
+      "avg_steps": 16.0
+    },
+    "_aggregate": {
+      "avg_time_to_awareness": 20.0,
+      "detection_rate": 0.0,
+      "avg_total_reward": 4.638,
+      "task_completion_rate": 1.0
+    }
+  }
+}

@@ -1,0 +1,4828 @@
+{
+  "service_failure": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.25,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.network": 1.9899999999999993
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8518518518518519,
+        "source_weights": {
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8571428571428571,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.15
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8771929824561403,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.2999999999999998
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.875,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 1.1799999999999997
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.150000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8735632183908046,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 1.3299999999999996
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.25,
+        "tracked_sources": 2,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8725490196078431,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.4799999999999995
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8803418803418803,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.6299999999999994
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8939393939393939,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.7799999999999994
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.050000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.891156462585034,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.9299999999999993
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8950617283950617,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.8099999999999992
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.050000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8870056497175142,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 1.959999999999999
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.890625,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.109999999999999
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.05,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8840579710144928,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.259999999999999
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.850000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8738738738738738,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.409999999999999
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8734177215189873,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.5599999999999987
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.876984126984127,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.7099999999999986
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.05,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8726591760299626,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.5899999999999985
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.150000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8723404255319149,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.7399999999999984
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8787878787878788,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 2.8899999999999983
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8814102564102564,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8807339449541285,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 11.850000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8771929824561403,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.649999999999999,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8683473389355743,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8736559139784946,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.350000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.875968992248062,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8781094527363185,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000004,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8776978417266187,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8796296296296297,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.05,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8769574944071589,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8787878787878788,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8825995807127882,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.050000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8800813008130082,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.883629191321499,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8850574712643678,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.250000000000004,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8845437616387337,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.050000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8822463768115942,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.050000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8800705467372134,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 11.950000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8780068728522337,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.150000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8777219430485762,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": -0.0008,
+      "fatigue_reduction": -0.0008,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.8775,
+      "second_half_chr": 0.8767,
+      "first_half_fatigue": 0.1225,
+      "second_half_fatigue": 0.1233,
+      "weight_spread": 0.0,
+      "final_source_weights": {
+        "probe.network": 3.0,
+        "probe.service_down": 3.0
+      }
+    }
+  },
+  "file_conflict": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.0,
+        "source_weights": {
+          "probe.filesystem": 0.88
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.5,
+        "source_weights": {
+          "probe.filesystem": 1.03
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.6666666666666666,
+        "source_weights": {
+          "probe.filesystem": 1.18
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.filesystem": 1.3299999999999998
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.6,
+        "source_weights": {
+          "probe.filesystem": 1.21
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.5,
+        "source_weights": {
+          "probe.filesystem": 1.0899999999999999
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.42857142857142855,
+        "source_weights": {
+          "probe.filesystem": 0.9699999999999999
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.5,
+        "source_weights": {
+          "probe.filesystem": 1.1199999999999999
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.5555555555555556,
+        "source_weights": {
+          "probe.filesystem": 1.2699999999999998
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.6,
+        "source_weights": {
+          "probe.filesystem": 1.4199999999999997
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.6363636363636364,
+        "source_weights": {
+          "probe.filesystem": 1.5699999999999996
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.6666666666666666,
+        "source_weights": {
+          "probe.filesystem": 1.7199999999999995
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.6923076923076923,
+        "source_weights": {
+          "probe.filesystem": 1.8699999999999994
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7142857142857143,
+        "source_weights": {
+          "probe.filesystem": 2.0199999999999996
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7333333333333333,
+        "source_weights": {
+          "probe.filesystem": 2.1699999999999995
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.filesystem": 2.3199999999999994
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7647058823529411,
+        "source_weights": {
+          "probe.filesystem": 2.4699999999999993
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.filesystem": 2.619999999999999
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7368421052631579,
+        "source_weights": {
+          "probe.filesystem": 2.499999999999999
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.filesystem": 2.649999999999999
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7142857142857143,
+        "source_weights": {
+          "probe.filesystem": 2.529999999999999
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7272727272727273,
+        "source_weights": {
+          "probe.filesystem": 2.679999999999999
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7391304347826086,
+        "source_weights": {
+          "probe.filesystem": 2.8299999999999987
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.filesystem": 2.9799999999999986
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.72,
+        "source_weights": {
+          "probe.filesystem": 2.8599999999999985
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7307692307692307,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7407407407407407,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7241379310344828,
+        "source_weights": {
+          "probe.filesystem": 2.88
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7333333333333333,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7096774193548387,
+        "source_weights": {
+          "probe.filesystem": 2.88
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.71875,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7272727272727273,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7058823529411765,
+        "source_weights": {
+          "probe.filesystem": 2.88
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7142857142857143,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7222222222222222,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.7027027027027027,
+        "source_weights": {
+          "probe.filesystem": 2.88
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7105263157894737,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.0,
+        "alert_fatigue": 1.0,
+        "time_to_awareness": 0,
+        "total_reward": 9.799999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 4,
+        "attention_use_rate": 0.6923076923076923,
+        "source_weights": {
+          "probe.filesystem": 2.88
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 10.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.7,
+        "source_weights": {
+          "probe.filesystem": 3.0
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": -0.1,
+      "fatigue_reduction": -0.1,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.75,
+      "second_half_chr": 0.65,
+      "first_half_fatigue": 0.25,
+      "second_half_fatigue": 0.35,
+      "weight_spread": 0.0,
+      "final_source_weights": {
+        "probe.filesystem": 3.0
+      }
+    }
+  },
+  "resource_exhaustion": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.5555555555555556,
+        "alert_fatigue": 0.4444444444444444,
+        "time_to_awareness": 0,
+        "total_reward": 10.099999999999998,
+        "tracked_sources": 1,
+        "tracked_keywords": 7,
+        "attention_use_rate": 0.5555555555555556,
+        "source_weights": {
+          "probe.system": 1.2699999999999998
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7142857142857143,
+        "source_weights": {
+          "probe.system": 2.529999999999999
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.1,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7272727272727273,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 10.9,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7333333333333333,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7719298245614035,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.782608695652174,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.300000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7849462365591398,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.780952380952381,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 10.9,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7692307692307693,
+        "source_weights": {
+          "probe.system": 2.9099999999999997
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7751937984496124,
+        "source_weights": {
+          "probe.system": 2.76
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 10.900000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7730496453900709,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.300000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7818181818181819,
+        "source_weights": {
+          "probe.system": 2.76
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7853107344632768,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7883597883597884,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.5833333333333334,
+        "alert_fatigue": 0.4166666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 10.699999999999998,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7761194029850746,
+        "source_weights": {
+          "probe.system": 2.6399999999999997
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7793427230046949,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7763713080168776,
+        "source_weights": {
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7831325301204819,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 10.9,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 2.76
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.6,
+        "alert_fatigue": 0.4,
+        "time_to_awareness": 0,
+        "total_reward": 10.299999999999997,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7712177121771218,
+        "source_weights": {
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000004,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7773851590106007,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.300000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7796610169491526,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7785016286644951,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 10.700000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.774294670846395,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 0.36363636363636365,
+        "alert_fatigue": 0.6363636363636364,
+        "time_to_awareness": 0,
+        "total_reward": 9.9,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7606060606060606,
+        "source_weights": {
+          "probe.system": 2.6399999999999997
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.6,
+        "alert_fatigue": 0.4,
+        "time_to_awareness": 0,
+        "total_reward": 10.299999999999999,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7558823529411764,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.700000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7549857549857549,
+        "source_weights": {
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.3,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7575757575757576,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7626666666666667,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7674418604651163,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7719298245614035,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.75,
+        "alert_fatigue": 0.25,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7712895377128953,
+        "source_weights": {
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 0.8333333333333334,
+        "alert_fatigue": 0.16666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 11.100000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7730496453900709,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7770114942528735,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.5833333333333334,
+        "alert_fatigue": 0.4166666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 10.7,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7718120805369127,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.9166666666666666,
+        "alert_fatigue": 0.08333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.500000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.775599128540305,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 11.700000000000003,
+        "tracked_sources": 1,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7813163481953291,
+        "source_weights": {
+          "probe.system": 3.0
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": 0.0076,
+      "fatigue_reduction": 0.0076,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.7736,
+      "second_half_chr": 0.7812,
+      "first_half_fatigue": 0.2264,
+      "second_half_fatigue": 0.2188,
+      "weight_spread": 0.0,
+      "final_source_weights": {
+        "probe.system": 3.0
+      }
+    }
+  },
+  "security_alert": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.9230769230769231,
+        "alert_fatigue": 0.07692307692307693,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9230769230769231,
+        "source_weights": {
+          "probe.process": 2.679999999999999
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9259259259259259,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.926829268292683,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9454545454545454,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9420289855072463,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9518072289156626,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.7857142857142857,
+        "alert_fatigue": 0.21428571428571427,
+        "time_to_awareness": 0,
+        "total_reward": 12.000000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9278350515463918,
+        "source_weights": {
+          "probe.process": 2.88
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.8571428571428571,
+        "alert_fatigue": 0.14285714285714285,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.918918918918919,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.928,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.935251798561151,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.934640522875817,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9401197604790419,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9447513812154696,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000003,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9435897435897436,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.7857142857142857,
+        "alert_fatigue": 0.21428571428571427,
+        "time_to_awareness": 0,
+        "total_reward": 12.000000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9330143540669856,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.7142857142857143,
+        "alert_fatigue": 0.2857142857142857,
+        "time_to_awareness": 0,
+        "total_reward": 11.8,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9192825112107623,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.919831223628692,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9243027888446215,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.8571428571428571,
+        "alert_fatigue": 0.14285714285714285,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9207547169811321,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000003,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.921146953405018,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9249146757679181,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9283387622149837,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9283489096573209,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9283582089552239,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 0.8571428571428571,
+        "alert_fatigue": 0.14285714285714285,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9255014326647565,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 0.7857142857142857,
+        "alert_fatigue": 0.21428571428571427,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9201101928374655,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9230769230769231,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9258312020460358,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.928395061728395,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9307875894988067,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9330254041570438,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 0.7857142857142857,
+        "alert_fatigue": 0.21428571428571427,
+        "time_to_awareness": 0,
+        "total_reward": 12.0,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9284116331096197,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.93058568329718,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9326315789473684,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.8571428571428571,
+        "alert_fatigue": 0.14285714285714285,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9304703476482618,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9324055666003976,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9342359767891683,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000003,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9340866290018832,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9339449541284404,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 0.8571428571428571,
+        "alert_fatigue": 0.14285714285714285,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 1,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.9320214669051878,
+        "source_weights": {
+          "probe.process": 3.0
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": 0.0217,
+      "fatigue_reduction": 0.0217,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.9212,
+      "second_half_chr": 0.9429,
+      "first_half_fatigue": 0.0788,
+      "second_half_fatigue": 0.0571,
+      "weight_spread": 0.0,
+      "final_source_weights": {
+        "probe.process": 3.0
+      }
+    }
+  },
+  "cascading_failure": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.6923076923076923,
+        "alert_fatigue": 0.3076923076923077,
+        "time_to_awareness": 0,
+        "total_reward": 11.600000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 18,
+        "attention_use_rate": 0.6923076923076923,
+        "source_weights": {
+          "probe.network": 1.6599999999999995,
+          "probe.service_down": 1.6299999999999994,
+          "probe.system": 0.4299999999999996
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8214285714285714,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.3699999999999996
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.500000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8372093023255814,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.2499999999999996
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8620689655172413,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.1899999999999996
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.863013698630137,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.12999999999999962
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.875,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.06999999999999962
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8737864077669902,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8813559322033898,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8947368421052632,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.700000000000003,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8986486486486487,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.901840490797546,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8932584269662921,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8963730569948186,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.3,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8894230769230769,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8789237668161435,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.500000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8781512605042017,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8814229249011858,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8731343283582089,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 2.88,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 13,
+        "attention_use_rate": 0.8763250883392226,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8825503355704698,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8849840255591054,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.4,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8810975609756098,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 2.88,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.880466472303207,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 11.999999999999998,
+        "tracked_sources": 3,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8715083798882681,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8766756032171582,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8814432989690721,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.700000000000003,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8833746898263027,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.400000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8827751196172249,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.700000000000003,
+        "tracked_sources": 3,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8845265588914549,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.3,
+        "tracked_sources": 3,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8816964285714286,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.700000000000003,
+        "tracked_sources": 3,
+        "tracked_keywords": 16,
+        "attention_use_rate": 0.8833693304535637,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8870292887029289,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.200000000000001,
+        "tracked_sources": 3,
+        "tracked_keywords": 15,
+        "attention_use_rate": 0.8843813387423936,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.000000000000004,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8877952755905512,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8891013384321224,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.500000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8884758364312267,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.3,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8860759493670886,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.000000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8820422535211268,
+        "source_weights": {
+          "probe.network": 2.88,
+          "probe.service_down": 2.88,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.600000000000003,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.8816466552315609,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 12.800000000000002,
+        "tracked_sources": 3,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.882943143812709,
+        "source_weights": {
+          "probe.network": 3.0,
+          "probe.service_down": 3.0,
+          "probe.system": 0.05
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": 0.0021,
+      "fatigue_reduction": 0.0021,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.8813,
+      "second_half_chr": 0.8833,
+      "first_half_fatigue": 0.1187,
+      "second_half_fatigue": 0.1167,
+      "weight_spread": 2.95,
+      "final_source_weights": {
+        "probe.network": 3.0,
+        "probe.service_down": 3.0,
+        "probe.system": 0.05
+      }
+    }
+  },
+  "noisy_service_failure": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.9285714285714286,
+        "alert_fatigue": 0.07142857142857142,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000001,
+        "tracked_sources": 4,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9285714285714286,
+        "source_weights": {
+          "probe.process": 2.8299999999999987,
+          "probe.filesystem": 0.94,
+          "probe.network": 0.2199999999999998,
+          "probe.security": 0.4599999999999998
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9310344827586207,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.8799999999999999,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.15
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9318181818181818,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.8199999999999998,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.2999999999999998
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9491525423728814,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.7599999999999998,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.4499999999999997
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9459459459459459,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.6999999999999997,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.5999999999999996
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9438202247191011,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.6399999999999997,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.7499999999999996
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9326923076923077,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.5799999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 1.8999999999999995
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9327731092436975,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.5199999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.0499999999999994
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9402985074626866,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.4599999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.1999999999999993
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9463087248322147,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.349999999999999
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9451219512195121,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.499999999999999
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9441340782122905,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.379999999999999
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000004,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9432989690721649,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.529999999999999
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.937799043062201,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.679999999999999
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9241071428571429,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.5599999999999987
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9246861924686193,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.7099999999999986
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9291338582677166,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.8599999999999985
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9219330855018587,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.7399999999999984
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.926056338028169,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.8899999999999983
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9297658862876255,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9299363057324841,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9270516717325228,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.76
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9273255813953488,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.6399999999999997
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.549999999999999,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9192200557103064,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.7899999999999996
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9224598930481284,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.9399999999999995
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9254498714652957,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9282178217821783,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9284009546539379,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9285714285714286,
+        "source_weights": {
+          "probe.process": 2.88,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9265033407572383,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9288793103448276,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9311064718162839,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9311740890688259,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9332023575638507,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.933206106870229,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.935064935064935,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9332129963898917,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 3.0
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.929701230228471,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.88
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000003,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.928082191780822,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.76
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 5,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9282136894824707,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999996,
+          "probe.network": 0.05,
+          "probe.security": 0.05,
+          "probe.system": 2.6399999999999997
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": -0.0031,
+      "fatigue_reduction": -0.0031,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.9298,
+      "second_half_chr": 0.9267,
+      "first_half_fatigue": 0.0702,
+      "second_half_fatigue": 0.0733,
+      "weight_spread": 2.95,
+      "final_source_weights": {
+        "probe.process": 3.0,
+        "probe.filesystem": 0.4,
+        "probe.network": 0.05,
+        "probe.security": 0.05,
+        "probe.system": 2.64
+      }
+    }
+  },
+  "gradual_degradation": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.7,
+        "alert_fatigue": 0.3,
+        "time_to_awareness": 0,
+        "total_reward": 10.15,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7,
+        "source_weights": {
+          "probe.system": 1.479999999999999,
+          "probe.network": 1.15
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.75,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7619047619047619,
+        "source_weights": {
+          "probe.system": 2.379999999999998,
+          "probe.network": 1.2999999999999998
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.75,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 1.4499999999999997
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 17,
+        "attention_use_rate": 0.7441860465116279,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 1.5999999999999996
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 1.7499999999999996
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.75,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7846153846153846,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 1.8999999999999995
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.350000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7763157894736842,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.0499999999999994
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.35,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7701149425287356,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 2.1999999999999993
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7857142857142857,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.349999999999999
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.750000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7981651376146789,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.499999999999999
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.350000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7916666666666666,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.649999999999999
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 0.6363636363636364,
+        "alert_fatigue": 0.36363636363636365,
+        "time_to_awareness": 0,
+        "total_reward": 10.15,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7786259541984732,
+        "source_weights": {
+          "probe.system": 2.7899999999999996,
+          "probe.network": 2.799999999999999
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7887323943661971,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.679999999999999
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7973856209150327,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.8299999999999987
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.8048780487804879,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 2.9799999999999986
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.35,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.8,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.8064516129032258,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.35,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.8020304568527918,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.6,
+        "alert_fatigue": 0.4,
+        "time_to_awareness": 0,
+        "total_reward": 10.15,
+        "tracked_sources": 2,
+        "tracked_keywords": 17,
+        "attention_use_rate": 0.7922705314009661,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7889908256880734,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.88
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.750000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7903930131004366,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.76
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7916666666666666,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.9099999999999997
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.796812749003984,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.5454545454545454,
+        "alert_fatigue": 0.45454545454545453,
+        "time_to_awareness": 0,
+        "total_reward": 10.149999999999999,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7862595419847328,
+        "source_weights": {
+          "probe.system": 2.6399999999999997,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.75,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7875457875457875,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.750000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7922535211267606,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 11.150000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.8,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7973856209150327,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.7272727272727273,
+        "alert_fatigue": 0.2727272727272727,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7949526813880127,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.5454545454545454,
+        "alert_fatigue": 0.45454545454545453,
+        "time_to_awareness": 0,
+        "total_reward": 10.15,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7865853658536586,
+        "source_weights": {
+          "probe.system": 2.789999999999999,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.6363636363636364,
+        "alert_fatigue": 0.36363636363636365,
+        "time_to_awareness": 0,
+        "total_reward": 10.15,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7817109144542773,
+        "source_weights": {
+          "probe.system": 2.9399999999999995,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.750000000000002,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7828571428571428,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.6,
+        "alert_fatigue": 0.4,
+        "time_to_awareness": 0,
+        "total_reward": 9.95,
+        "tracked_sources": 2,
+        "tracked_keywords": 14,
+        "attention_use_rate": 0.7777777777777778,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 2.88
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7816711590296496,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7853403141361257,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.75,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7862595419847328,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7896039603960396,
+        "source_weights": {
+          "probe.system": 2.88,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.8181818181818182,
+        "alert_fatigue": 0.18181818181818182,
+        "time_to_awareness": 0,
+        "total_reward": 10.55,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7903614457831325,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000003,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7934272300469484,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 0.9090909090909091,
+        "alert_fatigue": 0.09090909090909091,
+        "time_to_awareness": 0,
+        "total_reward": 10.950000000000001,
+        "tracked_sources": 2,
+        "tracked_keywords": 21,
+        "attention_use_rate": 0.7963386727688787,
+        "source_weights": {
+          "probe.system": 3.0,
+          "probe.network": 3.0
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": 0.015,
+      "fatigue_reduction": 0.015,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.7877,
+      "second_half_chr": 0.8027,
+      "first_half_fatigue": 0.2123,
+      "second_half_fatigue": 0.1973,
+      "weight_spread": 0.0,
+      "final_source_weights": {
+        "probe.system": 3.0,
+        "probe.network": 3.0
+      }
+    }
+  },
+  "multi_source_noise": {
+    "episodes": [
+      {
+        "episode": 0,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8,
+        "source_weights": {
+          "probe.process": 2.439999999999999,
+          "probe.filesystem": 0.6399999999999999,
+          "probe.network": 0.7000000000000001,
+          "probe.system": 2.229999999999999,
+          "probe.security": 0.3399999999999998,
+          "probe.file_conflict": 0.3999999999999998
+        }
+      },
+      {
+        "episode": 1,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8333333333333334,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.5799999999999998,
+          "probe.network": 0.52,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 2,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8444444444444444,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.5199999999999998,
+          "probe.network": 0.34,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 3,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8833333333333333,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.4599999999999998,
+          "probe.network": 0.16000000000000003,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 4,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.8933333333333333,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 5,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 6,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8952380952380953,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 7,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8916666666666667,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 8,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8962962962962963,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 9,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9066666666666666,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 10,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9090909090909091,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 11,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9166666666666666,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 12,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9128205128205128,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 13,
+        "context_hit_rate": 0.7333333333333333,
+        "alert_fatigue": 0.26666666666666666,
+        "time_to_awareness": 0,
+        "total_reward": 12.450000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9,
+        "source_weights": {
+          "probe.process": 2.88,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 2.88,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 14,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.750000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.8933333333333333,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 15,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8958333333333334,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 16,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8980392156862745,
+        "source_weights": {
+          "probe.process": 2.88,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 2.88,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 17,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8962962962962963,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 18,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8982456140350877,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 19,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 20,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9015873015873016,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 21,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.850000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 22,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9014492753623189,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 23,
+        "context_hit_rate": 0.6666666666666666,
+        "alert_fatigue": 0.3333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.25,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.8916666666666667,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 24,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.8933333333333333,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 25,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8974358974358975,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 26,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.8987654320987655,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 27,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9023809523809524,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 28,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.903448275862069,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 29,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9022222222222223,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 30,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9032258064516129,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 31,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.90625,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 32,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.907070707070707,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 33,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9098039215686274,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 34,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9104761904761904,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 35,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.050000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 9,
+        "attention_use_rate": 0.9111111111111111,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 36,
+        "context_hit_rate": 0.8,
+        "alert_fatigue": 0.2,
+        "time_to_awareness": 0,
+        "total_reward": 12.650000000000002,
+        "tracked_sources": 6,
+        "tracked_keywords": 11,
+        "attention_use_rate": 0.9081081081081082,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 37,
+        "context_hit_rate": 0.8666666666666667,
+        "alert_fatigue": 0.13333333333333333,
+        "time_to_awareness": 0,
+        "total_reward": 12.950000000000001,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9070175438596492,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 38,
+        "context_hit_rate": 0.9333333333333333,
+        "alert_fatigue": 0.06666666666666667,
+        "time_to_awareness": 0,
+        "total_reward": 13.150000000000004,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.9076923076923077,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      },
+      {
+        "episode": 39,
+        "context_hit_rate": 1.0,
+        "alert_fatigue": 0.0,
+        "time_to_awareness": 0,
+        "total_reward": 13.350000000000003,
+        "tracked_sources": 6,
+        "tracked_keywords": 10,
+        "attention_use_rate": 0.91,
+        "source_weights": {
+          "probe.process": 3.0,
+          "probe.filesystem": 0.3999999999999998,
+          "probe.network": 0.05,
+          "probe.system": 3.0,
+          "probe.security": 0.05,
+          "probe.file_conflict": 0.05
+        }
+      }
+    ],
+    "convergence": {
+      "chr_improvement": 0.02,
+      "fatigue_reduction": 0.02,
+      "tta_improvement": 0.0,
+      "first_half_chr": 0.9,
+      "second_half_chr": 0.92,
+      "first_half_fatigue": 0.1,
+      "second_half_fatigue": 0.08,
+      "weight_spread": 2.95,
+      "final_source_weights": {
+        "probe.process": 3.0,
+        "probe.filesystem": 0.4,
+        "probe.network": 0.05,
+        "probe.system": 3.0,
+        "probe.security": 0.05,
+        "probe.file_conflict": 0.05
+      }
+    }
+  }
+}

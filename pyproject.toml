@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-agent"
+version = "0.1.0"
+description = "Environment-aware agent layer for perception, context modeling, and interaction."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "AURA Contributors"}]
+keywords = ["agent", "environment", "context", "interaction", "multi-agent"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+server = [
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.27.0",
+]
+dev = [
+  "pytest>=7.0",
+  "ruff>=0.4",
+  "mypy>=1.0",
+  "requests",
+  "python-dotenv",
+]
+
+[project.scripts]
+aura = "aura.__main__:main"
+aura-server = "aura.server.__main__:main"
+
+# dev dependencies moved into [project.optional-dependencies] above
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ── Ruff (Harness Engineering: mechanical rule enforcement) ──
+[tool.ruff]
+target-version = "py39"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle errors
+  "W",    # pycodestyle warnings
+  "F",    # pyflakes
+  "I",    # isort
+  "B",    # flake8-bugbear
+  "UP",   # pyupgrade
+  "LOG",  # logging
+  "T20",  # print statements (force structured logging)
+]
+ignore = [
+  "E501",  # line length (handled by formatter)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["aura"]
+
+# ── Mypy ──
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+# ── Pytest ──
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+markers = [
+  "slow: marks tests as slow",
+  "integration: marks integration tests",
+]

@@ -1,0 +1,192 @@
+{
+  "full_system": {
+    "service_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.2,
+      "avg_chr": 0.938
+    },
+    "file_conflict": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.67,
+      "avg_chr": 0.2
+    },
+    "resource_exhaustion": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.33,
+      "avg_chr": 1.0
+    },
+    "security_alert": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "cascading_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "_aggregate": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 14.34,
+      "avg_chr": 0.804
+    }
+  },
+  "no_detection": {
+    "service_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.44,
+      "avg_chr": 0.2
+    },
+    "file_conflict": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.55,
+      "avg_chr": 0.0
+    },
+    "resource_exhaustion": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 11.85,
+      "avg_chr": 0.0
+    },
+    "security_alert": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.55,
+      "avg_chr": 0.0
+    },
+    "cascading_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.55,
+      "avg_chr": 0.0
+    },
+    "_aggregate": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.388,
+      "avg_chr": 0.04
+    }
+  },
+  "no_scoring": {
+    "service_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.32,
+      "avg_chr": 0.939
+    },
+    "file_conflict": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.67,
+      "avg_chr": 0.2
+    },
+    "resource_exhaustion": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.33,
+      "avg_chr": 1.0
+    },
+    "security_alert": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "cascading_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "_aggregate": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 14.364,
+      "avg_chr": 0.804
+    }
+  },
+  "no_feedback": {
+    "service_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.2,
+      "avg_chr": 0.938
+    },
+    "file_conflict": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.67,
+      "avg_chr": 0.2
+    },
+    "resource_exhaustion": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 12.33,
+      "avg_chr": 1.0
+    },
+    "security_alert": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "cascading_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.75,
+      "avg_chr": 0.941
+    },
+    "_aggregate": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 14.34,
+      "avg_chr": 0.804
+    }
+  },
+  "no_push_ctrl": {
+    "service_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.68,
+      "avg_chr": 0.945
+    },
+    "file_conflict": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 13.27,
+      "avg_chr": 0.389
+    },
+    "resource_exhaustion": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 14.97,
+      "avg_chr": 0.939
+    },
+    "security_alert": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.99,
+      "avg_chr": 0.945
+    },
+    "cascading_failure": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 16.15,
+      "avg_chr": 0.947
+    },
+    "_aggregate": {
+      "avg_tta": 0.0,
+      "detection_rate": 1.0,
+      "avg_reward": 15.212,
+      "avg_chr": 0.833
+    }
+  }
+}
