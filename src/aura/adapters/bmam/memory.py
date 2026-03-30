@@ -34,12 +34,14 @@ class BMAMMemory(MemoryStore):
         self._client = client or BMAMClient()
         self._user_id = user_id
         self._use_brain = use_brain_retrieval
+        self._conversation_turns = 0
 
     def update(self, scene: SceneState) -> None:
         """Store scene observation via BMAM API."""
         if not self._client:
             return
 
+        self._conversation_turns += 1
         context_type = scene.context.get("context_type", "observation")
         importance = 0.6 if context_type in ("task", "conversation") else 0.4
 
@@ -52,6 +54,7 @@ class BMAMMemory(MemoryStore):
                     "entities": scene.entities,
                     "context_type": context_type,
                     "source": "aura",
+                    "conversation_turns": self._conversation_turns,
                 },
             )
         except ConnectionError as e:
@@ -65,24 +68,28 @@ class BMAMMemory(MemoryStore):
             return []
 
         try:
+            context = {
+                "user_id": self._user_id,
+                "source": "aura",
+                "conversation_turns": self._conversation_turns,
+            }
+
             if self._use_brain:
                 result = self._client.brain_retrieve(
-                    query=query, k=limit,
-                    context={"user_id": self._user_id, "source": "aura"},
+                    query=query, k=limit, context=context,
                 )
                 memories = result.get("memories", [])
                 path_type = result.get("path_type", "unknown")
                 confidence = result.get("confidence", 0.0)
             else:
                 result = self._client.search(
-                    query=query, limit=limit,
-                    context={"user_id": self._user_id},
+                    query=query, limit=limit, context=context,
                 )
                 memories = result.get("results", [])
                 path_type = "semantic"
                 confidence = 1.0
 
-            return [
+            items = [
                 MemoryItem(
                     content=mem.get("content", ""),
                     metadata={
@@ -97,6 +104,21 @@ class BMAMMemory(MemoryStore):
                 )
                 for mem in memories
             ]
+
+            # Auto-feedback: tell BMAM how useful the retrieval was
+            if items:
+                reward = min(1.0, confidence * 2 - 1)  # 0.5→0, 1.0→1
+                try:
+                    self._client.feedback(
+                        query=query,
+                        response=items[0].content[:200],
+                        reward_signal=reward,
+                        query_type="aura_recall",
+                    )
+                except Exception:
+                    pass  # Non-critical
+
+            return items
         except ConnectionError as e:
             logger.warning("BMAM recall failed (service unavailable): %s", e)
             return []
@@ -148,6 +170,33 @@ class BMAMMemory(MemoryStore):
         except Exception as e:
             logger.error("BMAM get_persona_portrait failed: %s", e)
             return {}
+
+    # ── Soul Transfer ────────────────────────────────────────
+
+    def export_soul(self, name: str = "aura_export") -> Dict[str, Any]:
+        """Export BMAM memory archive (.bma) for soul transfer."""
+        try:
+            return self._client.export_archive(archive_name=name)
+        except Exception as e:
+            logger.error("BMAM export failed: %s", e)
+            return {"error": str(e)}
+
+    def import_soul(self, archive_path: str) -> Dict[str, Any]:
+        """Import a .bma archive to restore soul."""
+        try:
+            return self._client.import_archive(archive_path=archive_path)
+        except Exception as e:
+            logger.error("BMAM import failed: %s", e)
+            return {"error": str(e)}
+
+    # ── Health ───────────────────────────────────────────────
+
+    def get_brain_health(self) -> Dict[str, Any]:
+        """Get health status of all BMAM brain regions."""
+        try:
+            return self._client.get_component_health()
+        except Exception as e:
+            return {"error": str(e)}
 
     def is_available(self) -> bool:
         return self._client.is_available() if self._client else False

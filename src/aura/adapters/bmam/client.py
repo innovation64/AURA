@@ -212,3 +212,23 @@ class BMAMClient:
         return self._post("/v1/brain/persona/portrait/", {
             "user_id": user_id,
         })
+
+    # ── Archives (Soul Transfer) ─────────────────────────────
+
+    def export_archive(self, archive_name: str = "aura_export") -> Dict[str, Any]:
+        """POST /v1/archives/export/ — export memory archive (.bma)."""
+        return self._post("/v1/archives/export/", {
+            "archive_name": archive_name,
+        })
+
+    def import_archive(self, archive_path: str) -> Dict[str, Any]:
+        """POST /v1/archives/import/ — import memory archive."""
+        return self._post("/v1/archives/import/", {
+            "archive_path": archive_path,
+        })
+
+    # ── Soul State ───────────────────────────────────────────
+
+    def get_component_health(self) -> Dict[str, Any]:
+        """GET /v1/brain/health/components — get brain region health status."""
+        return self._get("/v1/brain/health/components")
