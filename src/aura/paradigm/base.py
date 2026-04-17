@@ -1,41 +1,31 @@
 """Base classes for interaction paradigms.
 
-Formal Definitions (Information-Theoretic)
-==========================================
+Design-Space Taxonomy
+=====================
 
-We formalize agent-environment interaction through the lens of information
-flow between environment state E_t and agent belief B_t at time t.
+We describe three interaction paradigms along the axis of who initiates
+information flow between environment state E_t and agent belief B_t at time t.
 
-Let I(·;·) denote mutual information, H(·) entropy, and H(·|·) conditional
-entropy.
+**Reactive** — on-demand information acquisition.
+    The agent issues a query q_t and receives response r_t. Belief update
+    depends entirely on what the agent thinks to ask for.
 
-**Reactive Paradigm** (On-Demand Information Acquisition):
-    At each step, the agent issues a query q_t and receives response r_t:
-        I_reactive(E_t ; B_t) = I(E_t ; r_t | q_t)
-    Information flow is agent-initiated and bounded by query quality.
-    The agent's belief update depends entirely on what it asks for.
-
-**Proactive Paradigm** (Unsolicited Context Injection):
+**Proactive** — unsolicited context injection.
     The environment monitors its own state, detects changes via a relevance
-    function ρ(·), and pushes context c_t when ρ(ΔE_t) > τ:
-        I_proactive(E_t ; B_t) = I(E_t ; r_t | q_t) + I(E_t ; c_t | ρ)
-    The second term is "free" information the agent never asked for.
-    This reduces H(E_t | B_t) — the agent's environmental uncertainty —
-    without consuming the agent's action budget.
+    function ρ(·), and pushes context c_t when ρ(ΔE_t) > τ. The pushed
+    context is "free" information the agent never asked for, which may
+    reduce environmental uncertainty without consuming its action budget.
 
-**Collaborative Paradigm** (Bilateral Information Flow with Attention):
-    Extends Proactive with a feedback channel: the agent's behavior updates
-    the relevance function ρ via an attention tracker A_t:
-        ρ_{t+1} = ρ_t + η · ∇_ρ L(A_t, c_t, used_t)
-    where used_t ∈ {0,1} indicates whether the agent utilized the pushed
-    context, and η is the learning rate.
-    Over time, the environment learns to push *what the agent actually needs*:
-        I_collab(E_t ; B_t) → max_{ρ} I(E_t ; c_t | ρ)
-    This is a self-improving system that converges to optimal context delivery.
+**Collaborative** — bilateral information flow with attention feedback.
+    Extends Proactive with a feedback channel: the relevance function ρ
+    is updated based on whether the agent actually utilized prior pushed
+    context (used_t ∈ {0,1}). Intended to converge to pushing "what the
+    agent actually needs" over time.
 
-Key Insight: The progression Reactive → Proactive → Collaborative
-monotonically increases I(E_t ; B_t) while the Collaborative paradigm
-additionally minimizes "alert fatigue" — i.e., H(c_t | used_t) → 0.
+Scope note: this docstring describes the design space. Whether each
+paradigm yields net gains is an empirical question and depends on task
+regime and metric saturation — see accompanying paper for measured
+effects (and the RQ1 null result in particular).
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-# AURA — An Understanding-enabled Reasoning Agent
+# AURA — Environment-Aware Agent Framework
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
