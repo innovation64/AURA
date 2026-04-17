@@ -65,6 +65,11 @@ class AURAConfig:
     workflow_reuse_rate: float = 0.6
     workflow_validation_rate: float = 0.2
     workflow_forge_threshold: int = 3
+    # Memory retrieval weights
+    memory_weight_semantic: float = 0.5
+    memory_weight_recency: float = 0.3
+    memory_weight_importance: float = 0.2
+    memory_recency_decay: float = 0.95
     # Extra kwargs passed to backend builders
     backend_kwargs: Dict[str, Any] = field(default_factory=dict)
 
@@ -100,7 +105,13 @@ class AURAAgent:
         if any([sense, scene, memory, reason, actor, interactor]):
             self.sense = sense or BasicSense()
             self.scene = scene or BasicScene()
-            self.memory = memory or EphemeralMemory(max_items=resolved_config.memory_limit)
+            self.memory = memory or EphemeralMemory(
+                max_items=resolved_config.memory_limit,
+                recency_decay=resolved_config.memory_recency_decay,
+                weight_semantic=resolved_config.memory_weight_semantic,
+                weight_recency=resolved_config.memory_weight_recency,
+                weight_importance=resolved_config.memory_weight_importance,
+            )
             self.reason = reason or SimpleReasoner()
             self.actor = actor or StubActor()
             self.interactor = interactor or BasicInteractor()
@@ -252,7 +263,13 @@ class AURAAgent:
         if not components.get("scene"):
             components["scene"] = BasicScene()
         if not components.get("memory"):
-            components["memory"] = EphemeralMemory(max_items=config.memory_limit)
+            components["memory"] = EphemeralMemory(
+                max_items=config.memory_limit,
+                recency_decay=config.memory_recency_decay,
+                weight_semantic=config.memory_weight_semantic,
+                weight_recency=config.memory_weight_recency,
+                weight_importance=config.memory_weight_importance,
+            )
         if not components.get("reason"):
             components["reason"] = SimpleReasoner()
         if not components.get("actor"):
@@ -330,9 +347,26 @@ class AURAAgent:
                 reasoning, self._prev_scene, scene_state, tool_results,
             )
 
-            # StrategyAuditor: check environment drift
+            # StrategyAuditor: check environment drift + staleness + counterfactual
             if self.auditor is not None and self._prev_scene is not None:
                 self.auditor.check_environment_drift(self._prev_scene, scene_state)
+
+                # Detect stale strategies and inject warning
+                stale = self.auditor.get_stale_strategies()
+                if stale:
+                    reasoning.metadata["stale_strategies"] = len(stale)
+                    logger.info("Auditor detected %d stale strategies", len(stale))
+
+                # Counterfactual probing: test alternative if budget allows
+                current_entry = (
+                    self.feedback_store.query_entry(scene_state, reasoning.intent)
+                    if self.feedback_store is not None else None
+                )
+                if self.auditor.should_probe(current_entry):
+                    alt = self.auditor.select_alternative(scene_state, reasoning.intent)
+                    if alt:
+                        reasoning.metadata["counterfactual_alternative"] = alt
+                        logger.debug("Auditor suggests counterfactual: %s", alt)
 
             # React to guard verdict
             if guard_verdict.level == InterventionLevel.HINT:
@@ -369,16 +403,21 @@ class AURAAgent:
                         )
 
             elif guard_verdict.level == InterventionLevel.REDIRECT:
-                reasoning = ReasoningResult(
-                    intent="abort_and_report",
-                    rationale=f"Guard redirect: {guard_verdict.detail}",
-                    actions=["report_stuck", "request_human_input"],
-                    metadata={
-                        **reasoning.metadata,
-                        "guard_redirected": True,
-                        "original_intent": reasoning.intent,
+                # Hard stop: return immediately without Act/Interact
+                halted_interaction = Interaction(
+                    message=f"[Guard REDIRECT] {guard_verdict.detail}",
+                    payload={
+                        "guard": {
+                            "level": "REDIRECT",
+                            "urgency": guard_verdict.urgency,
+                            "detail": guard_verdict.detail,
+                            "original_intent": reasoning.intent,
+                        },
                     },
+                    halted=True,
                 )
+                self._prev_scene = scene_state
+                return halted_interaction
 
         # ── WorkflowEngine: record exploration tool calls ─────────
         if (self.workflow_engine is not None and reused_workflow is None
@@ -484,24 +523,32 @@ class AURAAgent:
         return interaction
 
     def _collect_probe_signals(self) -> List[EnvironmentSignal]:
-        """Synchronously collect signals from the proactive engine."""
+        """Synchronously collect signals from the proactive engine.
+
+        Handles three cases:
+        1. No event loop exists → create one, poll, close it.
+        2. Event loop exists but not running → use it directly.
+        3. Event loop is running (e.g., called from async context) → use cache.
+        """
+        # Case 3: already inside an async context — never call run_until_complete
         try:
-            loop = asyncio.get_event_loop()
-            if loop.is_running():
-                return self._proactive_engine.get_cached_signals()
-            coro = self._proactive_engine.poll_signals()
-            return loop.run_until_complete(
-                asyncio.wait_for(coro, timeout=5.0)
-            )
+            loop = asyncio.get_running_loop()
+            # We're inside an async context; fall back to cached signals
+            logger.debug("Async context detected, using cached probe signals")
+            return self._proactive_engine.get_cached_signals()
         except RuntimeError:
+            pass  # No running loop — safe to create/use one
+
+        # Case 1 & 2: no running loop
+        try:
+            loop = asyncio.new_event_loop()
             try:
-                new_loop = asyncio.new_event_loop()
                 coro = self._proactive_engine.poll_signals()
-                return new_loop.run_until_complete(
+                return loop.run_until_complete(
                     asyncio.wait_for(coro, timeout=5.0)
                 )
-            except Exception:
-                return self._proactive_engine.get_cached_signals()
+            finally:
+                loop.close()
         except (asyncio.TimeoutError, Exception) as e:
             logger.debug("Probe signal collection failed/timed out: %s", e)
             return self._proactive_engine.get_cached_signals()

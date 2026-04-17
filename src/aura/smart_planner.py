@@ -166,6 +166,15 @@ class SmartPlanner(Planner):
 
     def __init__(self, max_hints_per_step: int = 1):
         self._max_hints = max_hints_per_step
+        self.reset()
+
+    def reset(self) -> None:
+        """Clear per-exploration state.
+
+        SmartPlanner is constructed once and reused across many agent turns.
+        Without an explicit reset, relevance gates and hint queues leak from
+        one exploration episode into the next, contaminating later decisions.
+        """
         self._hint_queue: List[EnvironmentHint] = []
         self._hints_derived: bool = False
         self._relevance_checked: bool = False

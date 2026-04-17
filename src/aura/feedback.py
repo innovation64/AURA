@@ -271,6 +271,15 @@ class ConditionalFeedbackStore:
                 break
         return result
 
+    def query_entry(
+        self,
+        scene_state: SceneState,
+        action: str,
+    ) -> Optional[FeedbackEntry]:
+        """Find the best-matching entry for a (state, action) pair."""
+        pattern = extract_pattern(scene_state)
+        return self._find_matching(pattern, action)
+
     def get_entry(self, entry_id: str) -> Optional[FeedbackEntry]:
         for e in self._entries:
             if e.entry_id == entry_id:

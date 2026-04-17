@@ -62,6 +62,27 @@ class TestDeriveHints:
 
 
 class TestSmartPlanner:
+    def test_reset_clears_episode_state(self):
+        planner = SmartPlanner()
+
+        # First episode: system query marks planner as relevant.
+        first = ExplorationState(
+            signals=[],
+            user_query="check system status",
+            available_tools=["system.snapshot"],
+        )
+        decision = planner.decide(first)
+        assert not decision.stop
+
+        # Reset should make the next episode independent.
+        planner.reset()
+        second = ExplorationState(
+            signals=[],
+            available_tools=["system.snapshot"],
+        )
+        decision = planner.decide(second)
+        assert decision.stop
+
     def test_skips_irrelevant_query(self):
         """Exploration should be skipped when query has no tool-relevant terms."""
         planner = SmartPlanner()
@@ -125,6 +146,19 @@ class TestSmartPlanner:
 
 
 class TestSmartPlannerWithExplorer:
+    def test_explorer_resets_planner_between_episodes(self):
+        from aura.explore import Explorer
+
+        planner = SmartPlanner()
+        registry = _make_registry()
+        explorer = Explorer(planner=planner, registry=registry, max_steps=3)
+
+        relevant = explorer.explore([], user_query="show git status")
+        assert any(r.name == "git.status" for r in relevant.tool_results)
+
+        irrelevant = explorer.explore([], user_query="Where should I go for lunch?")
+        assert len(irrelevant.tool_results) == 0
+
     def test_full_explore_loop(self):
         from aura.explore import Explorer
 

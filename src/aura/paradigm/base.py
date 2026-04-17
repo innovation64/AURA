@@ -1,4 +1,42 @@
-"""Base classes for interaction paradigms."""
+"""Base classes for interaction paradigms.
+
+Formal Definitions (Information-Theoretic)
+==========================================
+
+We formalize agent-environment interaction through the lens of information
+flow between environment state E_t and agent belief B_t at time t.
+
+Let I(·;·) denote mutual information, H(·) entropy, and H(·|·) conditional
+entropy.
+
+**Reactive Paradigm** (On-Demand Information Acquisition):
+    At each step, the agent issues a query q_t and receives response r_t:
+        I_reactive(E_t ; B_t) = I(E_t ; r_t | q_t)
+    Information flow is agent-initiated and bounded by query quality.
+    The agent's belief update depends entirely on what it asks for.
+
+**Proactive Paradigm** (Unsolicited Context Injection):
+    The environment monitors its own state, detects changes via a relevance
+    function ρ(·), and pushes context c_t when ρ(ΔE_t) > τ:
+        I_proactive(E_t ; B_t) = I(E_t ; r_t | q_t) + I(E_t ; c_t | ρ)
+    The second term is "free" information the agent never asked for.
+    This reduces H(E_t | B_t) — the agent's environmental uncertainty —
+    without consuming the agent's action budget.
+
+**Collaborative Paradigm** (Bilateral Information Flow with Attention):
+    Extends Proactive with a feedback channel: the agent's behavior updates
+    the relevance function ρ via an attention tracker A_t:
+        ρ_{t+1} = ρ_t + η · ∇_ρ L(A_t, c_t, used_t)
+    where used_t ∈ {0,1} indicates whether the agent utilized the pushed
+    context, and η is the learning rate.
+    Over time, the environment learns to push *what the agent actually needs*:
+        I_collab(E_t ; B_t) → max_{ρ} I(E_t ; c_t | ρ)
+    This is a self-improving system that converges to optimal context delivery.
+
+Key Insight: The progression Reactive → Proactive → Collaborative
+monotonically increases I(E_t ; B_t) while the Collaborative paradigm
+additionally minimizes "alert fatigue" — i.e., H(c_t | used_t) → 0.
+"""
 
 from __future__ import annotations
 

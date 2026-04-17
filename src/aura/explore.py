@@ -96,6 +96,10 @@ class ExplorationOutcome:
 
 
 class Planner:
+    def reset(self) -> None:
+        """Reset any per-exploration state before a new exploration episode."""
+        return None
+
     def decide(self, state: ExplorationState) -> ExplorationDecision:
         raise NotImplementedError
 
@@ -140,6 +144,7 @@ class Explorer:
         user_query: Optional[str] = None,
         raw_input: Any = None,
     ) -> ExplorationOutcome:
+        self.planner.reset()
         collected_signals: List[EnvironmentSignal] = list(signals)
         tool_results: List[ToolResult] = []
         decisions: List[ExplorationDecision] = []

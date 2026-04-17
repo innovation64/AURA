@@ -105,10 +105,20 @@ class _TFIDFIndex:
 class EphemeralMemory(MemoryStore):
     """Improved memory with TF-IDF semantic retrieval + recency + importance weighting."""
 
-    def __init__(self, max_items: int = 100) -> None:
+    def __init__(
+        self,
+        max_items: int = 100,
+        recency_decay: float = 0.95,
+        weight_semantic: float = 0.5,
+        weight_recency: float = 0.3,
+        weight_importance: float = 0.2,
+    ) -> None:
         self._items: Deque[MemoryItem] = deque(maxlen=max_items)
         self._index = _TFIDFIndex()
-        self._recency_decay: float = 0.95  # exponential decay per item
+        self._recency_decay: float = recency_decay
+        self._w_sem: float = weight_semantic
+        self._w_rec: float = weight_recency
+        self._w_imp: float = weight_importance
 
     def update(self, scene: SceneState) -> None:
         content = scene.summary
@@ -157,7 +167,7 @@ class EphemeralMemory(MemoryStore):
             importance = item.metadata.get("importance", 0.5)
 
             # Weighted combination
-            combined = 0.5 * sem + 0.3 * recency + 0.2 * importance
+            combined = self._w_sem * sem + self._w_rec * recency + self._w_imp * importance
             scored.append((combined, i, item))
 
         scored.sort(key=lambda x: x[0], reverse=True)

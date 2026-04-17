@@ -50,3 +50,4 @@ class Action:
 class Interaction:
     message: str
     payload: Dict[str, Any] = field(default_factory=dict)
+    halted: bool = False  # True when ExecutionGuard issued REDIRECT
