@@ -44,6 +44,7 @@ class IntentInferrer(Protocol):
         scene: SceneState,
         memories: Sequence[MemoryItem],
         user_profile: Optional[Dict[str, Any]] = None,
+        available_tools: Optional[Sequence[str]] = None,
     ) -> IntentFrame:
         ...
 
@@ -80,6 +81,7 @@ class HeuristicIntentInferrer:
         scene: SceneState,
         memories: Sequence[MemoryItem],
         user_profile: Optional[Dict[str, Any]] = None,
+        available_tools: Optional[Sequence[str]] = None,
     ) -> IntentFrame:
         q = (user_query or "").strip().lower()
         if not q:
@@ -123,24 +125,49 @@ class HeuristicIntentInferrer:
 # ---------------------------------------------------------------------------
 
 _INTENT_SYSTEM_PROMPT = (
-    "You are the intent-inference stage of an environment-aware agent. "
-    "Given the user's surface query, the current scene snapshot, and a few "
-    "recent memories, output a JSON object describing the user's likely "
-    "information need -- both literal and implicit. Think about what the "
-    "user would actually want to know beyond the surface words, given what "
-    "is observable in the scene. Your output controls how much environment "
-    "probing the downstream agent will perform, so be calibrated: do NOT "
-    "inflate implicit needs when the literal query is self-contained.\n\n"
-    "Output schema (JSON, no prose):\n"
+    "You are the intent-inference stage of an environment-aware agent that "
+    "performs theory-of-mind style alignment for a human user in a social "
+    "environment. Given the user's surface query, the scene, and recent "
+    "memories, output a JSON object describing the user's likely information "
+    "need -- both literal AND implicit.\n\n"
+    "Calibration rules for `gap` (MOST IMPORTANT):\n"
+    "- gap < 0.20: the literal query is self-contained. Facts-of-the-world "
+    "  questions ('what time is it?', 'how many agents are at home?') with "
+    "  no social or private-state subtext.\n"
+    "- 0.20 <= gap < 0.40: literal is sufficient but user would benefit "
+    "  from a small amount of situational context.\n"
+    "- 0.40 <= gap < 0.60: literal answer is a fact visible in the scene, "
+    "  but the user is likely after something that REQUIRES probing private "
+    "  agent state (availability, mood, emotional_state, unspoken_goal) -- "
+    "  e.g., 'where is X?' when they actually want to know if X is free.\n"
+    "- gap >= 0.60: implicit need dominates. Queries about appropriateness "
+    "  ('is this a good time to...?'), latent goals ('what is X up to?'), "
+    "  or relational state ('is anyone avoiding anyone?').\n\n"
+    "Calibration rules for `recommended_probes`:\n"
+    "- ONLY use tool names from the AVAILABLE_TOOLS list in the user message.\n"
+    "- Do NOT invent tool names. If no available tool matches the implicit "
+    "  need, leave this list empty.\n"
+    "- Prefer tools that return structured state (nearby_agents, agent plan, "
+    "  private state) over free-form search.\n\n"
+    "Output schema (JSON object, no prose, no markdown fences):\n"
     "{\n"
     '  "literal_need": "<one-sentence restatement>",\n'
     '  "implicit_need": ["<plausible hidden need>", ...],\n'
-    '  "gap": 0.0,  // [0,1], 0=literal is sufficient, 1=orthogonal\n'
+    '  "gap": 0.0,\n'
     '  "recommended_probes": ["<tool_name>", ...],\n'
-    '  "should_alert": false,  // add proactive info to the reply\n'
-    '  "confidence": 0.0,  // [0,1]\n'
+    '  "should_alert": false,\n'
+    '  "confidence": 0.0,\n'
     '  "rationale": "<one sentence>"\n'
-    "}"
+    "}\n\n"
+    "FEW-SHOT EXAMPLES:\n"
+    "Q: \"what time is it?\"\n"
+    "A: {\"literal_need\":\"What is the current simulation time?\",\"implicit_need\":[],\"gap\":0.1,\"recommended_probes\":[],\"should_alert\":false,\"confidence\":0.9,\"rationale\":\"self-contained factual query\"}\n\n"
+    "Q: \"where's Lin Wei?\" (scene shows Lin Wei at cafe)\n"
+    "A: {\"literal_need\":\"Lin Wei's current location\",\"implicit_need\":[\"user likely wants to know if Lin Wei is available to chat\",\"mood/emotional state might affect whether it's a good time to approach\"],\"gap\":0.5,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.8,\"rationale\":\"surface location query; real need is social-availability assessment\"}\n\n"
+    "Q: \"is now a good time to invite Lin Wei for coffee?\"\n"
+    "A: {\"literal_need\":\"Appropriateness of inviting Lin Wei now\",\"implicit_need\":[\"her current availability\",\"her mood/emotional state\",\"whether she is engaged in something she wouldn't want interrupted\"],\"gap\":0.75,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\",\"get_recent_events\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"explicit appropriateness query -- literal answer requires integrating private state\"}\n\n"
+    "Q: \"what's Lin Wei up to these days?\"\n"
+    "A: {\"literal_need\":\"Lin Wei's recent activities\",\"implicit_need\":[\"her private goals or latent plans beyond the visible routine\"],\"gap\":0.7,\"recommended_probes\":[\"get_recent_memories\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.75,\"rationale\":\"'up to' signals interest in latent intent, not surface behavior\"}"
 )
 
 
@@ -171,14 +198,15 @@ class LLMIntentInferrer:
         scene: SceneState,
         memories: Sequence[MemoryItem],
         user_profile: Optional[Dict[str, Any]] = None,
+        available_tools: Optional[Sequence[str]] = None,
     ) -> IntentFrame:
         if not user_query or not user_query.strip():
-            return self._fallback.infer(user_query, scene, memories, user_profile)
+            return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
 
         if self._client is None:
-            return self._fallback.infer(user_query, scene, memories, user_profile)
+            return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
 
-        user_message = _build_user_message(user_query, scene, memories, user_profile)
+        user_message = _build_user_message(user_query, scene, memories, user_profile, available_tools)
 
         try:
             resp = self._client.chat.completions.create(
@@ -194,12 +222,26 @@ class LLMIntentInferrer:
             raw = (resp.choices[0].message.content or "").strip()
         except Exception as e:
             logger.warning("LLMIntentInferrer call failed: %s — falling back", e)
-            return self._fallback.infer(user_query, scene, memories, user_profile)
+            return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
 
         frame = _parse_intent_json(raw, user_query)
         if frame is None:
             logger.warning("LLMIntentInferrer produced unparseable JSON; falling back")
-            return self._fallback.infer(user_query, scene, memories, user_profile)
+            return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
+
+        # Enforce tool-name whitelist when available_tools is provided:
+        # drop any probe the model invented that is not in the registry.
+        if available_tools is not None and frame.recommended_probes:
+            allowed = set(available_tools)
+            kept = [p for p in frame.recommended_probes if p in allowed]
+            if len(kept) != len(frame.recommended_probes):
+                logger.debug(
+                    "Filtered %d invalid probe names: %s",
+                    len(frame.recommended_probes) - len(kept),
+                    [p for p in frame.recommended_probes if p not in allowed],
+                )
+            frame.recommended_probes = kept
+
         return frame
 
 
@@ -212,18 +254,24 @@ def _build_user_message(
     scene: SceneState,
     memories: Sequence[MemoryItem],
     user_profile: Optional[Dict[str, Any]],
+    available_tools: Optional[Sequence[str]] = None,
 ) -> str:
     mem_preview = "\n".join(
         f"- {m.content[:160]}" for m in list(memories)[:5]
     ) or "(none)"
     scene_preview = f"summary: {scene.summary}\nentities: {scene.entities[:10]}"
     profile_preview = json.dumps(user_profile or {}, ensure_ascii=False)[:400]
+    tools_preview = (
+        ", ".join(sorted(set(available_tools))) if available_tools else "(none provided)"
+    )
     return (
         f"USER QUERY: {user_query}\n\n"
         f"CURRENT SCENE:\n{scene_preview}\n\n"
         f"RECENT MEMORIES:\n{mem_preview}\n\n"
         f"USER PROFILE: {profile_preview}\n\n"
-        "Infer the user's intent per the schema. Output JSON only."
+        f"AVAILABLE_TOOLS: {tools_preview}\n\n"
+        "Infer the user's intent per the schema. Recommended_probes MUST only "
+        "contain names from AVAILABLE_TOOLS (or be empty). Output JSON only."
     )
 
 

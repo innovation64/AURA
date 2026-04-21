@@ -353,14 +353,21 @@ class AURAAgent:
         if self.intent is not None and user_query:
             # Build a preview scene on pre-probe signals so the intent
             # inferrer can see the current environment without first
-            # spending probe budget on it.
+            # spending probe budget on it. Pass the tool registry so the
+            # LLM backend whitelists recommended_probes to real tools.
             try:
                 preview_scene = self.scene.build(signals)
                 preview_memories = self.memory.recall(user_query) if hasattr(self.memory, "recall") else []
+                available_tools = (
+                    [t.name for t in self.tool_registry.list()
+                     if self.tool_registry.is_allowed(t.name)]
+                    if self.tool_registry is not None else []
+                )
                 intent_frame = self.intent.infer(
                     user_query=user_query,
                     scene=preview_scene,
                     memories=preview_memories,
+                    available_tools=available_tools,
                 )
             except Exception as e:
                 logger.warning("Intent inference failed: %s — continuing without intent", e)

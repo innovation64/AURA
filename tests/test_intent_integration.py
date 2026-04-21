@@ -60,9 +60,11 @@ class _ScriptedIntent:
     def __init__(self, frame: IntentFrame):
         self._frame = frame
         self.calls = 0
+        self.last_available_tools = None
 
-    def infer(self, user_query, scene, memories, user_profile=None):
+    def infer(self, user_query, scene, memories, user_profile=None, available_tools=None):
         self.calls += 1
+        self.last_available_tools = available_tools
         return self._frame
 
 
@@ -164,6 +166,20 @@ class TestIntentPipelineEnabled:
         ))
         agent.run(raw_input="cafe", user_query="good time to chat?")
         assert expl.effective_max_steps_log == [2]
+
+    def test_available_tools_list_is_passed_through(self):
+        """IntentInferrer should receive the registry tool names so the
+        LLM backend can whitelist recommended_probes."""
+        expl = _CountingExplorer()
+        agent = _agent(intent_enabled=True, explorer=expl)
+        scripted = _ScriptedIntent(IntentFrame(
+            literal_need="q", implicit_need=[], gap=0.3, confidence=0.5,
+        ))
+        agent.intent = scripted
+        agent.run(raw_input="cafe", user_query="where is Lin Wei?")
+        # Tool registry is set by AURAConfig defaults; it must be forwarded
+        assert scripted.last_available_tools is not None
+        assert isinstance(scripted.last_available_tools, list)
 
     def test_intent_inference_exception_does_not_break_pipeline(self):
         class _BoomIntent:
