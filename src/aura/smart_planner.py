@@ -236,34 +236,34 @@ class SmartPlanner(Planner):
     def _should_explore(state: ExplorationState) -> bool:
         """Determine whether exploration is warranted for this query/signal set.
 
-        Returns False for queries that are purely about reasoning, social
-        interaction, or memory recall — where system/workspace probing adds noise.
+        Exploration is warranted when either (i) there are anomaly or
+        probe-modality signals, or (ii) `_derive_hints` can extract a hint
+        whose target tool is actually available. This keeps the relevance
+        check in lock-step with the hint-generation logic instead of
+        duplicating a separate keyword list that drifts from it.
         """
-        query = (state.user_query or "").lower()
-
         # If there are already anomaly signals, exploration is warranted
         for sig in state.signals:
             payload = sig.payload or {}
             if payload.get("anomalies") or sig.modality in ("filesystem", "network", "docker"):
                 return True
 
-        # Check if query matches any tool-relevant category
-        relevant_terms = (
-            # System (require explicit technical context)
-            "cpu usage", "memory usage", "disk space", "gpu util", "load average",
-            "process list", "system status", "system health", "performance metric",
-            # Workspace
-            "file system", "repo", "workspace", "directory listing",
-            "source code", "module import",
-            # Docker/services
-            "container", "docker", "pod", "deploy",
-            # Git
-            "commit", "branch", "merge", "pull request", "push", "git diff",
-        )
-        if any(term in query for term in relevant_terms):
+        # If a concrete hint can be derived for an available tool, explore.
+        available = set(state.available_tools)
+        hints = _derive_hints(state.signals, state.user_query or "")
+        for h in hints:
+            if h.tool_name in available:
+                return True
+
+        # Query additionally covers queries like 'is the system healthy?'
+        # even when no hint maps to a specific tool -- keep the explicit
+        # system-context fallback so that _needs_system_context can fire.
+        query = (state.user_query or "").lower()
+        system_terms = ("cpu usage", "memory usage", "disk space", "gpu util",
+                        "system status", "system health", "performance metric")
+        if any(term in query for term in system_terms):
             return True
 
-        # No match — exploration would just add noise
         return False
 
     @staticmethod
