@@ -11,9 +11,10 @@ from .memory import EphemeralMemory, MemoryStore
 from .reason import Reasoner, SimpleReasoner
 from .scene import BasicScene, SceneModel
 from .sense import BasicSense, SenseAdapter
-from .types import EnvironmentSignal, Interaction, ReasoningResult
+from .types import EnvironmentSignal, IntentFrame, Interaction, ReasoningResult
 from .builtin_tools import default_tools
 from .explore import Explorer, HeuristicPlanner, ExplorationOutcome
+from .intent import HeuristicIntentInferrer, IntentInferrer, LLMIntentInferrer, intent_frame_to_dict
 from .tools import ToolPolicy, ToolRegistry
 from .guard import ExecutionGuard, InterventionLevel, GuardVerdict
 from .feedback import ConditionalFeedbackStore, Outcome as FeedbackOutcome
@@ -22,6 +23,34 @@ from .workflow import WorkflowEngine, WorkflowStep, Workflow
 from .feedback import extract_pattern
 
 logger = logging.getLogger(__name__)
+
+
+def intent_gap_to_budget(gap: float, max_steps: int) -> int:
+    """Map IntentFrame.gap to a dynamic probe budget.
+
+    When intent inference is enabled, probing becomes an agent decision
+    rather than a static config. Low-gap queries (literal == implicit)
+    skip probing; high-gap queries open the full configured budget.
+
+    The mapping is monotone and saturates at max_steps:
+        gap < 0.20 -> 0  (skip Explore entirely)
+        gap < 0.40 -> 1
+        gap < 0.60 -> 2
+        gap < 0.80 -> 3
+        gap >= 0.80 -> min(max_steps, 5)
+    """
+    g = max(0.0, min(1.0, float(gap)))
+    if g < 0.20:
+        base = 0
+    elif g < 0.40:
+        base = 1
+    elif g < 0.60:
+        base = 2
+    elif g < 0.80:
+        base = 3
+    else:
+        base = 5
+    return min(max(0, int(max_steps)), base)
 
 
 @dataclass
@@ -200,6 +229,13 @@ class AURAAgent:
                 forge_threshold=resolved_config.workflow_forge_threshold,
             )
 
+        # IntentInferrer (env-mediated ToM). Default disabled; when enabled,
+        # the inferred IntentFrame controls Explore budget, Memory recall,
+        # and Interact alert behavior per step.
+        self.intent: Optional[IntentInferrer] = None
+        if resolved_config.intent_enabled:
+            self.intent = self._build_intent_inferrer(resolved_config)
+
         # Trajectory collector (training data)
         self._trajectory_collector = None
         self._config = resolved_config
@@ -299,7 +335,7 @@ class AURAAgent:
         return components
 
     def run(self, raw_input: Any, user_query: Optional[str] = None) -> Interaction:
-        """Execute the full AURA pipeline: Sense → Probe → Explore → Scene → Memory → Reason → [Guard] → Act → Interact."""
+        """Execute the full AURA pipeline: Sense → Probe → [Intent] → Explore → Scene → Memory → Reason → [Guard] → Act → Interact."""
         signals = self.sense.ingest(raw_input)
 
         # Proactive: inject probe signals if engine is available
@@ -309,11 +345,46 @@ class AURAAgent:
             if probe_signals:
                 signals = list(signals) + probe_signals
 
-        # Explore: tool-based environment probing
+        # Intent inference (env-mediated ToM) — only when enabled. The
+        # inferred frame will (a) dynamically set the Explore budget
+        # via intent_gap_to_budget and (b) be threaded into reasoning
+        # metadata so downstream stages (Interact) can read should_alert.
+        intent_frame: Optional[IntentFrame] = None
+        if self.intent is not None and user_query:
+            # Build a preview scene on pre-probe signals so the intent
+            # inferrer can see the current environment without first
+            # spending probe budget on it.
+            try:
+                preview_scene = self.scene.build(signals)
+                preview_memories = self.memory.recall(user_query) if hasattr(self.memory, "recall") else []
+                intent_frame = self.intent.infer(
+                    user_query=user_query,
+                    scene=preview_scene,
+                    memories=preview_memories,
+                )
+            except Exception as e:
+                logger.warning("Intent inference failed: %s — continuing without intent", e)
+                intent_frame = None
+
+        # Explore: tool-based environment probing. Budget is dynamic when
+        # an IntentFrame is available (low-gap => skip Explore entirely;
+        # high-gap => full configured budget). Otherwise the static
+        # config.explore_max_steps applies (legacy behavior).
         exploration: Optional[ExplorationOutcome] = None
         if self.explorer is not None:
-            exploration = self.explorer.explore(signals, user_query=user_query, raw_input=raw_input)
-            signals = list(signals) + exploration.extra_signals
+            explore_budget_override: Optional[int] = None
+            if intent_frame is not None:
+                explore_budget_override = intent_gap_to_budget(
+                    intent_frame.gap, self._config.explore_max_steps,
+                )
+            if explore_budget_override is None or explore_budget_override > 0:
+                exploration = self.explorer.explore(
+                    signals,
+                    user_query=user_query,
+                    raw_input=raw_input,
+                    max_steps_override=explore_budget_override,
+                )
+                signals = list(signals) + exploration.extra_signals
 
         # Scene → Memory → Reason
         scene_state = self.scene.build(signals)
@@ -338,6 +409,17 @@ class AURAAgent:
                 self.workflow_engine.start_recording()
 
         reasoning = self.reason.plan(scene_state, memories, user_query)
+
+        # Thread IntentFrame into reasoning.metadata so downstream stages
+        # (Interact, logging, RQ ablations) can read the agent's ToM output
+        # without a second inference call.
+        if intent_frame is not None:
+            reasoning.metadata["intent"] = intent_frame_to_dict(intent_frame)
+            reasoning.metadata["intent_gap"] = intent_frame.gap
+            reasoning.metadata["intent_should_alert"] = intent_frame.should_alert
+            reasoning.metadata["intent_recommended_probes"] = intent_frame.recommended_probes
+            if exploration is not None:
+                reasoning.metadata["explore_budget_used"] = len(exploration.tool_results)
 
         # ── ExecutionGuard check ─────────────────────────────────
         guard_verdict: Optional[GuardVerdict] = None
@@ -437,6 +519,20 @@ class AURAAgent:
         # ── Act → Interact ───────────────────────────────────────
         action = self.actor.act(reasoning, scene_state)
         interaction = self.interactor.respond(action, scene_state)
+
+        # Proactive alert: when intent inference flags a gap between the
+        # literal query and the user's likely implicit need, prepend a
+        # short note surfacing that context. This is AURA's ToM output
+        # translated into user-visible behavior.
+        if intent_frame is not None:
+            interaction.payload["intent"] = intent_frame_to_dict(intent_frame)
+            if intent_frame.should_alert and intent_frame.implicit_need:
+                note = (
+                    "[heads-up] You literally asked about "
+                    f"'{intent_frame.literal_need}', but I also noticed you may be "
+                    f"wondering about: {intent_frame.implicit_need[0]}."
+                )
+                interaction.message = f"{note}\n\n{interaction.message}"
 
         if exploration is not None:
             interaction.payload.setdefault("exploration", exploration.summary())
@@ -625,6 +721,27 @@ class AURAAgent:
             return ctx if ctx else None
         except Exception:
             return None
+
+    def _build_intent_inferrer(self, config: AURAConfig) -> IntentInferrer:
+        """Construct the IntentInferrer used by AURA's env-mediated ToM stage.
+
+        Prefers LLMIntentInferrer when a backbone client is available via
+        the backend registry, otherwise falls back to the deterministic
+        heuristic. Either implementation satisfies the IntentInferrer
+        Protocol so downstream code does not branch.
+        """
+        client = None
+        try:
+            # Reuse the existing LLM client hanging off the backend if present.
+            # Most backends expose an openai-compatible client on .client.
+            backend_client = getattr(self, "_backend_client", None)
+            if backend_client is None and hasattr(self.memory, "client"):
+                backend_client = getattr(self.memory, "client", None)
+            client = backend_client
+        except Exception:
+            client = None
+        model = config.intent_model or config.llm_model
+        return LLMIntentInferrer(client=client, model=model)
 
     def _build_proactive_engine(self, config: AURAConfig) -> Optional[Any]:
         """Build the proactive engine with configured probes."""

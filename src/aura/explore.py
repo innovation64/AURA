@@ -143,13 +143,15 @@ class Explorer:
         signals: Sequence[EnvironmentSignal],
         user_query: Optional[str] = None,
         raw_input: Any = None,
+        max_steps_override: Optional[int] = None,
     ) -> ExplorationOutcome:
         self.planner.reset()
         collected_signals: List[EnvironmentSignal] = list(signals)
         tool_results: List[ToolResult] = []
         decisions: List[ExplorationDecision] = []
 
-        for step in range(max(0, self.max_steps)):
+        effective_max_steps = self.max_steps if max_steps_override is None else max_steps_override
+        for step in range(max(0, effective_max_steps)):
             # FIX: Build state with ALL collected signals including latest tool results
             # Previously, planner could see stale state because tool_results were
             # added after the planner decision in the same iteration.
