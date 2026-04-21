@@ -167,7 +167,9 @@ _INTENT_SYSTEM_PROMPT = (
     "Q: \"is now a good time to invite Lin Wei for coffee?\"\n"
     "A: {\"literal_need\":\"Appropriateness of inviting Lin Wei now\",\"implicit_need\":[\"her current availability\",\"her mood/emotional state\",\"whether she is engaged in something she wouldn't want interrupted\"],\"gap\":0.75,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\",\"get_recent_events\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"explicit appropriateness query -- literal answer requires integrating private state\"}\n\n"
     "Q: \"what's Lin Wei up to these days?\"\n"
-    "A: {\"literal_need\":\"Lin Wei's recent activities\",\"implicit_need\":[\"her private goals or latent plans beyond the visible routine\"],\"gap\":0.7,\"recommended_probes\":[\"get_recent_memories\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.75,\"rationale\":\"'up to' signals interest in latent intent, not surface behavior\"}"
+    "A: {\"literal_need\":\"Lin Wei's recent activities\",\"implicit_need\":[\"her private goals or latent plans beyond the visible routine\"],\"gap\":0.7,\"recommended_probes\":[\"get_recent_memories\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.75,\"rationale\":\"'up to' signals interest in latent intent, not surface behavior\"}\n\n"
+    "Q: \"does Lin Wei think Zhang Hao is free to be interrupted?\" (available tools include get_agent_belief_about)\n"
+    "A: {\"literal_need\":\"Lin Wei's belief about Zhang Hao's availability\",\"implicit_need\":[\"what Lin Wei currently BELIEVES about Zhang Hao -- not the ground truth\"],\"gap\":0.8,\"recommended_probes\":[\"get_agent_belief_about\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"second-order ToM: question is about the believer's mental model of another agent, not the target's actual state\"}"
 )
 
 
