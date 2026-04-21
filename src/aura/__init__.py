@@ -14,6 +14,7 @@ from .evolve_types import (
     WorldState,
 )
 from .explore import Explorer, HeuristicPlanner, ExplorationDecision, ExplorationOutcome, Planner
+from .intent import HeuristicIntentInferrer, IntentInferrer, LLMIntentInferrer, intent_frame_to_dict
 from .interact import BasicInteractor, Interactor
 from .memory import EphemeralMemory, MemoryStore
 from .reason import Reasoner, SimpleReasoner
@@ -21,7 +22,7 @@ from .scene import BasicScene, SceneModel
 from .sense import BasicSense, SenseAdapter
 from .tools import Tool, ToolCall, ToolPolicy, ToolRegistry, ToolResult
 from .workflow import WorkflowEngine, WorkflowMemory, BackgroundValidator, ToolForge, Workflow, WorkflowStep, WorkflowStatus
-from .types import Action, EnvironmentSignal, Interaction, MemoryItem, ReasoningResult, SceneState
+from .types import Action, EnvironmentSignal, IntentFrame, Interaction, MemoryItem, ReasoningResult, SceneState
 from .llm import LLMConfig, LLMEngine
 from .backend import register_backend, get_backend, list_backends, BackendFactory, ensure_backends_registered
 
@@ -84,9 +85,15 @@ __all__ = [
     "Workflow",
     "WorkflowStep",
     "WorkflowStatus",
+    # Intent (env-mediated ToM)
+    "IntentInferrer",
+    "HeuristicIntentInferrer",
+    "LLMIntentInferrer",
+    "intent_frame_to_dict",
     # Types
     "Action",
     "EnvironmentSignal",
+    "IntentFrame",
     "Interaction",
     "MemoryItem",
     "ReasoningResult",

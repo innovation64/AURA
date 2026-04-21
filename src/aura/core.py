@@ -70,6 +70,11 @@ class AURAConfig:
     memory_weight_recency: float = 0.3
     memory_weight_importance: float = 0.2
     memory_recency_decay: float = 0.95
+    # Intent inference (env-mediated ToM) — off by default so the existing
+    # test/benchmark surface is unchanged. Day 4-5 of the retrofit wires
+    # IntentFrame into Memory/Explore/Interact branches.
+    intent_enabled: bool = False
+    intent_model: Optional[str] = None  # falls back to llm_model when None
     # Extra kwargs passed to backend builders
     backend_kwargs: Dict[str, Any] = field(default_factory=dict)
 
