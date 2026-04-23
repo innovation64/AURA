@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    </pattern>
+    <linearGradient id="commercial" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe7cc"/><stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="residential" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dcfce7"/><stop offset="100%" stop-color="#bbf7d0"/>
+    </linearGradient>
+    <linearGradient id="civic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="park" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9d5ff"/><stop offset="100%" stop-color="#ddd6fe"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background + grid -->
+  <rect width="960" height="560" fill="#f8fafc"/>
+  <rect width="960" height="560" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">
+    AURATown — 5-agent social simulation, 60×60 grid, day-night cycle
+  </text>
+  <text x="480" y="54" text-anchor="middle" font-size="12" fill="#64748b">
+    public state visible · private state (availability · mood · unspoken_goal · beliefs_about_others) probe-only
+  </text>
+
+  <!-- Districts -->
+  <g filter="url(#shadow)">
+    <!-- Commercial (top-left) -->
+    <rect x="40"  y="80"  width="300" height="200" rx="14" fill="url(#commercial)" stroke="#d97706" stroke-width="1.5"/>
+    <text x="190" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#9a3412">COMMERCIAL</text>
+
+    <!-- Residential (top-right) -->
+    <rect x="620" y="80"  width="300" height="200" rx="14" fill="url(#residential)" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="770" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">RESIDENTIAL</text>
+
+    <!-- Civic (bottom-left) -->
+    <rect x="40"  y="320" width="300" height="200" rx="14" fill="url(#civic)" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="190" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">CIVIC</text>
+
+    <!-- Park (bottom-right) -->
+    <rect x="620" y="320" width="300" height="200" rx="14" fill="url(#park)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="770" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">PARK</text>
+  </g>
+
+  <!-- Roads connecting districts -->
+  <g stroke="#94a3b8" stroke-width="3" stroke-dasharray="6 4" fill="none" opacity="0.55">
+    <line x1="340" y1="180" x2="620" y2="180"/>
+    <line x1="340" y1="420" x2="620" y2="420"/>
+    <line x1="190" y1="280" x2="190" y2="320"/>
+    <line x1="770" y1="280" x2="770" y2="320"/>
+    <line x1="340" y1="180" x2="620" y2="420"/>
+  </g>
+
+  <!-- Locations (emoji + label) -->
+  <g font-size="12" fill="#0f172a" text-anchor="middle">
+    <!-- Commercial -->
+    <text x="85"  y="146" font-size="22">☕</text><text x="85"  y="168">Sunrise Cafe</text>
+    <text x="180" y="146" font-size="22">🏪</text><text x="180" y="168">Chen's Shop</text>
+    <text x="275" y="146" font-size="22">🍜</text><text x="275" y="168">Noodle House</text>
+    <text x="130" y="220" font-size="22">🥖</text><text x="130" y="242">Bakery</text>
+    <text x="230" y="220" font-size="22">💈</text><text x="230" y="242">Barber</text>
+
+    <!-- Residential -->
+    <text x="670" y="146" font-size="22">🏡</text><text x="670" y="168">Lin Wei home</text>
+    <text x="770" y="146" font-size="22">🏡</text><text x="770" y="168">Zhang Hao home</text>
+    <text x="870" y="146" font-size="22">🏡</text><text x="870" y="168">Chen Mei home</text>
+    <text x="720" y="220" font-size="22">🏡</text><text x="720" y="242">Liu Yang home</text>
+    <text x="820" y="220" font-size="22">🏡</text><text x="820" y="242">Wang Jun home</text>
+
+    <!-- Civic -->
+    <text x="90"  y="386" font-size="22">📚</text><text x="90"  y="408">Town Library</text>
+    <text x="190" y="386" font-size="22">🏛️</text><text x="190" y="408">Town Hall</text>
+    <text x="290" y="386" font-size="22">🏥</text><text x="290" y="408">Clinic</text>
+    <text x="140" y="460" font-size="22">🏫</text><text x="140" y="482">School</text>
+    <text x="240" y="460" font-size="22">⛪</text><text x="240" y="482">Chapel</text>
+
+    <!-- Park -->
+    <text x="670" y="386" font-size="22">🌳</text><text x="670" y="408">Central Park</text>
+    <text x="770" y="386" font-size="22">⛲</text><text x="770" y="408">Fountain Sq.</text>
+    <text x="870" y="386" font-size="22">🌸</text><text x="870" y="408">Garden</text>
+    <text x="720" y="460" font-size="22">🎪</text><text x="720" y="482">Pavilion</text>
+    <text x="820" y="460" font-size="22">🎾</text><text x="820" y="482">Sports Court</text>
+  </g>
+
+  <!-- Agents -->
+  <g>
+    <!-- Lin Wei at cafe (commercial) -->
+    <circle cx="85"  cy="135" r="11" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+    <text x="85"  y="139" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">L</text>
+    <!-- Zhang Hao at cafe -->
+    <circle cx="98"  cy="142" r="11" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+    <text x="98"  y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Z</text>
+    <!-- Chen Mei at cafe -->
+    <circle cx="72"  cy="142" r="11" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+    <text x="72"  y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">C</text>
+    <!-- Liu Yang at school -->
+    <circle cx="140" cy="449" r="11" fill="#a855f7" stroke="#fff" stroke-width="2"/>
+    <text x="140" y="453" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Y</text>
+    <!-- Wang Jun at library -->
+    <circle cx="90"  cy="375" r="11" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+    <text x="90"  y="379" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">W</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(380, 250)">
+    <rect x="0" y="0" width="200" height="170" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#shadow)"/>
+    <text x="100" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">5 agents</text>
+
+    <circle cx="22" cy="48" r="8" fill="#ef4444"/>
+    <text x="40" y="52" font-size="11" fill="#1e293b">Lin Wei · cafe owner</text>
+
+    <circle cx="22" cy="70" r="8" fill="#3b82f6"/>
+    <text x="40" y="74" font-size="11" fill="#1e293b">Zhang Hao · writer</text>
+
+    <circle cx="22" cy="92" r="8" fill="#22c55e"/>
+    <text x="40" y="96" font-size="11" fill="#1e293b">Chen Mei · shop owner</text>
+
+    <circle cx="22" cy="114" r="8" fill="#a855f7"/>
+    <text x="40" y="118" font-size="11" fill="#1e293b">Liu Yang · student</text>
+
+    <circle cx="22" cy="136" r="8" fill="#f59e0b"/>
+    <text x="40" y="140" font-size="11" fill="#1e293b">Wang Jun · retired prof.</text>
+
+    <text x="100" y="160" text-anchor="middle" font-size="9" fill="#64748b">
+      dots = current position · probes fill hidden state
+    </text>
+  </g>
+</svg>

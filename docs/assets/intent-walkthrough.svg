@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8"/>
+      <feOffset dx="0" dy="1"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="540" fill="#f8fafc"/>
+  <text x="480" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">
+    One query through AURA — the user's implicit need surfaces
+  </text>
+
+  <!-- 1. User query bubble -->
+  <g filter="url(#sh)">
+    <rect x="30" y="68" width="240" height="70" rx="14" fill="#ffe7cc" stroke="#d97706" stroke-width="1.5"/>
+    <text x="48" y="92" font-size="11" fill="#9a3412" font-weight="700">Human user asks</text>
+    <text x="48" y="114" font-size="14" fill="#0f172a" font-style="italic">"where is Lin Wei?"</text>
+    <text x="48" y="130" font-size="10" fill="#64748b">(surface query, literal level)</text>
+  </g>
+
+  <!-- arrow 1 -->
+  <path d="M 270 103 L 320 103" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 2. Scene + Memory feeding IntentInferrer -->
+  <g filter="url(#sh)">
+    <rect x="325" y="68" width="240" height="180" rx="14" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="345" y="92" font-size="11" fill="#334155" font-weight="700">Scene + Memory (public only)</text>
+    <text x="345" y="114" font-size="11" fill="#1e293b">• Sunrise Cafe, 10:15 AM</text>
+    <text x="345" y="132" font-size="11" fill="#1e293b">• Lin Wei at counter</text>
+    <text x="345" y="150" font-size="11" fill="#1e293b">• Zhang Hao reading</text>
+    <text x="345" y="168" font-size="11" fill="#1e293b">• Chen Mei writing</text>
+    <text x="345" y="186" font-size="11" fill="#64748b">(private state hidden:</text>
+    <text x="345" y="202" font-size="11" fill="#64748b">availability, mood,</text>
+    <text x="345" y="218" font-size="11" fill="#64748b">unspoken_goal)</text>
+    <text x="345" y="238" font-size="10" fill="#475569" font-style="italic">deterministic context assembly</text>
+  </g>
+
+  <!-- arrow 2 -->
+  <path d="M 565 158 L 610 158" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 3. IntentFrame (the ToM stage) -->
+  <g filter="url(#sh)">
+    <rect x="615" y="68" width="315" height="230" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="630" y="90" font-size="11" font-weight="700" fill="#9a3412">IntentInferrer · LLM</text>
+    <text x="772" y="90" text-anchor="middle" font-size="9" fill="#92400e">(the agentic stage)</text>
+
+    <rect x="630" y="102" width="285" height="180" rx="8" fill="#fffbeb" stroke="#fbbf24"/>
+    <text x="640" y="120" font-size="10" fill="#78350f" font-family="'Courier New', monospace">IntentFrame:</text>
+    <text x="640" y="138" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  literal_need: "Lin Wei's location"</text>
+    <text x="640" y="156" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  implicit_need:</text>
+    <text x="650" y="172" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    "is she free to chat?"</text>
+    <text x="640" y="190" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  gap: 0.5</text>
+    <text x="640" y="208" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  recommended_probes:</text>
+    <text x="650" y="224" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    get_nearby_agents</text>
+    <text x="650" y="240" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    get_agent_plan</text>
+    <text x="640" y="258" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  should_alert: true</text>
+    <text x="640" y="276" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  confidence: 0.8</text>
+  </g>
+
+  <!-- arrow 3 down to probe -->
+  <path d="M 772 300 L 772 340" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4. Probe loop -->
+  <g filter="url(#sh)">
+    <rect x="615" y="345" width="315" height="90" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="630" y="368" font-size="11" font-weight="700" fill="#1e40af">Bounded probe loop (B=2)</text>
+    <text x="630" y="388" font-size="11" fill="#0f172a" font-family="'Courier New', monospace">→ get_agent_plan("Lin Wei")</text>
+    <text x="630" y="406" font-size="10" fill="#475569">  returns: availability = "busy"</text>
+    <text x="630" y="424" font-size="10" fill="#475569">           reason = "serving customers"</text>
+  </g>
+
+  <!-- arrow 4 left from probe -->
+  <path d="M 615 390 L 540 390" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 5. Response -->
+  <g filter="url(#sh)">
+    <rect x="30" y="345" width="510" height="160" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="48" y="370" font-size="11" font-weight="700" fill="#166534">AURA response (literal + implicit surfaced)</text>
+
+    <rect x="48" y="380" width="470" height="30" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="58" y="400" font-size="12" fill="#78350f" font-weight="600">
+      [heads-up] she's currently busy serving customers —
+    </text>
+
+    <text x="48" y="430" font-size="12" fill="#0f172a">
+      Lin Wei is at the Sunrise Cafe, behind the counter.
+    </text>
+    <text x="48" y="450" font-size="12" fill="#0f172a">
+      You may want to wait until she's free before
+    </text>
+    <text x="48" y="470" font-size="12" fill="#0f172a">
+      starting a longer conversation.
+    </text>
+    <text x="48" y="494" font-size="10" fill="#64748b" font-style="italic">
+      implicit need "is she free?" surfaced without the user explicitly asking
+    </text>
+  </g>
+
+  <!-- Contrast note bottom center -->
+  <g transform="translate(560, 470)">
+    <text x="0" y="0" font-size="11" fill="#991b1b" font-weight="700">Vanilla LLM:</text>
+    <text x="0" y="18" font-size="11" fill="#1e293b">"Lin Wei is at the Sunrise Cafe."</text>
+    <text x="0" y="34" font-size="10" fill="#64748b">(literal only · implicit need lost)</text>
+  </g>
+</svg>

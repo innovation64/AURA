@@ -3,6 +3,10 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+<p align="center">
+  <img src="docs/assets/auratown-map.svg" alt="AURATown — 5-agent social simulation, 60×60 grid with commercial / residential / civic / park districts" width="820"/>
+</p>
+
 **AURA** is an *environment agent* that bridges the alignment gap between
 users and LLM-driven AI agents. Instead of passively answering literal
 queries, AURA infers the user's **implicit information need**, decides
@@ -22,6 +26,10 @@ Asking *"where is Lin Wei?"* often means *"is she free to chat?"* A
 reactive LLM agent answers the surface question; the user's real need
 never surfaces. AURA addresses this alignment gap at the architectural
 level.
+
+<p align="center">
+  <img src="docs/assets/intent-walkthrough.svg" alt="One query through AURA: surface query → Scene/Memory → IntentFrame (gap 0.5, recommended probes) → bounded probe → response with [heads-up] alert" width="880"/>
+</p>
 
 ```mermaid
 flowchart LR
