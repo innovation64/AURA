@@ -1,141 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Helvetica Neue', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" font-family="'Helvetica Neue', Arial, sans-serif">
+  <!--
+    AURATown 60x60 grid. Each location is drawn at its real coordinate
+    from demo/town/assets/town_map.json. Agents start at their homes
+    (demo/town/agents.py). Grid spacing: 10 svg units per 1 grid cell.
+    Map origin (grid 0,0) at svg (60, 40); map extends to svg (660, 640).
+  -->
   <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.2"/>
       <feOffset dx="0" dy="1"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
-      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#e2e8f0" stroke-width="0.6"/>
+    <pattern id="grid10" x="60" y="40" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#cbd5e1" stroke-width="0.8"/>
     </pattern>
-    <linearGradient id="commercial" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffe7cc"/><stop offset="100%" stop-color="#fed7aa"/>
-    </linearGradient>
-    <linearGradient id="residential" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#dcfce7"/><stop offset="100%" stop-color="#bbf7d0"/>
-    </linearGradient>
-    <linearGradient id="civic" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#dbeafe"/><stop offset="100%" stop-color="#bfdbfe"/>
-    </linearGradient>
-    <linearGradient id="park" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e9d5ff"/><stop offset="100%" stop-color="#ddd6fe"/>
-    </linearGradient>
+    <pattern id="grid1" x="60" y="40" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e2e8f0" stroke-width="0.3"/>
+    </pattern>
   </defs>
 
-  <!-- Background + grid -->
-  <rect width="960" height="560" fill="#f8fafc"/>
-  <rect width="960" height="560" fill="url(#grid)"/>
+  <rect width="960" height="680" fill="#f8fafc"/>
 
   <!-- Title -->
-  <text x="480" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">
-    AURATown — 5-agent social simulation, 60×60 grid, day-night cycle
+  <text x="480" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">
+    AURATown — 60 × 60 grid · 5 agents · 20 named locations
   </text>
-  <text x="480" y="54" text-anchor="middle" font-size="12" fill="#64748b">
+  <text x="480" y="46" text-anchor="middle" font-size="11" fill="#64748b">
     public state visible · private state (availability · mood · unspoken_goal · beliefs_about_others) probe-only
   </text>
 
-  <!-- Districts -->
-  <g filter="url(#shadow)">
-    <!-- Commercial (top-left) -->
-    <rect x="40"  y="80"  width="300" height="200" rx="14" fill="url(#commercial)" stroke="#d97706" stroke-width="1.5"/>
-    <text x="190" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#9a3412">COMMERCIAL</text>
+  <!-- Grid background (map area is svg x[60..660], y[40..640], 600x600) -->
+  <rect x="60" y="40" width="600" height="600" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="60" y="40" width="600" height="600" fill="url(#grid1)"/>
+  <rect x="60" y="40" width="600" height="600" fill="url(#grid10)"/>
 
-    <!-- Residential (top-right) -->
-    <rect x="620" y="80"  width="300" height="200" rx="14" fill="url(#residential)" stroke="#16a34a" stroke-width="1.5"/>
-    <text x="770" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">RESIDENTIAL</text>
+  <!-- Axis labels: show 0, 10, 20, 30, 40, 50, 60 -->
+  <g font-size="9" fill="#94a3b8">
+    <text x="60"  y="655" text-anchor="middle">0</text>
+    <text x="160" y="655" text-anchor="middle">10</text>
+    <text x="260" y="655" text-anchor="middle">20</text>
+    <text x="360" y="655" text-anchor="middle">30</text>
+    <text x="460" y="655" text-anchor="middle">40</text>
+    <text x="560" y="655" text-anchor="middle">50</text>
+    <text x="660" y="655" text-anchor="middle">60</text>
+    <text x="330" y="671" text-anchor="middle" font-size="10" fill="#475569">x (grid units)</text>
 
-    <!-- Civic (bottom-left) -->
-    <rect x="40"  y="320" width="300" height="200" rx="14" fill="url(#civic)" stroke="#2563eb" stroke-width="1.5"/>
-    <text x="190" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">CIVIC</text>
-
-    <!-- Park (bottom-right) -->
-    <rect x="620" y="320" width="300" height="200" rx="14" fill="url(#park)" stroke="#7c3aed" stroke-width="1.5"/>
-    <text x="770" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">PARK</text>
+    <text x="52" y="44"  text-anchor="end">0</text>
+    <text x="52" y="144" text-anchor="end">10</text>
+    <text x="52" y="244" text-anchor="end">20</text>
+    <text x="52" y="344" text-anchor="end">30</text>
+    <text x="52" y="444" text-anchor="end">40</text>
+    <text x="52" y="544" text-anchor="end">50</text>
+    <text x="52" y="644" text-anchor="end">60</text>
+    <text x="20" y="340" text-anchor="middle" font-size="10" fill="#475569" transform="rotate(-90 20 340)">y (grid units)</text>
   </g>
 
-  <!-- Roads connecting districts -->
-  <g stroke="#94a3b8" stroke-width="3" stroke-dasharray="6 4" fill="none" opacity="0.55">
-    <line x1="340" y1="180" x2="620" y2="180"/>
-    <line x1="340" y1="420" x2="620" y2="420"/>
-    <line x1="190" y1="280" x2="190" y2="320"/>
-    <line x1="770" y1="280" x2="770" y2="320"/>
-    <line x1="340" y1="180" x2="620" y2="420"/>
+  <!--
+    Location pins: drawn at grid (x, y) mapped to svg (60 + 10x, 40 + 10y).
+    Color by type:
+      home (green #16a34a)   civic (blue #2563eb)
+      commerce (orange #d97706)   open/park (purple #7c3aed)
+    Pin = circle r=7 + drop pin tail; label floats next to pin.
+  -->
+  <g filter="url(#sh)">
+    <!-- Homes (green) -->
+    <g fill="#16a34a" stroke="#fff" stroke-width="1.5">
+      <circle cx="120" cy="80"  r="7"/>  <!-- Lin Wei's Home (6,4) -->
+      <circle cx="280" cy="80"  r="7"/>  <!-- Wang Jun's Home (22,4) -->
+      <circle cx="480" cy="80"  r="7"/>  <!-- Zhang Hao's Home (42,4) -->
+      <circle cx="120" cy="480" r="7"/>  <!-- Chen Mei's Home (6,44) -->
+      <circle cx="480" cy="480" r="7"/>  <!-- Liu Yang's Home (42,44) -->
+    </g>
+    <!-- Commerce (orange) -->
+    <g fill="#d97706" stroke="#fff" stroke-width="1.5">
+      <circle cx="200" cy="140" r="7"/>  <!-- Tea House (14,10) -->
+      <circle cx="120" cy="220" r="7"/>  <!-- Sunrise Cafe (6,18) -->
+      <circle cx="200" cy="220" r="7"/>  <!-- Golden Wheat Bakery (14,18) -->
+      <circle cx="540" cy="220" r="7"/>  <!-- Wellness Pharmacy (48,18) -->
+      <circle cx="120" cy="380" r="7"/>  <!-- Chen's General Store (6,34) -->
+      <circle cx="200" cy="380" r="7"/>  <!-- Art Gallery (14,34) -->
+    </g>
+    <!-- Civic (blue) -->
+    <g fill="#2563eb" stroke="#fff" stroke-width="1.5">
+      <circle cx="580" cy="100" r="7"/>  <!-- Temple (52,6) -->
+      <circle cx="300" cy="200" r="7"/>  <!-- Town Hall (24,16) -->
+      <circle cx="440" cy="220" r="7"/>  <!-- Town Library (38,18) -->
+      <circle cx="420" cy="380" r="7"/>  <!-- AURA Academy (36,34) -->
+    </g>
+    <!-- Open / park (purple) -->
+    <g fill="#7c3aed" stroke="#fff" stroke-width="1.5">
+      <circle cx="260" cy="260" r="7"/>  <!-- Town Park (20,22) -->
+      <circle cx="280" cy="380" r="7"/>  <!-- Town Square (22,34) -->
+      <circle cx="520" cy="380" r="7"/>  <!-- Community Garden (46,34) -->
+      <circle cx="280" cy="480" r="7"/>  <!-- Flower Garden (22,44) -->
+      <circle cx="600" cy="180" r="7"/>  <!-- Riverside Walk (54,14) -->
+    </g>
   </g>
 
-  <!-- Locations (emoji + label) -->
-  <g font-size="12" fill="#0f172a" text-anchor="middle">
-    <!-- Commercial -->
-    <text x="85"  y="146" font-size="22">☕</text><text x="85"  y="168">Sunrise Cafe</text>
-    <text x="180" y="146" font-size="22">🏪</text><text x="180" y="168">Chen's Shop</text>
-    <text x="275" y="146" font-size="22">🍜</text><text x="275" y="168">Noodle House</text>
-    <text x="130" y="220" font-size="22">🥖</text><text x="130" y="242">Bakery</text>
-    <text x="230" y="220" font-size="22">💈</text><text x="230" y="242">Barber</text>
-
-    <!-- Residential -->
-    <text x="670" y="146" font-size="22">🏡</text><text x="670" y="168">Lin Wei home</text>
-    <text x="770" y="146" font-size="22">🏡</text><text x="770" y="168">Zhang Hao home</text>
-    <text x="870" y="146" font-size="22">🏡</text><text x="870" y="168">Chen Mei home</text>
-    <text x="720" y="220" font-size="22">🏡</text><text x="720" y="242">Liu Yang home</text>
-    <text x="820" y="220" font-size="22">🏡</text><text x="820" y="242">Wang Jun home</text>
-
+  <!-- Location labels -->
+  <g font-size="10" fill="#1e293b">
+    <!-- Homes -->
+    <text x="132" y="77">Lin Wei's Home</text>
+    <text x="292" y="77">Wang Jun's Home</text>
+    <text x="492" y="77">Zhang Hao's Home</text>
+    <text x="132" y="477">Chen Mei's Home</text>
+    <text x="492" y="477">Liu Yang's Home</text>
+    <!-- Commerce -->
+    <text x="212" y="137">Tea House</text>
+    <text x="132" y="217">Sunrise Cafe</text>
+    <text x="212" y="217">Golden Wheat Bakery</text>
+    <text x="552" y="217">Wellness Pharmacy</text>
+    <text x="132" y="377">Chen's General Store</text>
+    <text x="212" y="377">Art Gallery</text>
     <!-- Civic -->
-    <text x="90"  y="386" font-size="22">📚</text><text x="90"  y="408">Town Library</text>
-    <text x="190" y="386" font-size="22">🏛️</text><text x="190" y="408">Town Hall</text>
-    <text x="290" y="386" font-size="22">🏥</text><text x="290" y="408">Clinic</text>
-    <text x="140" y="460" font-size="22">🏫</text><text x="140" y="482">School</text>
-    <text x="240" y="460" font-size="22">⛪</text><text x="240" y="482">Chapel</text>
-
-    <!-- Park -->
-    <text x="670" y="386" font-size="22">🌳</text><text x="670" y="408">Central Park</text>
-    <text x="770" y="386" font-size="22">⛲</text><text x="770" y="408">Fountain Sq.</text>
-    <text x="870" y="386" font-size="22">🌸</text><text x="870" y="408">Garden</text>
-    <text x="720" y="460" font-size="22">🎪</text><text x="720" y="482">Pavilion</text>
-    <text x="820" y="460" font-size="22">🎾</text><text x="820" y="482">Sports Court</text>
+    <text x="592" y="97">Temple</text>
+    <text x="312" y="197">Town Hall</text>
+    <text x="452" y="217">Town Library</text>
+    <text x="432" y="377">AURA Academy</text>
+    <!-- Open -->
+    <text x="272" y="257">Town Park</text>
+    <text x="292" y="377">Town Square</text>
+    <text x="532" y="377">Community Garden</text>
+    <text x="292" y="477">Flower Garden</text>
+    <text x="612" y="177">Riverside Walk</text>
   </g>
 
-  <!-- Agents -->
+  <!-- Agent starting positions (at homes), labelled with initials on top of the home pin -->
   <g>
-    <!-- Lin Wei at cafe (commercial) -->
-    <circle cx="85"  cy="135" r="11" fill="#ef4444" stroke="#fff" stroke-width="2"/>
-    <text x="85"  y="139" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">L</text>
-    <!-- Zhang Hao at cafe -->
-    <circle cx="98"  cy="142" r="11" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-    <text x="98"  y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Z</text>
-    <!-- Chen Mei at cafe -->
-    <circle cx="72"  cy="142" r="11" fill="#22c55e" stroke="#fff" stroke-width="2"/>
-    <text x="72"  y="146" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">C</text>
-    <!-- Liu Yang at school -->
-    <circle cx="140" cy="449" r="11" fill="#a855f7" stroke="#fff" stroke-width="2"/>
-    <text x="140" y="453" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Y</text>
-    <!-- Wang Jun at library -->
-    <circle cx="90"  cy="375" r="11" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
-    <text x="90"  y="379" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">W</text>
+    <circle cx="120" cy="80"  r="10" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+    <text x="120" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">L</text>
+    <circle cx="280" cy="80"  r="10" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <text x="280" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">W</text>
+    <circle cx="480" cy="80"  r="10" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+    <text x="480" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">Z</text>
+    <circle cx="120" cy="480" r="10" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+    <text x="120" y="465" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">C</text>
+    <circle cx="480" cy="480" r="10" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+    <text x="480" y="465" text-anchor="middle" font-size="11" font-weight="700" fill="#7e22ce">Y</text>
   </g>
 
-  <!-- Legend -->
-  <g transform="translate(380, 250)">
-    <rect x="0" y="0" width="200" height="170" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#shadow)"/>
-    <text x="100" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">5 agents</text>
+  <!-- Legend panel on the right -->
+  <g transform="translate(700, 60)">
+    <rect x="0" y="0" width="240" height="580" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" filter="url(#sh)"/>
 
-    <circle cx="22" cy="48" r="8" fill="#ef4444"/>
-    <text x="40" y="52" font-size="11" fill="#1e293b">Lin Wei · cafe owner</text>
+    <text x="120" y="24" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">5 agents (start at home)</text>
 
-    <circle cx="22" cy="70" r="8" fill="#3b82f6"/>
-    <text x="40" y="74" font-size="11" fill="#1e293b">Zhang Hao · writer</text>
+    <g font-size="11" fill="#1e293b">
+      <circle cx="20" cy="48" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="20" cy="48" r="10" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+      <text x="40" y="52">Lin Wei · cafe owner</text>
 
-    <circle cx="22" cy="92" r="8" fill="#22c55e"/>
-    <text x="40" y="96" font-size="11" fill="#1e293b">Chen Mei · shop owner</text>
+      <circle cx="20" cy="74" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="20" cy="74" r="10" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+      <text x="40" y="78">Zhang Hao · writer</text>
 
-    <circle cx="22" cy="114" r="8" fill="#a855f7"/>
-    <text x="40" y="118" font-size="11" fill="#1e293b">Liu Yang · student</text>
+      <circle cx="20" cy="100" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="20" cy="100" r="10" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+      <text x="40" y="104">Chen Mei · shop owner</text>
 
-    <circle cx="22" cy="136" r="8" fill="#f59e0b"/>
-    <text x="40" y="140" font-size="11" fill="#1e293b">Wang Jun · retired prof.</text>
+      <circle cx="20" cy="126" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="20" cy="126" r="10" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+      <text x="40" y="130">Liu Yang · student</text>
 
-    <text x="100" y="160" text-anchor="middle" font-size="9" fill="#64748b">
-      dots = current position · probes fill hidden state
-    </text>
+      <circle cx="20" cy="152" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="20" cy="152" r="10" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="40" y="156">Wang Jun · retired prof.</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="176" x2="224" y2="176" stroke="#e2e8f0" stroke-width="1"/>
+
+    <text x="120" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">20 locations by type</text>
+
+    <g font-size="11" fill="#1e293b">
+      <circle cx="20" cy="222" r="7" fill="#16a34a" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="226">home  (5)</text>
+
+      <circle cx="20" cy="248" r="7" fill="#d97706" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="252">commerce  (6)</text>
+      <text x="40" y="267" font-size="9" fill="#64748b">cafe, bakery, pharmacy, shop, gallery, teahouse</text>
+
+      <circle cx="20" cy="292" r="7" fill="#2563eb" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="296">civic  (4)</text>
+      <text x="40" y="311" font-size="9" fill="#64748b">temple, town hall, library, academy</text>
+
+      <circle cx="20" cy="336" r="7" fill="#7c3aed" stroke="#fff" stroke-width="1.5"/>
+      <text x="40" y="340">open / park  (5)</text>
+      <text x="40" y="355" font-size="9" fill="#64748b">park, square, two gardens, riverside</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="376" x2="224" y2="376" stroke="#e2e8f0" stroke-width="1"/>
+
+    <text x="120" y="398" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">Probe tools</text>
+
+    <g font-size="10" fill="#1e293b" font-family="'Courier New', monospace">
+      <text x="16" y="420">world.time</text>
+      <text x="16" y="436">world.location</text>
+      <text x="16" y="452">world.nearby_agents</text>
+      <text x="16" y="468">world.agents_summary</text>
+      <text x="16" y="484">world.events_recent</text>
+      <text x="16" y="500">memory.recent</text>
+      <text x="16" y="520" fill="#be185d">get_agent_belief_about</text>
+      <text x="16" y="536" fill="#9f1239" font-style="italic" font-family="inherit" font-size="9">for second-order ToM</text>
+    </g>
+
+    <text x="120" y="568" text-anchor="middle" font-size="9" fill="#64748b">coordinates and names sourced from</text>
+    <text x="120" y="580" text-anchor="middle" font-size="9" fill="#64748b" font-family="'Courier New', monospace">demo/town/assets/town_map.json</text>
   </g>
 </svg>

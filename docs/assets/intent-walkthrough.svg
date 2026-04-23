@@ -1,112 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Helvetica Neue', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" font-family="'Helvetica Neue', Arial, sans-serif">
   <defs>
     <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8"/>
-      <feOffset dx="0" dy="1"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1.5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
-    </marker>
   </defs>
 
-  <rect width="960" height="540" fill="#f8fafc"/>
-  <text x="480" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">
-    One query through AURA — the user's implicit need surfaces
+  <rect width="980" height="620" fill="#f8fafc"/>
+
+  <!-- Page title -->
+  <text x="490" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">
+    Same query, two architectures — AURA surfaces the user's implicit need
+  </text>
+  <text x="490" y="48" text-anchor="middle" font-size="11" fill="#64748b">
+    "where is Lin Wei?" · Scene: Sunrise Cafe, 10:15 AM · Lin Wei's private state: availability=busy, mood=cheerful (hidden from scene)
   </text>
 
-  <!-- 1. User query bubble -->
+  <!-- Divider line in the middle -->
+  <line x1="490" y1="70" x2="490" y2="600" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 4"/>
+
+  <!-- ============ LEFT: Vanilla LLM ============ -->
+  <!-- Chat window -->
   <g filter="url(#sh)">
-    <rect x="30" y="68" width="240" height="70" rx="14" fill="#ffe7cc" stroke="#d97706" stroke-width="1.5"/>
-    <text x="48" y="92" font-size="11" fill="#9a3412" font-weight="700">Human user asks</text>
-    <text x="48" y="114" font-size="14" fill="#0f172a" font-style="italic">"where is Lin Wei?"</text>
-    <text x="48" y="130" font-size="10" fill="#64748b">(surface query, literal level)</text>
+    <rect x="30" y="80" width="430" height="430" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- Title bar -->
+    <rect x="30" y="80" width="430" height="38" rx="14" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="30" y="104" width="430" height="14" fill="#f1f5f9"/>
+    <circle cx="52"  cy="99" r="5" fill="#ef4444"/>
+    <circle cx="68"  cy="99" r="5" fill="#f59e0b"/>
+    <circle cx="84"  cy="99" r="5" fill="#22c55e"/>
+    <text x="240" y="104" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Vanilla LLM (ReAct-style)</text>
   </g>
 
-  <!-- arrow 1 -->
-  <path d="M 270 103 L 320 103" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <!-- 2. Scene + Memory feeding IntentInferrer -->
-  <g filter="url(#sh)">
-    <rect x="325" y="68" width="240" height="180" rx="14" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
-    <text x="345" y="92" font-size="11" fill="#334155" font-weight="700">Scene + Memory (public only)</text>
-    <text x="345" y="114" font-size="11" fill="#1e293b">• Sunrise Cafe, 10:15 AM</text>
-    <text x="345" y="132" font-size="11" fill="#1e293b">• Lin Wei at counter</text>
-    <text x="345" y="150" font-size="11" fill="#1e293b">• Zhang Hao reading</text>
-    <text x="345" y="168" font-size="11" fill="#1e293b">• Chen Mei writing</text>
-    <text x="345" y="186" font-size="11" fill="#64748b">(private state hidden:</text>
-    <text x="345" y="202" font-size="11" fill="#64748b">availability, mood,</text>
-    <text x="345" y="218" font-size="11" fill="#64748b">unspoken_goal)</text>
-    <text x="345" y="238" font-size="10" fill="#475569" font-style="italic">deterministic context assembly</text>
+  <!-- User bubble -->
+  <g>
+    <rect x="260" y="140" width="180" height="36" rx="12" fill="#e0e7ff" stroke="#6366f1" stroke-width="1"/>
+    <text x="440" y="161" text-anchor="end" font-size="12" fill="#1e293b">where is Lin Wei?</text>
+    <text x="440" y="186" text-anchor="end" font-size="9" fill="#64748b">You · 10:15</text>
   </g>
 
-  <!-- arrow 2 -->
-  <path d="M 565 158 L 610 158" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <!-- 3. IntentFrame (the ToM stage) -->
-  <g filter="url(#sh)">
-    <rect x="615" y="68" width="315" height="230" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-    <text x="630" y="90" font-size="11" font-weight="700" fill="#9a3412">IntentInferrer · LLM</text>
-    <text x="772" y="90" text-anchor="middle" font-size="9" fill="#92400e">(the agentic stage)</text>
-
-    <rect x="630" y="102" width="285" height="180" rx="8" fill="#fffbeb" stroke="#fbbf24"/>
-    <text x="640" y="120" font-size="10" fill="#78350f" font-family="'Courier New', monospace">IntentFrame:</text>
-    <text x="640" y="138" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  literal_need: "Lin Wei's location"</text>
-    <text x="640" y="156" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  implicit_need:</text>
-    <text x="650" y="172" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    "is she free to chat?"</text>
-    <text x="640" y="190" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  gap: 0.5</text>
-    <text x="640" y="208" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  recommended_probes:</text>
-    <text x="650" y="224" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    get_nearby_agents</text>
-    <text x="650" y="240" font-size="10" fill="#7c2d12" font-family="'Courier New', monospace">    get_agent_plan</text>
-    <text x="640" y="258" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  should_alert: true</text>
-    <text x="640" y="276" font-size="10" fill="#1e293b" font-family="'Courier New', monospace">  confidence: 0.8</text>
+  <!-- Assistant response -->
+  <g>
+    <rect x="50" y="210" width="270" height="70" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="64" y="232" font-size="12" fill="#0f172a">Lin Wei is at the Sunrise Cafe.</text>
+    <text x="64" y="268" font-size="9" fill="#64748b">Assistant · 10:15 · 1 LLM call · 1.2 s</text>
   </g>
 
-  <!-- arrow 3 down to probe -->
-  <path d="M 772 300 L 772 340" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Evaluation panel for vanilla -->
+  <g>
+    <rect x="50" y="320" width="390" height="170" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+    <text x="64" y="342" font-size="11" font-weight="700" fill="#991b1b">Judge scores</text>
 
-  <!-- 4. Probe loop -->
-  <g filter="url(#sh)">
-    <rect x="615" y="345" width="315" height="90" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
-    <text x="630" y="368" font-size="11" font-weight="700" fill="#1e40af">Bounded probe loop (B=2)</text>
-    <text x="630" y="388" font-size="11" fill="#0f172a" font-family="'Courier New', monospace">→ get_agent_plan("Lin Wei")</text>
-    <text x="630" y="406" font-size="10" fill="#475569">  returns: availability = "busy"</text>
-    <text x="630" y="424" font-size="10" fill="#475569">           reason = "serving customers"</text>
+    <text x="64" y="366" font-size="11" fill="#1e293b">literal_score</text>
+    <rect x="200" y="356" width="180" height="12" rx="3" fill="#e5e7eb"/>
+    <rect x="200" y="356" width="163" height="12" rx="3" fill="#22c55e"/>
+    <text x="390" y="366" text-anchor="end" font-size="11" fill="#065f46" font-weight="700">0.91</text>
+
+    <text x="64" y="394" font-size="11" fill="#1e293b">implicit_score</text>
+    <rect x="200" y="384" width="180" height="12" rx="3" fill="#e5e7eb"/>
+    <rect x="200" y="384" width="29" height="12" rx="3" fill="#dc2626"/>
+    <text x="390" y="394" text-anchor="end" font-size="11" fill="#991b1b" font-weight="700">0.16</text>
+
+    <line x1="64" y1="412" x2="426" y2="412" stroke="#fecaca"/>
+
+    <text x="64" y="432" font-size="10" fill="#7f1d1d" font-weight="600">What the user actually wanted</text>
+    <text x="64" y="450" font-size="11" fill="#1e293b" font-style="italic">"is Lin Wei free to chat right now?"</text>
+    <text x="64" y="472" font-size="10" fill="#7f1d1d">⨯  lost — surface answer only</text>
   </g>
 
-  <!-- arrow 4 left from probe -->
-  <path d="M 615 390 L 540 390" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <!-- 5. Response -->
+  <!-- ============ RIGHT: AURA ============ -->
   <g filter="url(#sh)">
-    <rect x="30" y="345" width="510" height="160" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
-    <text x="48" y="370" font-size="11" font-weight="700" fill="#166534">AURA response (literal + implicit surfaced)</text>
-
-    <rect x="48" y="380" width="470" height="30" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
-    <text x="58" y="400" font-size="12" fill="#78350f" font-weight="600">
-      [heads-up] she's currently busy serving customers —
-    </text>
-
-    <text x="48" y="430" font-size="12" fill="#0f172a">
-      Lin Wei is at the Sunrise Cafe, behind the counter.
-    </text>
-    <text x="48" y="450" font-size="12" fill="#0f172a">
-      You may want to wait until she's free before
-    </text>
-    <text x="48" y="470" font-size="12" fill="#0f172a">
-      starting a longer conversation.
-    </text>
-    <text x="48" y="494" font-size="10" fill="#64748b" font-style="italic">
-      implicit need "is she free?" surfaced without the user explicitly asking
-    </text>
+    <rect x="520" y="80" width="430" height="430" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- Title bar -->
+    <rect x="520" y="80" width="430" height="38" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+    <rect x="520" y="104" width="430" height="14" fill="#eff6ff"/>
+    <circle cx="542"  cy="99" r="5" fill="#ef4444"/>
+    <circle cx="558"  cy="99" r="5" fill="#f59e0b"/>
+    <circle cx="574"  cy="99" r="5" fill="#22c55e"/>
+    <text x="730" y="104" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">AURA (IntentFrame + bounded probe)</text>
   </g>
 
-  <!-- Contrast note bottom center -->
-  <g transform="translate(560, 470)">
-    <text x="0" y="0" font-size="11" fill="#991b1b" font-weight="700">Vanilla LLM:</text>
-    <text x="0" y="18" font-size="11" fill="#1e293b">"Lin Wei is at the Sunrise Cafe."</text>
-    <text x="0" y="34" font-size="10" fill="#64748b">(literal only · implicit need lost)</text>
+  <!-- User bubble -->
+  <g>
+    <rect x="750" y="140" width="180" height="36" rx="12" fill="#e0e7ff" stroke="#6366f1" stroke-width="1"/>
+    <text x="930" y="161" text-anchor="end" font-size="12" fill="#1e293b">where is Lin Wei?</text>
+    <text x="930" y="186" text-anchor="end" font-size="9" fill="#64748b">You · 10:15</text>
+  </g>
+
+  <!-- IntentFrame sidebar (small) -->
+  <g>
+    <rect x="540" y="205" width="170" height="150" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+    <text x="550" y="223" font-size="9" font-weight="700" fill="#92400e">IntentFrame (LLM)</text>
+    <text x="550" y="240" font-size="9" fill="#1e293b" font-family="'Courier New', monospace">gap: 0.5</text>
+    <text x="550" y="256" font-size="9" fill="#1e293b" font-family="'Courier New', monospace">implicit_need:</text>
+    <text x="556" y="270" font-size="9" fill="#7c2d12" font-family="'Courier New', monospace">"is she free?"</text>
+    <text x="550" y="288" font-size="9" fill="#1e293b" font-family="'Courier New', monospace">probes:</text>
+    <text x="556" y="302" font-size="9" fill="#7c2d12" font-family="'Courier New', monospace">get_agent_plan</text>
+    <text x="550" y="320" font-size="9" fill="#1e293b" font-family="'Courier New', monospace">alert: true</text>
+    <text x="550" y="344" font-size="8" fill="#92400e" font-style="italic">probe → availability=busy</text>
+  </g>
+
+  <!-- Assistant response (with alert) -->
+  <g>
+    <rect x="720" y="205" width="220" height="150" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+
+    <!-- Alert badge -->
+    <rect x="732" y="215" width="196" height="22" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="740" y="230" font-size="10" font-weight="700" fill="#92400e">⚠ heads-up</text>
+    <text x="815" y="230" font-size="9" fill="#78350f">she's currently busy</text>
+
+    <text x="734" y="255" font-size="11" fill="#0f172a">Lin Wei is at the Sunrise</text>
+    <text x="734" y="270" font-size="11" fill="#0f172a">Cafe, behind the counter.</text>
+    <text x="734" y="290" font-size="11" fill="#0f172a">She's serving customers —</text>
+    <text x="734" y="305" font-size="11" fill="#0f172a">you may want to wait until</text>
+    <text x="734" y="320" font-size="11" fill="#0f172a">she's free before starting</text>
+    <text x="734" y="335" font-size="11" fill="#0f172a">a longer conversation.</text>
+
+    <text x="734" y="350" font-size="9" fill="#64748b">Assistant · 10:15 · 4 LLM calls · 5.6 s</text>
+  </g>
+
+  <!-- Evaluation panel for AURA -->
+  <g>
+    <rect x="540" y="380" width="390" height="110" rx="10" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/>
+    <text x="554" y="402" font-size="11" font-weight="700" fill="#166534">Judge scores</text>
+
+    <text x="554" y="426" font-size="11" fill="#1e293b">literal_score</text>
+    <rect x="690" y="416" width="180" height="12" rx="3" fill="#e5e7eb"/>
+    <rect x="690" y="416" width="172" height="12" rx="3" fill="#22c55e"/>
+    <text x="880" y="426" text-anchor="end" font-size="11" fill="#065f46" font-weight="700">0.96</text>
+
+    <text x="554" y="454" font-size="11" fill="#1e293b">implicit_score</text>
+    <rect x="690" y="444" width="180" height="12" rx="3" fill="#e5e7eb"/>
+    <rect x="690" y="444" width="151" height="12" rx="3" fill="#22c55e"/>
+    <text x="880" y="454" text-anchor="end" font-size="11" fill="#065f46" font-weight="700">0.84</text>
+
+    <text x="554" y="478" font-size="10" fill="#166534">✓ implicit need surfaced · literal accuracy preserved</text>
+  </g>
+
+  <!-- ============ Footer: aggregate from RQ-ToM ============ -->
+  <g transform="translate(30, 530)">
+    <rect x="0" y="0" width="920" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="460" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">
+      Aggregate across 25 implicit-intent queries × 3 seeds (N = 75 paired)
+    </text>
+
+    <g font-size="10" fill="#1e293b">
+      <text x="30" y="44" font-weight="700" fill="#991b1b">Vanilla LLM</text>
+      <text x="30" y="60" font-family="'Courier New', monospace">implicit 0.19  ·  literal 0.66</text>
+
+      <text x="350" y="44" font-weight="700" fill="#0c4a6e">NoIntent (ReAct)</text>
+      <text x="350" y="60" font-family="'Courier New', monospace">implicit 0.64  ·  literal 0.94</text>
+
+      <text x="670" y="44" font-weight="700" fill="#166534">AURA ToM</text>
+      <text x="670" y="60" font-family="'Courier New', monospace">implicit 0.84  ·  literal 0.96</text>
+    </g>
+
+    <text x="460" y="82" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">
+      Δ implicit AURA vs Vanilla = +0.65, paired t = 16.88, p ≈ 0
+    </text>
   </g>
 </svg>
