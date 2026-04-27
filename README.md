@@ -4,7 +4,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <p align="center">
-  <img src="docs/assets/auratown-map.svg" alt="AURATown — 5-agent social simulation, 60×60 grid with commercial / residential / civic / park districts" width="820"/>
+  <img src="docs/assets/auratown-illustrated.png" alt="AURATown — illustrated bird's-eye view of the 5-agent social simulation testbed" width="860"/>
+</p>
+
+<p align="center">
+  <em>AURATown — the 5-agent social simulation testbed where AURA's mechanisms are evaluated.<br/>
+  Technical 60×60 grid map with named coordinates: see <a href="docs/assets/auratown-map.svg">auratown-map.svg</a>.</em>
 </p>
 
 **AURA** is an *environment agent* that bridges the alignment gap between
@@ -28,7 +33,11 @@ never surfaces. AURA addresses this alignment gap at the architectural
 level.
 
 <p align="center">
-  <img src="docs/assets/intent-walkthrough.svg" alt="One query through AURA: surface query → Scene/Memory → IntentFrame (gap 0.5, recommended probes) → bounded probe → response with [heads-up] alert" width="880"/>
+  <img src="docs/assets/story-comic.png" alt="4-panel comic: user asks 'where is Lin Wei?', vanilla LLM gives a literal answer, AURA infers the implicit need (is she free?) by probing the cafe scene, and replies with a grounded answer plus a heads-up alert" width="860"/>
+</p>
+
+<p align="center">
+  <em>What AURA does in 30 seconds: it doesn't just answer the literal question — it infers the user's implicit need, probes the environment, and surfaces what actually matters with an explicit heads-up.</em>
 </p>
 
 ```mermaid
@@ -53,6 +62,10 @@ flowchart LR
 
 AURA sits in the middle of the Human–Agent–Environment triangle,
 mediating context flow in both directions.
+
+<p align="center">
+  <img src="docs/assets/triangle-mediator.png" alt="Triangle: Human user (top-left) and AI agents (top-right) connected through a translucent mediator layer (the Environment Agent π_E) over a small town environment (bottom)" width="720"/>
+</p>
 
 ---
 
@@ -86,6 +99,10 @@ the `IntentFrame` so per-query judgment is local where it matters.
 ---
 
 ## IntentFrame: Modeling the Implicit Need
+
+<p align="center">
+  <img src="docs/assets/intentframe-thinking.png" alt="IntentFrame visualisation: a robot character producing a thought-bubble that contains six fields (literal_need, implicit_need, gap, recommended_probes, alert, confidence) plus an input-to-output workflow strip below" width="640"/>
+</p>
 
 Each query produces an `IntentFrame`:
 
