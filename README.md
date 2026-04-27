@@ -71,10 +71,16 @@ mediating context flow in both directions.
 
 ## The Architecture
 
-A 7-stage pipeline. The first four stages build grounded context
-deterministically; `IntentInferrer` is the point at which the LLM
+<p align="center">
+  <img src="docs/assets/aura-architecture.png" alt="AURA's eight-stage pipeline: Sense → Scene → Memory → IntentInferrer → Explore → Reason → Act → Interact, embedded in the human user / AI agents / environment context, with the IntentInferrer highlighted as the single agentic stage" width="900"/>
+</p>
+
+An **eight-stage pipeline**. The first three stages (Sense, Scene,
+Memory) build grounded context deterministically; the
+**`IntentInferrer`** (★ in the figure) is the point at which the LLM
 takes over control flow (per-query probe budget, tool selection,
-alerting).
+alerting). Explore, Reason, Act, Interact then run on the enriched
+context.
 
 ```mermaid
 flowchart LR
