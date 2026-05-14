@@ -1,0 +1,326 @@
+{
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "per_seed": {
+    "42": {
+      "per_budget": {
+        "0": {
+          "budget": 0,
+          "avg_ga": 0.8637,
+          "std_ga": 0.1179,
+          "avg_latency": 16.681,
+          "min_latency": 9.783,
+          "max_latency": 49.284,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "1": {
+          "budget": 1,
+          "avg_ga": 0.8646,
+          "std_ga": 0.1241,
+          "avg_latency": 21.561,
+          "min_latency": 9.422,
+          "max_latency": 55.104,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "2": {
+          "budget": 2,
+          "avg_ga": 0.8524,
+          "std_ga": 0.1313,
+          "avg_latency": 27.33,
+          "min_latency": 10.338,
+          "max_latency": 82.02,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "3": {
+          "budget": 3,
+          "avg_ga": 0.8542,
+          "std_ga": 0.1244,
+          "avg_latency": 29.552,
+          "min_latency": 10.932,
+          "max_latency": 87.326,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "4": {
+          "budget": 4,
+          "avg_ga": 0.8575,
+          "std_ga": 0.1297,
+          "avg_latency": 36.785,
+          "min_latency": 10.52,
+          "max_latency": 122.158,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "5": {
+          "budget": 5,
+          "avg_ga": 0.8692,
+          "std_ga": 0.1302,
+          "avg_latency": 37.547,
+          "min_latency": 10.018,
+          "max_latency": 104.116,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        }
+      },
+      "pareto_frontier": [
+        {
+          "budget": 0,
+          "avg_latency": 16.681,
+          "avg_ga": 0.8637
+        },
+        {
+          "budget": 1,
+          "avg_latency": 21.561,
+          "avg_ga": 0.8646
+        },
+        {
+          "budget": 5,
+          "avg_latency": 37.547,
+          "avg_ga": 0.8692
+        }
+      ],
+      "_metadata": {
+        "backbone_model": "gpt-4o-mini",
+        "judge_model": "gpt-4o-mini",
+        "timestamp": "2026-04-07T10:23:54.258207"
+      }
+    },
+    "123": {
+      "per_budget": {
+        "0": {
+          "budget": 0,
+          "avg_ga": 0.8614,
+          "std_ga": 0.1341,
+          "avg_latency": 16.918,
+          "min_latency": 10.665,
+          "max_latency": 76.839,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "1": {
+          "budget": 1,
+          "avg_ga": 0.8821,
+          "std_ga": 0.114,
+          "avg_latency": 20.51,
+          "min_latency": 10.881,
+          "max_latency": 52.945,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "2": {
+          "budget": 2,
+          "avg_ga": 0.862,
+          "std_ga": 0.1299,
+          "avg_latency": 24.562,
+          "min_latency": 9.812,
+          "max_latency": 82.022,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "3": {
+          "budget": 3,
+          "avg_ga": 0.8662,
+          "std_ga": 0.1199,
+          "avg_latency": 32.134,
+          "min_latency": 9.9,
+          "max_latency": 85.092,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "4": {
+          "budget": 4,
+          "avg_ga": 0.8576,
+          "std_ga": 0.1312,
+          "avg_latency": 34.052,
+          "min_latency": 10.733,
+          "max_latency": 92.073,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "5": {
+          "budget": 5,
+          "avg_ga": 0.8684,
+          "std_ga": 0.1235,
+          "avg_latency": 41.057,
+          "min_latency": 11.304,
+          "max_latency": 111.21,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        }
+      },
+      "pareto_frontier": [
+        {
+          "budget": 0,
+          "avg_latency": 16.918,
+          "avg_ga": 0.8614
+        },
+        {
+          "budget": 1,
+          "avg_latency": 20.51,
+          "avg_ga": 0.8821
+        }
+      ],
+      "_metadata": {
+        "backbone_model": "gpt-4o-mini",
+        "judge_model": "gpt-4o-mini",
+        "timestamp": "2026-04-07T15:52:30.956876"
+      }
+    },
+    "456": {
+      "per_budget": {
+        "0": {
+          "budget": 0,
+          "avg_ga": 0.8613,
+          "std_ga": 0.1205,
+          "avg_latency": 18.15,
+          "min_latency": 9.838,
+          "max_latency": 84.891,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "1": {
+          "budget": 1,
+          "avg_ga": 0.8762,
+          "std_ga": 0.114,
+          "avg_latency": 22.153,
+          "min_latency": 10.257,
+          "max_latency": 88.388,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "2": {
+          "budget": 2,
+          "avg_ga": 0.872,
+          "std_ga": 0.1192,
+          "avg_latency": 25.523,
+          "min_latency": 10.592,
+          "max_latency": 68.55,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "3": {
+          "budget": 3,
+          "avg_ga": 0.868,
+          "std_ga": 0.1254,
+          "avg_latency": 31.606,
+          "min_latency": 11.196,
+          "max_latency": 75.984,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "4": {
+          "budget": 4,
+          "avg_ga": 0.858,
+          "std_ga": 0.1288,
+          "avg_latency": 35.05,
+          "min_latency": 10.251,
+          "max_latency": 81.264,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        },
+        "5": {
+          "budget": 5,
+          "avg_ga": 0.8668,
+          "std_ga": 0.1217,
+          "avg_latency": 39.176,
+          "min_latency": 9.867,
+          "max_latency": 122.029,
+          "num_ga_judgments": 500,
+          "ga_from_rq1_pipeline": true
+        }
+      },
+      "pareto_frontier": [
+        {
+          "budget": 0,
+          "avg_latency": 18.15,
+          "avg_ga": 0.8613
+        },
+        {
+          "budget": 1,
+          "avg_latency": 22.153,
+          "avg_ga": 0.8762
+        }
+      ],
+      "_metadata": {
+        "backbone_model": "gpt-4o-mini",
+        "judge_model": "gpt-4o-mini",
+        "timestamp": "2026-04-07T21:25:30.178809"
+      }
+    }
+  },
+  "statistics": {
+    "per_budget": {
+      "0": {
+        "avg_ga_mean": 0.8621,
+        "avg_ga_std": 0.0014,
+        "avg_latency_mean": 17.25,
+        "avg_latency_std": 0.789,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      },
+      "1": {
+        "avg_ga_mean": 0.8743,
+        "avg_ga_std": 0.0089,
+        "avg_latency_mean": 21.408,
+        "avg_latency_std": 0.832,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      },
+      "2": {
+        "avg_ga_mean": 0.8621,
+        "avg_ga_std": 0.0098,
+        "avg_latency_mean": 25.805,
+        "avg_latency_std": 1.405,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      },
+      "3": {
+        "avg_ga_mean": 0.8628,
+        "avg_ga_std": 0.0075,
+        "avg_latency_mean": 31.097,
+        "avg_latency_std": 1.364,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      },
+      "4": {
+        "avg_ga_mean": 0.8577,
+        "avg_ga_std": 0.0003,
+        "avg_latency_mean": 35.296,
+        "avg_latency_std": 1.383,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      },
+      "5": {
+        "avg_ga_mean": 0.8681,
+        "avg_ga_std": 0.0012,
+        "avg_latency_mean": 39.26,
+        "avg_latency_std": 1.757,
+        "avg_num_judgments": 500.0,
+        "seeds": 3
+      }
+    },
+    "pareto_frontier": [
+      {
+        "budget": 0,
+        "avg_latency": 17.25,
+        "avg_ga": 0.8621
+      },
+      {
+        "budget": 1,
+        "avg_latency": 21.408,
+        "avg_ga": 0.8743
+      }
+    ]
+  },
+  "_metadata": {
+    "backbone_model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "timestamp": "2026-04-07T21:25:30.179396"
+  }
+}

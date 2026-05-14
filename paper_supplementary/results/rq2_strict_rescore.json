@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "input": "evaluation/results/rq2_factual_accuracy_multiseed.json",
+  "n_seeds": 3,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "metric_definitions": {
+    "strict_precision": "correct_claims / (correct_claims + contradicted_claims) per query; query excluded if denominator is 0 (only unverifiable claims)",
+    "claim_recall": "correct_claims / total_claims per query",
+    "hallucination_rate": "fraction of (query, seed) cells with >=1 contradicted claim",
+    "perfect_rate": "fraction with 0 contradicted AND >=1 correct claim",
+    "lenient_accuracy": "the existing 0.7*precision + 0.3*completeness FA from llm_judge.py for comparison"
+  },
+  "per_condition": {
+    "AURA_Full": {
+      "strict_precision_mean": 0.6583501006036218,
+      "strict_precision_std": 0.34311183578199556,
+      "strict_precision_n_cells": 142,
+      "claim_recall_mean": 0.5403412698412698,
+      "claim_recall_std": 0.34071896890257897,
+      "hallucination_rate": 0.6666666666666666,
+      "perfect_rate": 0.28,
+      "lenient_accuracy_mean": 0.6404713333333333,
+      "n_query_seed_cells": 150
+    },
+    "AURA_NoProbe": {
+      "strict_precision_mean": 0.5814797059763502,
+      "strict_precision_std": 0.3645698000679565,
+      "strict_precision_n_cells": 149,
+      "claim_recall_mean": 0.5187936507936508,
+      "claim_recall_std": 0.34689704531765614,
+      "hallucination_rate": 0.7533333333333333,
+      "perfect_rate": 0.24,
+      "lenient_accuracy_mean": 0.6026631428571428,
+      "n_query_seed_cells": 150
+    },
+    "Vanilla_LLM": {
+      "strict_precision_mean": 0.03591549295774648,
+      "strict_precision_std": 0.15091389284024892,
+      "strict_precision_n_cells": 142,
+      "claim_recall_mean": 0.03288888888888889,
+      "claim_recall_std": 0.14278505336372407,
+      "hallucination_rate": 0.9333333333333333,
+      "perfect_rate": 0.013333333333333334,
+      "lenient_accuracy_mean": 0.07033333333333333,
+      "n_query_seed_cells": 150
+    },
+    "Static_Context": {
+      "strict_precision_mean": 0.4594745484400657,
+      "strict_precision_std": 0.43294118806535103,
+      "strict_precision_n_cells": 145,
+      "claim_recall_mean": 0.3959365079365079,
+      "claim_recall_std": 0.40212293204418853,
+      "hallucination_rate": 0.7,
+      "perfect_rate": 0.26666666666666666,
+      "lenient_accuracy_mean": 0.4503493333333333,
+      "n_query_seed_cells": 150
+    },
+    "ReAct": {
+      "strict_precision_mean": 0.5781094527363184,
+      "strict_precision_std": 0.4418217106710009,
+      "strict_precision_n_cells": 134,
+      "claim_recall_mean": 0.5340277777777778,
+      "claim_recall_std": 0.4482629644691666,
+      "hallucination_rate": 0.5133333333333333,
+      "perfect_rate": 0.38,
+      "lenient_accuracy_mean": 0.5502893333333333,
+      "n_query_seed_cells": 150
+    }
+  },
+  "per_condition_per_category": {
+    "AURA_Full": {
+      "spatial": {
+        "mean": 0.47172619047619047,
+        "n": 24
+      },
+      "social": {
+        "mean": 0.47,
+        "n": 30
+      },
+      "temporal": {
+        "mean": 0.891871921182266,
+        "n": 29
+      },
+      "memory": {
+        "mean": 0.7402298850574712,
+        "n": 29
+      },
+      "planning": {
+        "mean": 0.6911111111111111,
+        "n": 30
+      }
+    },
+    "AURA_NoProbe": {
+      "spatial": {
+        "mean": 0.39022988505747125,
+        "n": 29
+      },
+      "social": {
+        "mean": 0.29055555555555557,
+        "n": 30
+      },
+      "temporal": {
+        "mean": 0.7977777777777778,
+        "n": 30
+      },
+      "memory": {
+        "mean": 0.6946825396825397,
+        "n": 30
+      },
+      "planning": {
+        "mean": 0.7277777777777777,
+        "n": 30
+      }
+    },
+    "Vanilla_LLM": {
+      "spatial": {
+        "mean": 0.034444444444444444,
+        "n": 30
+      },
+      "social": {
+        "mean": 0.06896551724137931,
+        "n": 29
+      },
+      "temporal": {
+        "mean": 0.035555555555555556,
+        "n": 30
+      },
+      "memory": {
+        "mean": 0.0,
+        "n": 24
+      },
+      "planning": {
+        "mean": 0.034482758620689655,
+        "n": 29
+      }
+    },
+    "Static_Context": {
+      "spatial": {
+        "mean": 0.44753086419753085,
+        "n": 27
+      },
+      "social": {
+        "mean": 0.2747126436781609,
+        "n": 29
+      },
+      "temporal": {
+        "mean": 0.49137931034482757,
+        "n": 29
+      },
+      "memory": {
+        "mean": 0.3472222222222222,
+        "n": 30
+      },
+      "planning": {
+        "mean": 0.7302380952380952,
+        "n": 30
+      }
+    },
+    "ReAct": {
+      "spatial": {
+        "mean": 0.5912698412698413,
+        "n": 21
+      },
+      "social": {
+        "mean": 0.5827586206896551,
+        "n": 29
+      },
+      "temporal": {
+        "mean": 0.7172413793103448,
+        "n": 29
+      },
+      "memory": {
+        "mean": 0.5467948717948719,
+        "n": 26
+      },
+      "planning": {
+        "mean": 0.4528735632183908,
+        "n": 29
+      }
+    }
+  },
+  "paired_contrasts_AURA_Full_vs": [
+    {
+      "vs": "Vanilla_LLM",
+      "strict_precision_delta": 0.6088707010582011,
+      "strict_precision_t": 12.705990383900403,
+      "strict_precision_p": 0.0,
+      "strict_precision_n_pairs": 48,
+      "hallucination_delta": -0.26666666666666666,
+      "hallucination_t": -4.12837477233712,
+      "hallucination_p": 3.65336316503484e-05,
+      "perfect_delta": 0.26666666666666666,
+      "perfect_t": 5.028948456749697,
+      "perfect_p": 4.931769268523567e-07
+    },
+    {
+      "vs": "Static_Context",
+      "strict_precision_delta": 0.19324603174603175,
+      "strict_precision_t": 3.3866897038441683,
+      "strict_precision_p": 0.000707413494442255,
+      "strict_precision_n_pairs": 50,
+      "hallucination_delta": -0.03333333333333333,
+      "hallucination_t": -0.4937419311010187,
+      "hallucination_p": 0.6214884480044061,
+      "perfect_delta": 0.01333333333333333,
+      "perfect_t": 0.21115394209236657,
+      "perfect_p": 0.8327671492929096
+    },
+    {
+      "vs": "ReAct",
+      "strict_precision_delta": 0.0899821833495303,
+      "strict_precision_t": 1.8947072397053397,
+      "strict_precision_p": 0.05813119808010625,
+      "strict_precision_n_pairs": 49,
+      "hallucination_delta": 0.15333333333333335,
+      "hallucination_t": 2.571150242200435,
+      "hallucination_p": 0.01013613428297,
+      "perfect_delta": -0.09999999999999999,
+      "perfect_t": -1.8782971010998233,
+      "perfect_p": 0.06034053291564656
+    },
+    {
+      "vs": "AURA_NoProbe",
+      "strict_precision_delta": 0.06191269841269841,
+      "strict_precision_t": 2.204573559787116,
+      "strict_precision_p": 0.027484032829198535,
+      "strict_precision_n_pairs": 50,
+      "hallucination_delta": -0.08666666666666667,
+      "hallucination_t": -1.6953905698425373,
+      "hallucination_p": 0.09000135364498751,
+      "perfect_delta": 0.039999999999999994,
+      "perfect_t": 0.8826958385893168,
+      "perfect_p": 0.3774006311492406
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "tool_disclosure": {
+    "get_time": 0,
+    "get_location": 0,
+    "get_nearby_agents": 0,
+    "get_all_agents": 1,
+    "get_recent_memories": 2,
+    "get_recent_events": 1,
+    "get_agent_plan": 1,
+    "get_location_info": 0
+  },
+  "shared_avg_disclosure": 0.625,
+  "expected_n_queries": 50,
+  "allow_partial": false,
+  "skipped": {},
+  "per_condition": {
+    "AURA_GapRouted": {
+      "fa_mean": 0.6959802857142857,
+      "probes_mean": 1.4,
+      "disclosure_mean": 0.92,
+      "latency_mean": 4.341073333333333,
+      "n_queries": 50
+    },
+    "Fixed_Probe": {
+      "fa_mean": 0.7662374285714286,
+      "probes_mean": 8,
+      "disclosure_mean": 5.0,
+      "latency_mean": 3.226653333333333,
+      "n_queries": 50
+    },
+    "AURA_Full": {
+      "fa_mean": 0.6404713333333333,
+      "probes_mean": 0,
+      "disclosure_mean": 0.0,
+      "latency_mean": 3.8626994864145914,
+      "n_queries": 50
+    },
+    "AURA_NoProbe": {
+      "fa_mean": 0.6026631428571428,
+      "probes_mean": 0,
+      "disclosure_mean": 0.0,
+      "latency_mean": 2.2259061272939045,
+      "n_queries": 50
+    },
+    "ReAct": {
+      "fa_mean": 0.5502893333333333,
+      "probes_mean": 0,
+      "disclosure_mean": 0.0,
+      "latency_mean": 6.013656001091004,
+      "n_queries": 50
+    },
+    "Static_Context": {
+      "fa_mean": 0.4503493333333333,
+      "probes_mean": 0,
+      "disclosure_mean": 0.0,
+      "latency_mean": 1.7693831650416056,
+      "n_queries": 50
+    },
+    "Vanilla_LLM": {
+      "fa_mean": 0.07033333333333333,
+      "probes_mean": 0,
+      "disclosure_mean": 0.0,
+      "latency_mean": 2.2786180289586384,
+      "n_queries": 50
+    },
+    "Plan_and_Solve": {
+      "fa_mean": 0.7635402857142857,
+      "probes_mean": 4.64,
+      "disclosure_mean": 2.9,
+      "latency_mean": 5.19426,
+      "n_queries": 50
+    },
+    "Reflexion": {
+      "fa_mean": 0.16748933333333332,
+      "probes_mean": 2.15,
+      "disclosure_mean": 1.34375,
+      "latency_mean": 20.59358,
+      "n_queries": 50
+    }
+  },
+  "per_category": {
+    "AURA_GapRouted": {
+      "spatial": {
+        "fa_mean": 0.4266338095238095,
+        "probes_mean": 1.1,
+        "disclosure_mean": 0.06666666666666667,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.6970566666666667,
+        "probes_mean": 1.6666666666666667,
+        "disclosure_mean": 0.9,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.7957233333333333,
+        "probes_mean": 0.8333333333333334,
+        "disclosure_mean": 0.6333333333333333,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.7865266666666667,
+        "probes_mean": 1.4666666666666666,
+        "disclosure_mean": 2.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.7739609523809524,
+        "probes_mean": 1.9333333333333333,
+        "disclosure_mean": 1.0,
+        "n": 10
+      }
+    },
+    "Fixed_Probe": {
+      "spatial": {
+        "fa_mean": 0.6298566666666666,
+        "probes_mean": 8,
+        "disclosure_mean": 5.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.8307233333333334,
+        "probes_mean": 8,
+        "disclosure_mean": 5.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.7902471428571428,
+        "probes_mean": 8,
+        "disclosure_mean": 5.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.82928,
+        "probes_mean": 8,
+        "disclosure_mean": 5.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.75108,
+        "probes_mean": 8,
+        "disclosure_mean": 5.0,
+        "n": 10
+      }
+    },
+    "AURA_Full": {
+      "spatial": {
+        "fa_mean": 0.4568566666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.459,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.8455,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.7073333333333334,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.7336666666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      }
+    },
+    "AURA_NoProbe": {
+      "spatial": {
+        "fa_mean": 0.45316666666666666,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.322,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.8128366666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.6844133333333333,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.7408990476190476,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      }
+    },
+    "ReAct": {
+      "spatial": {
+        "fa_mean": 0.46839,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.5913333333333334,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.73,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.49005666666666664,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.4716666666666666,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      }
+    },
+    "Static_Context": {
+      "spatial": {
+        "fa_mean": 0.42439,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.27566666666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.4775,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.3148333333333333,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.7593566666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      }
+    },
+    "Vanilla_LLM": {
+      "spatial": {
+        "fa_mean": 0.076,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.09166666666666667,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.084,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.06166666666666666,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.03833333333333333,
+        "probes_mean": 0,
+        "disclosure_mean": 0.0,
+        "n": 10
+      }
+    },
+    "Plan_and_Solve": {
+      "spatial": {
+        "fa_mean": 0.58619,
+        "probes_mean": 5,
+        "disclosure_mean": 3.125,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.7875566666666667,
+        "probes_mean": 4.8,
+        "disclosure_mean": 3.0,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.8290804761904762,
+        "probes_mean": 3.6666666666666665,
+        "disclosure_mean": 2.2916666666666665,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.7964371428571428,
+        "probes_mean": 4.733333333333333,
+        "disclosure_mean": 2.9583333333333335,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.8184371428571429,
+        "probes_mean": 5,
+        "disclosure_mean": 3.125,
+        "n": 10
+      }
+    },
+    "Reflexion": {
+      "spatial": {
+        "fa_mean": 0.1665,
+        "probes_mean": 5.233333333333333,
+        "disclosure_mean": 3.2708333333333335,
+        "n": 10
+      },
+      "social": {
+        "fa_mean": 0.12816666666666665,
+        "probes_mean": 1.4833333333333334,
+        "disclosure_mean": 0.9270833333333334,
+        "n": 10
+      },
+      "temporal": {
+        "fa_mean": 0.12722333333333333,
+        "probes_mean": 1.1,
+        "disclosure_mean": 0.6875,
+        "n": 10
+      },
+      "memory": {
+        "fa_mean": 0.13899999999999998,
+        "probes_mean": 0.5666666666666667,
+        "disclosure_mean": 0.3541666666666667,
+        "n": 10
+      },
+      "planning": {
+        "fa_mean": 0.2765566666666667,
+        "probes_mean": 2.3666666666666667,
+        "disclosure_mean": 1.4791666666666667,
+        "n": 10
+      }
+    }
+  },
+  "paired_vs_AURA_GapRouted": {
+    "fa": {
+      "Fixed_Probe": {
+        "n": 50,
+        "delta": 0.07025714285714285,
+        "t": 2.2147067354076846,
+        "p": 0.031461528297603826
+      },
+      "AURA_Full": {
+        "n": 50,
+        "delta": -0.055508952380952374,
+        "t": -1.6855384255443555,
+        "p": 0.09824371150021437
+      },
+      "AURA_NoProbe": {
+        "n": 50,
+        "delta": -0.09331714285714285,
+        "t": -2.6034245812160135,
+        "p": 0.012179853701181017
+      },
+      "ReAct": {
+        "n": 50,
+        "delta": -0.1456909523809524,
+        "t": -3.3850422188311775,
+        "p": 0.0014089626175996515
+      },
+      "Static_Context": {
+        "n": 50,
+        "delta": -0.2456309523809524,
+        "t": -4.730564792815566,
+        "p": 1.9360029305698203e-05
+      },
+      "Vanilla_LLM": {
+        "n": 50,
+        "delta": -0.6256469523809524,
+        "t": -15.141393699639366,
+        "p": 4.126444911787843e-20
+      },
+      "Plan_and_Solve": {
+        "n": 50,
+        "delta": 0.06756,
+        "t": 1.9538693484149214,
+        "p": 0.05643726494481638
+      },
+      "Reflexion": {
+        "n": 50,
+        "delta": -0.5284909523809523,
+        "t": -11.23621609052719,
+        "p": 3.652741225830184e-15
+      }
+    },
+    "probes": {
+      "Fixed_Probe": {
+        "n": 50,
+        "delta": 6.6,
+        "t": 74.29739866425918,
+        "p": 4.949192399741436e-52
+      },
+      "AURA_Full": {
+        "n": 50,
+        "delta": -1.4,
+        "t": -15.760054262115583,
+        "p": 8.049148525452846e-21
+      },
+      "AURA_NoProbe": {
+        "n": 50,
+        "delta": -1.4,
+        "t": -15.760054262115583,
+        "p": 8.049148525452846e-21
+      },
+      "ReAct": {
+        "n": 50,
+        "delta": -1.4,
+        "t": -15.760054262115583,
+        "p": 8.049148525452846e-21
+      },
+      "Static_Context": {
+        "n": 50,
+        "delta": -1.4,
+        "t": -15.760054262115583,
+        "p": 8.049148525452846e-21
+      },
+      "Vanilla_LLM": {
+        "n": 50,
+        "delta": -1.4,
+        "t": -15.760054262115583,
+        "p": 8.049148525452846e-21
+      },
+      "Plan_and_Solve": {
+        "n": 50,
+        "delta": 3.24,
+        "t": 25.713764195547196,
+        "p": 4.1738224517724396e-30
+      },
+      "Reflexion": {
+        "n": 50,
+        "delta": 0.75,
+        "t": 2.2861527947625873,
+        "p": 0.026607037069535943
+      }
+    },
+    "disclosure": {
+      "Fixed_Probe": {
+        "n": 50,
+        "delta": 4.08,
+        "t": 37.78300800412075,
+        "p": 6.681069809374795e-38
+      },
+      "AURA_Full": {
+        "n": 50,
+        "delta": -0.92,
+        "t": -8.519697883282129,
+        "p": 3.0994705373749174e-11
+      },
+      "AURA_NoProbe": {
+        "n": 50,
+        "delta": -0.92,
+        "t": -8.519697883282129,
+        "p": 3.0994705373749174e-11
+      },
+      "ReAct": {
+        "n": 50,
+        "delta": -0.92,
+        "t": -8.519697883282129,
+        "p": 3.0994705373749174e-11
+      },
+      "Static_Context": {
+        "n": 50,
+        "delta": -0.92,
+        "t": -8.519697883282129,
+        "p": 3.0994705373749174e-11
+      },
+      "Vanilla_LLM": {
+        "n": 50,
+        "delta": -0.92,
+        "t": -8.519697883282129,
+        "p": 3.0994705373749174e-11
+      },
+      "Plan_and_Solve": {
+        "n": 50,
+        "delta": 1.98,
+        "t": 15.241893497972265,
+        "p": 3.154798365126027e-20
+      },
+      "Reflexion": {
+        "n": 50,
+        "delta": 0.42375,
+        "t": 1.5712758403812506,
+        "p": 0.12255423844841741
+      }
+    }
+  }
+}

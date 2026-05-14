@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "n_raters": 8,
+  "raters": [
+    "annotator_1",
+    "GUANGYU LI",
+    "annotator_3",
+    "annotator_4",
+    "annotator_5",
+    "Mengting Jia",
+    "annotator_7",
+    "annotator_8"
+  ],
+  "per_dimension": {
+    "response_helpfulness": {
+      "rater_mean_deltas": {
+        "annotator_1": 3.06,
+        "GUANGYU LI": 1.26,
+        "annotator_3": 2.2,
+        "annotator_4": 1.4,
+        "annotator_5": 1.46,
+        "Mengting Jia": -0.3,
+        "annotator_7": 2.26,
+        "annotator_8": 1.32
+      },
+      "n_raters": 8,
+      "delta_mean_of_means": 1.5825,
+      "delta_std_of_means": 0.9848,
+      "cohens_dz_rater_level": 1.607,
+      "wilcoxon_W_plus_rater": 35.0,
+      "wilcoxon_p_rater": 0.01729,
+      "sign_test_wins": 7,
+      "sign_test_ties": 0,
+      "sign_test_losses": 1,
+      "cluster_bootstrap_mean": 1.5825,
+      "cluster_bootstrap_lo95": 0.9375,
+      "cluster_bootstrap_hi95": 2.2025
+    },
+    "environmental_awareness": {
+      "rater_mean_deltas": {
+        "annotator_1": 3.76,
+        "GUANGYU LI": 1.4,
+        "annotator_3": 2.52,
+        "annotator_4": 1.42,
+        "annotator_5": 1.44,
+        "Mengting Jia": -0.16,
+        "annotator_7": 2.92,
+        "annotator_8": 1.58
+      },
+      "n_raters": 8,
+      "delta_mean_of_means": 1.86,
+      "delta_std_of_means": 1.1898,
+      "cohens_dz_rater_level": 1.5633,
+      "wilcoxon_W_plus_rater": 35.0,
+      "wilcoxon_p_rater": 0.01729,
+      "sign_test_wins": 7,
+      "sign_test_ties": 0,
+      "sign_test_losses": 1,
+      "cluster_bootstrap_mean": 1.86,
+      "cluster_bootstrap_lo95": 1.075,
+      "cluster_bootstrap_hi95": 2.62
+    },
+    "agent_believability": {
+      "rater_mean_deltas": {
+        "annotator_1": 3.48,
+        "GUANGYU LI": 0.88,
+        "annotator_3": 1.82,
+        "annotator_4": 1.14,
+        "annotator_5": 1.64,
+        "Mengting Jia": -0.26,
+        "annotator_7": 2.62,
+        "annotator_8": 1.42
+      },
+      "n_raters": 8,
+      "delta_mean_of_means": 1.5925,
+      "delta_std_of_means": 1.1242,
+      "cohens_dz_rater_level": 1.4166,
+      "wilcoxon_W_plus_rater": 35.0,
+      "wilcoxon_p_rater": 0.01729,
+      "sign_test_wins": 7,
+      "sign_test_ties": 0,
+      "sign_test_losses": 1,
+      "cluster_bootstrap_mean": 1.5925,
+      "cluster_bootstrap_lo95": 0.8775,
+      "cluster_bootstrap_hi95": 2.3225
+    },
+    "factual_accuracy": {
+      "rater_mean_deltas": {
+        "annotator_1": 2.42,
+        "GUANGYU LI": 1.04,
+        "annotator_3": 2.12,
+        "annotator_4": 1.1,
+        "annotator_5": 1.8,
+        "Mengting Jia": -0.48,
+        "annotator_7": 1.66,
+        "annotator_8": 1.44
+      },
+      "n_raters": 8,
+      "delta_mean_of_means": 1.3875,
+      "delta_std_of_means": 0.8897,
+      "cohens_dz_rater_level": 1.5595,
+      "wilcoxon_W_plus_rater": 35.0,
+      "wilcoxon_p_rater": 0.01729,
+      "sign_test_wins": 7,
+      "sign_test_ties": 0,
+      "sign_test_losses": 1,
+      "cluster_bootstrap_mean": 1.3875,
+      "cluster_bootstrap_lo95": 0.7575,
+      "cluster_bootstrap_hi95": 1.9
+    }
+  },
+  "method": "Each rater's deltas averaged across 50 scenarios, then Wilcoxon signed-rank on the resulting N=8 paired means. Cluster bootstrap on rater_id (5000 resamples) for non-parametric 95% CI on the mean delta. This is the conservative analysis; the original 400-cell paired Wilcoxon ignores rater-level dependence."
+}

@@ -1,0 +1,7 @@
+{
+  "num_scenarios": 50,
+  "json_path": "evaluation/results/human_eval_forms.json",
+  "html_path": "evaluation/results/human_eval_forms.html",
+  "aura_responses": 50,
+  "baseline_responses": 50
+}

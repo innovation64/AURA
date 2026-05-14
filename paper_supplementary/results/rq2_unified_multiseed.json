@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "inputs": {
+    "main": "evaluation/results/rq2_factual_accuracy_multiseed.json",
+    "extra": "evaluation/results/rq2_extra_baselines_multiseed.json"
+  },
+  "per_condition": {
+    "AURA_Full": {
+      "strict_precision_mean": 0.6583501006036218,
+      "strict_precision_std": 0.34311183578199556,
+      "lenient_FA_mean": 0.6404713333333333,
+      "hallucination_rate": 0.6666666666666666,
+      "perfect_rate": 0.28,
+      "n_cells": 150,
+      "mean_latency_s": 3.8626994864145914
+    },
+    "AURA_NoProbe": {
+      "strict_precision_mean": 0.5814797059763502,
+      "strict_precision_std": 0.3645698000679565,
+      "lenient_FA_mean": 0.6026631428571428,
+      "hallucination_rate": 0.7533333333333333,
+      "perfect_rate": 0.24,
+      "n_cells": 150,
+      "mean_latency_s": 2.2259061272939045
+    },
+    "Vanilla_LLM": {
+      "strict_precision_mean": 0.03591549295774648,
+      "strict_precision_std": 0.15091389284024892,
+      "lenient_FA_mean": 0.07033333333333333,
+      "hallucination_rate": 0.9333333333333333,
+      "perfect_rate": 0.013333333333333334,
+      "n_cells": 150,
+      "mean_latency_s": 2.2786180289586384
+    },
+    "Static_Context": {
+      "strict_precision_mean": 0.4594745484400657,
+      "strict_precision_std": 0.43294118806535103,
+      "lenient_FA_mean": 0.4503493333333333,
+      "hallucination_rate": 0.7,
+      "perfect_rate": 0.26666666666666666,
+      "n_cells": 150,
+      "mean_latency_s": 1.7693831650416056
+    },
+    "ReAct": {
+      "strict_precision_mean": 0.5781094527363184,
+      "strict_precision_std": 0.4418217106710009,
+      "lenient_FA_mean": 0.5502893333333333,
+      "hallucination_rate": 0.5133333333333333,
+      "perfect_rate": 0.38,
+      "n_cells": 150,
+      "mean_latency_s": 6.013656001091004
+    },
+    "Reflexion": {
+      "strict_precision_mean": 0.2124074074074074,
+      "strict_precision_std": 0.36141593779788755,
+      "lenient_FA_mean": 0.17236643356643355,
+      "hallucination_rate": 0.5594405594405595,
+      "perfect_rate": 0.06993006993006994,
+      "n_cells": 143,
+      "mean_latency_s": 20.637020979020978
+    },
+    "Plan_and_Solve": {
+      "strict_precision_mean": 0.7392133204633204,
+      "strict_precision_std": 0.3109328902439814,
+      "lenient_FA_mean": 0.7635402857142857,
+      "hallucination_rate": 0.5866666666666667,
+      "perfect_rate": 0.4,
+      "n_cells": 150,
+      "mean_latency_s": 5.19426
+    }
+  },
+  "paired_AURA_Full_vs": [
+    {
+      "vs": "Vanilla_LLM",
+      "n_pairs_strict": 48,
+      "delta_strict_p": 0.6088707010582011,
+      "p_strict": 0.0,
+      "delta_lenient_FA": 0.570138,
+      "p_lenient": 0.0
+    },
+    {
+      "vs": "Static_Context",
+      "n_pairs_strict": 50,
+      "delta_strict_p": 0.19324603174603175,
+      "p_strict": 0.000707413494442255,
+      "delta_lenient_FA": 0.190122,
+      "p_lenient": 0.00015840007346312746
+    },
+    {
+      "vs": "ReAct",
+      "n_pairs_strict": 49,
+      "delta_strict_p": 0.0899821833495303,
+      "p_strict": 0.05813119808010625,
+      "delta_lenient_FA": 0.09018200000000001,
+      "p_lenient": 0.03270140668046895
+    },
+    {
+      "vs": "Reflexion",
+      "n_pairs_strict": 43,
+      "delta_strict_p": 0.4327334809892949,
+      "p_strict": 1.768785118372307e-11,
+      "delta_lenient_FA": 0.472982,
+      "p_lenient": 0.0
+    },
+    {
+      "vs": "Plan_and_Solve",
+      "n_pairs_strict": 50,
+      "delta_strict_p": -0.09250793650793651,
+      "p_strict": 0.053231132928387215,
+      "delta_lenient_FA": -0.12306895238095238,
+      "p_lenient": 0.0040203080773988376
+    },
+    {
+      "vs": "AURA_NoProbe",
+      "n_pairs_strict": 50,
+      "delta_strict_p": 0.06191269841269841,
+      "p_strict": 0.027484032829198535,
+      "delta_lenient_FA": 0.03780819047619048,
+      "p_lenient": 0.05957080769438461
+    }
+  ]
+}

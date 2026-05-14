@@ -1,0 +1,164 @@
+{
+  "n_raters": 8,
+  "raters": [
+    "annotator_1",
+    "GUANGYU LI",
+    "annotator_3",
+    "annotator_4",
+    "annotator_5",
+    "Mengting Jia",
+    "annotator_7",
+    "annotator_8"
+  ],
+  "n_scenarios": 50,
+  "n_paired_per_dim": 400,
+  "by_dimension": {
+    "response_helpfulness": {
+      "aura_mean": 3.833,
+      "aura_std": 1.006,
+      "vanilla_mean": 2.25,
+      "vanilla_std": 1.096,
+      "delta_mean": 1.583,
+      "delta_std": 1.538,
+      "wilcoxon_W": 4460,
+      "wilcoxon_p": 0.0,
+      "cohens_d": 1.029,
+      "n_pairs": 400,
+      "n_nonzero": 347
+    },
+    "environmental_awareness": {
+      "aura_mean": 3.817,
+      "aura_std": 0.983,
+      "vanilla_mean": 1.958,
+      "vanilla_std": 1.126,
+      "delta_mean": 1.86,
+      "delta_std": 1.602,
+      "wilcoxon_W": 3919,
+      "wilcoxon_p": 0.0,
+      "cohens_d": 1.161,
+      "n_pairs": 400,
+      "n_nonzero": 361
+    },
+    "agent_believability": {
+      "aura_mean": 3.755,
+      "aura_std": 1.014,
+      "vanilla_mean": 2.163,
+      "vanilla_std": 1.063,
+      "delta_mean": 1.593,
+      "delta_std": 1.572,
+      "wilcoxon_W": 4250,
+      "wilcoxon_p": 0.0,
+      "cohens_d": 1.013,
+      "n_pairs": 400,
+      "n_nonzero": 334
+    },
+    "factual_accuracy": {
+      "aura_mean": 3.71,
+      "aura_std": 1.086,
+      "vanilla_mean": 2.322,
+      "vanilla_std": 1.068,
+      "delta_mean": 1.387,
+      "delta_std": 1.503,
+      "wilcoxon_W": 5340,
+      "wilcoxon_p": 0.0,
+      "cohens_d": 0.923,
+      "n_pairs": 400,
+      "n_nonzero": 332
+    }
+  },
+  "by_category": {
+    "memory": {
+      "response_helpfulness": 1.788,
+      "environmental_awareness": 2.013,
+      "agent_believability": 1.712,
+      "factual_accuracy": 1.587,
+      "avg": 1.775
+    },
+    "planning": {
+      "response_helpfulness": 1.325,
+      "environmental_awareness": 1.65,
+      "agent_believability": 1.375,
+      "factual_accuracy": 1.113,
+      "avg": 1.366
+    },
+    "social": {
+      "response_helpfulness": 1.762,
+      "environmental_awareness": 2.087,
+      "agent_believability": 1.725,
+      "factual_accuracy": 1.488,
+      "avg": 1.766
+    },
+    "spatial": {
+      "response_helpfulness": 1.15,
+      "environmental_awareness": 1.55,
+      "agent_believability": 1.337,
+      "factual_accuracy": 1.125,
+      "avg": 1.291
+    },
+    "temporal": {
+      "response_helpfulness": 1.887,
+      "environmental_awareness": 2.0,
+      "agent_believability": 1.812,
+      "factual_accuracy": 1.625,
+      "avg": 1.831
+    }
+  },
+  "by_rater": {
+    "annotator_1": {
+      "aura_wins": 200,
+      "ties": 0,
+      "aura_losses": 0,
+      "win_rate": 1.0,
+      "mean_delta": 3.18
+    },
+    "GUANGYU LI": {
+      "aura_wins": 138,
+      "ties": 41,
+      "aura_losses": 21,
+      "win_rate": 0.69,
+      "mean_delta": 1.145
+    },
+    "annotator_3": {
+      "aura_wins": 170,
+      "ties": 29,
+      "aura_losses": 1,
+      "win_rate": 0.85,
+      "mean_delta": 2.165
+    },
+    "annotator_4": {
+      "aura_wins": 163,
+      "ties": 30,
+      "aura_losses": 7,
+      "win_rate": 0.815,
+      "mean_delta": 1.265
+    },
+    "annotator_5": {
+      "aura_wins": 170,
+      "ties": 16,
+      "aura_losses": 14,
+      "win_rate": 0.85,
+      "mean_delta": 1.585
+    },
+    "Mengting Jia": {
+      "aura_wins": 48,
+      "ties": 80,
+      "aura_losses": 72,
+      "win_rate": 0.24,
+      "mean_delta": -0.3
+    },
+    "annotator_7": {
+      "aura_wins": 197,
+      "ties": 3,
+      "aura_losses": 0,
+      "win_rate": 0.985,
+      "mean_delta": 2.365
+    },
+    "annotator_8": {
+      "aura_wins": 165,
+      "ties": 27,
+      "aura_losses": 8,
+      "win_rate": 0.825,
+      "mean_delta": 1.44
+    }
+  }
+}

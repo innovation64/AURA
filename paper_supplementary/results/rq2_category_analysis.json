@@ -1,0 +1,83 @@
+{
+  "per_category_seed_level": {
+    "spatial": {
+      "AURA_Full_mean": 0.4569,
+      "AURA_NoProbe_mean": 0.4532,
+      "delta": 0.0037,
+      "t": 0.053,
+      "p_two_sided": 0.96269
+    },
+    "social": {
+      "AURA_Full_mean": 0.459,
+      "AURA_NoProbe_mean": 0.322,
+      "delta": 0.137,
+      "t": 10.125,
+      "p_two_sided": 0.00961
+    },
+    "temporal": {
+      "AURA_Full_mean": 0.8455,
+      "AURA_NoProbe_mean": 0.8128,
+      "delta": 0.0327,
+      "t": 0.796,
+      "p_two_sided": 0.50972
+    },
+    "memory": {
+      "AURA_Full_mean": 0.7073,
+      "AURA_NoProbe_mean": 0.6844,
+      "delta": 0.0229,
+      "t": 0.412,
+      "p_two_sided": 0.72019
+    },
+    "planning": {
+      "AURA_Full_mean": 0.7337,
+      "AURA_NoProbe_mean": 0.7409,
+      "delta": -0.0072,
+      "t": -0.148,
+      "p_two_sided": 0.89563
+    }
+  },
+  "per_category_query_level": {
+    "spatial": {
+      "n": 30,
+      "mean_delta": 0.0037,
+      "std": 0.3027,
+      "t": 0.067,
+      "p_two_sided": 0.94722
+    },
+    "social": {
+      "n": 30,
+      "mean_delta": 0.137,
+      "std": 0.2588,
+      "t": 2.9,
+      "p_two_sided": 0.00705
+    },
+    "temporal": {
+      "n": 30,
+      "mean_delta": 0.0327,
+      "std": 0.1404,
+      "t": 1.274,
+      "p_two_sided": 0.21272
+    },
+    "memory": {
+      "n": 30,
+      "mean_delta": 0.0229,
+      "std": 0.299,
+      "t": 0.42,
+      "p_two_sided": 0.67764
+    },
+    "planning": {
+      "n": 30,
+      "mean_delta": -0.0072,
+      "std": 0.2273,
+      "t": -0.174,
+      "p_two_sided": 0.86285
+    },
+    "overall": {
+      "n": 150,
+      "mean_delta": 0.0378,
+      "std": 0.2546,
+      "t": 1.819,
+      "p_two_sided": 0.07096
+    }
+  }
+}

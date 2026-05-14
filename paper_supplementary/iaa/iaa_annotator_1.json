@@ -1,0 +1,32 @@
+{
+  "annotator": "annotator_1",
+  "n_questions": 25,
+  "ratings": {
+    "101": "literal",
+    "102": "availability",
+    "103": "literal",
+    "104": "availability",
+    "105": "literal",
+    "106": "mood",
+    "107": "availability",
+    "108": "second_order",
+    "109": "mood",
+    "110": "mood",
+    "111": "appropriateness",
+    "112": "latent_goal",
+    "113": "appropriateness",
+    "114": "appropriateness",
+    "115": "appropriateness",
+    "116": "availability",
+    "117": "literal",
+    "118": "latent_goal",
+    "119": "literal",
+    "120": "latent_goal",
+    "121": "availability",
+    "122": "availability",
+    "123": "second_order",
+    "124": "mood",
+    "125": "mood"
+  },
+  "free_text": {}
+}

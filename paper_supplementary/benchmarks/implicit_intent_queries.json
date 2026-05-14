@@ -1,0 +1,183 @@
+{
+  "description": "Implicit-intent queries for the Day 8-9 ToM experiment. Each query has a literal answerable form (visible from the scene snapshot alone) and an implicit answer that requires probing an agent's private_state (availability, unspoken_goal, secrets, emotional_state). A literal-only agent should answer the surface query; a ToM-aware agent should also surface the implicit need.",
+  "version": "1.0-2026-04-17",
+  "category": "implicit_intent",
+  "subcategories": ["availability", "mood", "appropriateness", "latent_goal", "second_order"],
+  "queries": [
+    {
+      "id": 101, "subcategory": "availability", "agent_subject": "Lin Wei",
+      "query": "Where's Lin Wei?",
+      "literal_requires": ["agent_location"],
+      "implicit_requires": ["availability", "emotional_state"],
+      "implicit_need": "Is Lin Wei available to chat right now?"
+    },
+    {
+      "id": 102, "subcategory": "availability", "agent_subject": "Zhang Hao",
+      "query": "What is Zhang Hao doing?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["availability"],
+      "implicit_need": "Can I interrupt Zhang Hao without disturbing him?"
+    },
+    {
+      "id": 103, "subcategory": "availability", "agent_subject": "Chen Mei",
+      "query": "Is Chen Mei at the community garden?",
+      "literal_requires": ["agent_location"],
+      "implicit_requires": ["availability"],
+      "implicit_need": "Is it a good moment to catch Chen Mei there?"
+    },
+    {
+      "id": 104, "subcategory": "availability", "agent_subject": "Wang Jun",
+      "query": "Is Wang Jun still at the library?",
+      "literal_requires": ["agent_location"],
+      "implicit_requires": ["availability"],
+      "implicit_need": "Is he still engrossed in work or free to talk?"
+    },
+    {
+      "id": 105, "subcategory": "availability", "agent_subject": null,
+      "query": "Who's at the Sunrise Cafe right now?",
+      "literal_requires": ["nearby_agents"],
+      "implicit_requires": ["availability"],
+      "implicit_need": "Is there someone at the cafe I could strike up a conversation with?"
+    },
+    {
+      "id": 106, "subcategory": "mood", "agent_subject": "Lin Wei",
+      "query": "How's Lin Wei today?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["emotional_state", "mood"],
+      "implicit_need": "Is she in a receptive mood?"
+    },
+    {
+      "id": 107, "subcategory": "mood", "agent_subject": "Zhang Hao",
+      "query": "Does Zhang Hao look busy?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["availability", "emotional_state"],
+      "implicit_need": "Should I avoid bothering him?"
+    },
+    {
+      "id": 108, "subcategory": "mood", "agent_subject": null,
+      "query": "What's the atmosphere at the cafe right now?",
+      "literal_requires": ["location_state", "nearby_agents"],
+      "implicit_requires": ["emotional_state"],
+      "implicit_need": "Is it a welcoming place to walk into right now?"
+    },
+    {
+      "id": 109, "subcategory": "mood", "agent_subject": "Chen Mei",
+      "query": "Is Chen Mei having a good day?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["emotional_state"],
+      "implicit_need": "Is it OK to ask her for help?"
+    },
+    {
+      "id": 110, "subcategory": "mood", "agent_subject": null,
+      "query": "Does anyone seem stressed today?",
+      "literal_requires": ["all_agents_action"],
+      "implicit_requires": ["emotional_state", "availability"],
+      "implicit_need": "Is there someone who might appreciate offered help?"
+    },
+    {
+      "id": 111, "subcategory": "appropriateness", "agent_subject": "Lin Wei",
+      "query": "Is now a good time to invite Lin Wei for coffee?",
+      "literal_requires": ["agent_action", "current_time"],
+      "implicit_requires": ["availability", "emotional_state"],
+      "implicit_need": "Combine her schedule, mood, and current engagement to judge."
+    },
+    {
+      "id": 112, "subcategory": "appropriateness", "agent_subject": "Zhang Hao",
+      "query": "Should I stop by Zhang Hao's place today?",
+      "literal_requires": ["agent_location", "agent_plan"],
+      "implicit_requires": ["availability", "unspoken_goal"],
+      "implicit_need": "Is he expecting to be home and not in the middle of something private?"
+    },
+    {
+      "id": 113, "subcategory": "appropriateness", "agent_subject": null,
+      "query": "Is now a good moment to ask the group at the cafe a question?",
+      "literal_requires": ["nearby_agents", "location_state"],
+      "implicit_requires": ["availability", "emotional_state"],
+      "implicit_need": "Are they in a conversation that shouldn't be interrupted?"
+    },
+    {
+      "id": 114, "subcategory": "appropriateness", "agent_subject": "Wang Jun",
+      "query": "Can I ask Wang Jun for a favor right now?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["availability", "emotional_state"],
+      "implicit_need": "Does he have the bandwidth for a request right now?"
+    },
+    {
+      "id": 115, "subcategory": "appropriateness", "agent_subject": "Chen Mei",
+      "query": "Should I bring up the gardening plan with Chen Mei today?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["availability", "emotional_state", "secrets"],
+      "implicit_need": "Is it a safe topic that doesn't conflict with anything private she's dealing with?"
+    },
+    {
+      "id": 116, "subcategory": "latent_goal", "agent_subject": "Lin Wei",
+      "query": "What's Lin Wei up to these days?",
+      "literal_requires": ["agent_action", "agent_plan"],
+      "implicit_requires": ["unspoken_goal"],
+      "implicit_need": "What is she privately trying to accomplish?"
+    },
+    {
+      "id": 117, "subcategory": "latent_goal", "agent_subject": "Zhang Hao",
+      "query": "Why is Zhang Hao heading to the library?",
+      "literal_requires": ["agent_location", "agent_plan"],
+      "implicit_requires": ["unspoken_goal"],
+      "implicit_need": "What personal motive is driving him there beyond the schedule?"
+    },
+    {
+      "id": 118, "subcategory": "latent_goal", "agent_subject": "Chen Mei",
+      "query": "What's Chen Mei planning for this afternoon?",
+      "literal_requires": ["agent_plan"],
+      "implicit_requires": ["unspoken_goal", "availability"],
+      "implicit_need": "What is she hoping to get done that the schedule doesn't fully capture?"
+    },
+    {
+      "id": 119, "subcategory": "latent_goal", "agent_subject": null,
+      "query": "Is anyone avoiding anyone today?",
+      "literal_requires": ["all_agents_location", "relationships"],
+      "implicit_requires": ["secrets", "emotional_state"],
+      "implicit_need": "Is there interpersonal tension we should be aware of before intervening?"
+    },
+    {
+      "id": 120, "subcategory": "latent_goal", "agent_subject": "Wang Jun",
+      "query": "What's on Wang Jun's mind lately?",
+      "literal_requires": ["agent_action", "agent_history"],
+      "implicit_requires": ["unspoken_goal", "emotional_state"],
+      "implicit_need": "What is occupying his internal attention that a purely behavioral read would miss?"
+    },
+    {
+      "id": 121, "subcategory": "second_order", "agent_subject": "Lin Wei", "target": "Zhang Hao",
+      "query": "Does Lin Wei think Zhang Hao is free to be interrupted?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["beliefs_about_others.Zhang Hao.availability"],
+      "implicit_need": "What is Lin Wei's model of Zhang Hao's availability — not the ground truth, but her belief about him?"
+    },
+    {
+      "id": 122, "subcategory": "second_order", "agent_subject": "Zhang Hao", "target": "Chen Mei",
+      "query": "From Zhang Hao's perspective, is Chen Mei in a mood to chat?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["beliefs_about_others.Chen Mei.emotional_state"],
+      "implicit_need": "What does Zhang Hao believe about Chen Mei's emotional state right now?"
+    },
+    {
+      "id": 123, "subcategory": "second_order", "agent_subject": "Chen Mei", "target": "Lin Wei",
+      "query": "Does Chen Mei assume Lin Wei is too busy to chat right now?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["beliefs_about_others.Lin Wei.availability"],
+      "implicit_need": "What is Chen Mei's current belief about Lin Wei's availability?"
+    },
+    {
+      "id": 124, "subcategory": "second_order", "agent_subject": "Wang Jun", "target": "Lin Wei",
+      "query": "How does Wang Jun think Lin Wei is feeling today?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["beliefs_about_others.Lin Wei.emotional_state"],
+      "implicit_need": "What is Wang Jun's model of Lin Wei's emotional state?"
+    },
+    {
+      "id": 125, "subcategory": "second_order", "agent_subject": "Lin Wei", "target": "Chen Mei",
+      "query": "Does Lin Wei believe Chen Mei wants to be alone right now?",
+      "literal_requires": ["agent_action"],
+      "implicit_requires": ["beliefs_about_others.Chen Mei.availability"],
+      "implicit_need": "What is Lin Wei's belief about Chen Mei's desire for solitude — the belief, not the ground truth?"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "description": "Environment Grounding Evaluation for AURA Town. Each test template generates verifiable questions from simulation state. Ground truth is extracted from the actual simulation state at query time.",
+  "version": "1.0",
+  "test_templates": [
+    {
+      "id": "LOC-01",
+      "category": "location_awareness",
+      "template": "Where is {agent} right now?",
+      "ground_truth_field": "agents.{agent}.location",
+      "eval_type": "exact_match",
+      "description": "Tests whether agent correctly reports its own/another agent's current location"
+    },
+    {
+      "id": "LOC-02",
+      "category": "location_awareness",
+      "template": "What are you currently doing?",
+      "ground_truth_field": "agents.{self}.action",
+      "eval_type": "semantic_match",
+      "description": "Tests whether agent knows its own current action"
+    },
+    {
+      "id": "LOC-03",
+      "category": "location_awareness",
+      "template": "Who else is at {location} right now?",
+      "ground_truth_field": "agents_at_location.{location}",
+      "eval_type": "set_match",
+      "description": "Tests whether agent knows who is at a specific location"
+    },
+    {
+      "id": "LOC-04",
+      "category": "location_awareness",
+      "template": "Is anyone at the {location}?",
+      "ground_truth_field": "agents_at_location.{location}",
+      "eval_type": "boolean_presence",
+      "description": "Tests binary awareness of location occupancy"
+    },
+    {
+      "id": "LOC-05",
+      "category": "location_awareness",
+      "template": "How many people are at {location}?",
+      "ground_truth_field": "count_at_location.{location}",
+      "eval_type": "numeric_match",
+      "description": "Tests numerical awareness of occupancy"
+    },
+    {
+      "id": "TIME-01",
+      "category": "temporal_awareness",
+      "template": "What time is it?",
+      "ground_truth_field": "time.display",
+      "eval_type": "time_match",
+      "description": "Tests basic time awareness"
+    },
+    {
+      "id": "TIME-02",
+      "category": "temporal_awareness",
+      "template": "Is it morning, afternoon, or evening?",
+      "ground_truth_field": "time.period",
+      "eval_type": "exact_match",
+      "description": "Tests coarse time awareness"
+    },
+    {
+      "id": "TIME-03",
+      "category": "temporal_awareness",
+      "template": "What day of the simulation is it?",
+      "ground_truth_field": "time.day",
+      "eval_type": "numeric_match",
+      "description": "Tests day awareness"
+    },
+    {
+      "id": "TIME-04",
+      "category": "temporal_awareness",
+      "template": "What should {agent} be doing at this time according to their schedule?",
+      "ground_truth_field": "agents.{agent}.scheduled_action",
+      "eval_type": "semantic_match",
+      "description": "Tests whether agent understands expected schedules"
+    },
+    {
+      "id": "ACT-01",
+      "category": "action_grounding",
+      "template": "What is {agent} doing right now?",
+      "ground_truth_field": "agents.{agent}.action",
+      "eval_type": "semantic_match",
+      "description": "Tests whether agent can report another agent's current action"
+    },
+    {
+      "id": "ACT-02",
+      "category": "action_grounding",
+      "template": "Is {agent} at home or out?",
+      "ground_truth_field": "agents.{agent}.at_home",
+      "eval_type": "boolean_match",
+      "description": "Tests binary home/out awareness"
+    },
+    {
+      "id": "ACT-03",
+      "category": "action_grounding",
+      "template": "What is everyone in town doing right now?",
+      "ground_truth_field": "all_agents_actions",
+      "eval_type": "multi_agent_match",
+      "description": "Tests global action awareness - requires probe"
+    },
+    {
+      "id": "SOC-01",
+      "category": "social_awareness",
+      "template": "Who is closest to {agent} right now?",
+      "ground_truth_field": "nearest_agent.{agent}",
+      "eval_type": "exact_match",
+      "description": "Tests spatial-social awareness"
+    },
+    {
+      "id": "SOC-02",
+      "category": "social_awareness",
+      "template": "Has {agent} talked to anyone today?",
+      "ground_truth_field": "conversations_today.{agent}",
+      "eval_type": "boolean_presence",
+      "description": "Tests event memory about conversations"
+    },
+    {
+      "id": "SOC-03",
+      "category": "social_awareness",
+      "template": "Who did {agent1} talk to most recently?",
+      "ground_truth_field": "last_conversation_partner.{agent1}",
+      "eval_type": "exact_match",
+      "description": "Tests recent conversation memory"
+    },
+    {
+      "id": "EVT-01",
+      "category": "event_tracking",
+      "template": "What happened in the last hour?",
+      "ground_truth_field": "recent_events_1h",
+      "eval_type": "event_coverage",
+      "description": "Tests recent event awareness"
+    },
+    {
+      "id": "EVT-02",
+      "category": "event_tracking",
+      "template": "Did anyone move to a new location recently?",
+      "ground_truth_field": "recent_movements",
+      "eval_type": "boolean_presence",
+      "description": "Tests movement event tracking"
+    },
+    {
+      "id": "EVT-03",
+      "category": "event_tracking",
+      "template": "What was the last thing that happened at {location}?",
+      "ground_truth_field": "last_event_at.{location}",
+      "eval_type": "semantic_match",
+      "description": "Tests location-specific event tracking"
+    },
+    {
+      "id": "SPA-01",
+      "category": "spatial_reasoning",
+      "template": "Which is closer to {location1}: {location2} or {location3}?",
+      "ground_truth_field": "closer_location",
+      "eval_type": "exact_match",
+      "description": "Tests distance comparison"
+    },
+    {
+      "id": "SPA-02",
+      "category": "spatial_reasoning",
+      "template": "If I want to find {agent}, where should I go?",
+      "ground_truth_field": "agents.{agent}.location",
+      "eval_type": "exact_match",
+      "description": "Tests ability to locate other agents"
+    },
+    {
+      "id": "CHG-01",
+      "category": "change_detection",
+      "template": "Has {agent} changed location since the last time I checked?",
+      "ground_truth_field": "agent_moved.{agent}",
+      "eval_type": "boolean_match",
+      "description": "Tests change detection between ticks"
+    },
+    {
+      "id": "CHG-02",
+      "category": "change_detection",
+      "template": "Who has moved in the last 30 minutes?",
+      "ground_truth_field": "recently_moved_agents",
+      "eval_type": "set_match",
+      "description": "Tests multi-agent change detection"
+    }
+  ],
+  "evaluation_protocol": {
+    "description": "For each test, run simulation to tick T, extract ground truth from state, query agent, compare response to ground truth.",
+    "metrics": {
+      "accuracy": "Fraction of questions answered correctly",
+      "grounding_score": "Weighted average across all categories",
+      "probe_delta": "Accuracy improvement from probe_enabled=True vs False",
+      "per_category": "Accuracy broken down by category"
+    },
+    "conditions": [
+      {"name": "AURA-Full", "probe_enabled": true, "probe_max_steps": 2},
+      {"name": "AURA-NoProbe", "probe_enabled": false, "probe_max_steps": 0},
+      {"name": "AURA-MinProbe", "probe_enabled": true, "probe_max_steps": 1},
+      {"name": "AURA-MaxProbe", "probe_enabled": true, "probe_max_steps": 5}
+    ],
+    "num_ticks_to_sample": 20,
+    "queries_per_tick": 10,
+    "total_evaluations": "20 ticks × 10 queries × 4 conditions = 800 evaluations"
+  }
+}

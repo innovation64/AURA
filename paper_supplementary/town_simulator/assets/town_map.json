@@ -1,0 +1,337 @@
+{
+  "width": 60,
+  "height": 60,
+  "locations": [
+    {
+      "name": "Lin Wei's Home",
+      "type": "home",
+      "x": 6, "y": 4,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfe0", "capacity": 4,
+      "owner": "Lin Wei",
+      "description": "A cozy apartment above the cafe, decorated with warm lights and the aroma of fresh coffee.",
+      "interior_objects": [
+        {"name": "Kitchen Counter", "description": "A tidy counter with spice racks and a wok hanging on the wall"},
+        {"name": "Reading Nook", "description": "A cushioned window seat with a small lamp and stack of cookbooks"},
+        {"name": "Herb Shelf", "description": "A wooden shelf with jars of dried herbs and tea leaves"}
+      ],
+      "items": ["cookbooks", "tea set", "photo frames", "apron", "spice jars"],
+      "atmosphere": "Warm golden light, faint scent of cinnamon, soft humming from the kitchen"
+    },
+    {
+      "name": "Wang Jun's Home",
+      "type": "home",
+      "x": 22, "y": 4,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfe0", "capacity": 4,
+      "owner": "Wang Jun",
+      "description": "A distinguished home with walls lined with philosophy books and framed calligraphy.",
+      "interior_objects": [
+        {"name": "Study Desk", "description": "A heavy mahogany desk covered in open books and ink brushes"},
+        {"name": "Calligraphy Wall", "description": "Framed works of classical calligraphy from various dynasties"},
+        {"name": "Tea Corner", "description": "A low table with a clay teapot and delicate cups for morning tea"}
+      ],
+      "items": ["philosophy books", "ink brushes", "reading glasses", "chess set", "classical scrolls"],
+      "atmosphere": "Quiet dignity, the smell of old paper and sandalwood incense"
+    },
+    {
+      "name": "Zhang Hao's Home",
+      "type": "home",
+      "x": 42, "y": 4,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfe0", "capacity": 4,
+      "owner": "Zhang Hao",
+      "description": "A quiet studio filled with bookshelves, manuscripts, and a well-worn writing desk by the window.",
+      "interior_objects": [
+        {"name": "Writing Desk", "description": "Cluttered with manuscript pages, coffee-stained and full of crossed-out lines"},
+        {"name": "Bookshelf Wall", "description": "Floor-to-ceiling shelves packed with novels, poetry, and reference books"},
+        {"name": "Inspiration Board", "description": "A corkboard with photos, newspaper clippings, and sticky notes of story ideas"}
+      ],
+      "items": ["manuscripts", "typewriter", "coffee mugs", "notebooks", "fountain pen"],
+      "atmosphere": "Creative clutter, the quiet scratch of pen on paper, a forgotten cup of cold coffee"
+    },
+    {
+      "name": "Tea House",
+      "type": "teahouse",
+      "x": 14, "y": 10,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udf75", "capacity": 8,
+      "owner": null,
+      "description": "A serene tea house with tatami mats, calligraphy scrolls on the walls, and a selection of fine teas.",
+      "interior_objects": [
+        {"name": "Tea Bar", "description": "A long wooden bar with dozens of tea canisters and brewing equipment"},
+        {"name": "Tatami Room", "description": "A private room with floor cushions and a low table for tea ceremonies"},
+        {"name": "Scroll Display", "description": "Rotating display of calligraphy and ink paintings by local artists"},
+        {"name": "Water Feature", "description": "A small bamboo fountain that provides soothing sounds"}
+      ],
+      "items": ["green tea", "oolong tea", "jasmine tea", "ceramic teapots", "bamboo mats"],
+      "atmosphere": "Tranquil, the gentle sound of flowing water and the fragrance of steeping tea"
+    },
+    {
+      "name": "Temple",
+      "type": "temple",
+      "x": 52, "y": 6,
+      "width": 3, "height": 3,
+      "emoji": "\u26e9\ufe0f", "capacity": 12,
+      "owner": null,
+      "description": "An ancient temple with incense smoke, prayer bells, and a peaceful courtyard garden.",
+      "interior_objects": [
+        {"name": "Main Altar", "description": "A gilded altar with offerings of fruit and incense"},
+        {"name": "Prayer Bell", "description": "A large bronze bell that resonates throughout the courtyard"},
+        {"name": "Meditation Garden", "description": "A rock garden with raked sand and carefully placed stones"},
+        {"name": "Incense Hall", "description": "Shelves of incense sticks and candles for visitors"}
+      ],
+      "items": ["incense", "prayer beads", "candles", "offering fruits", "scripture texts"],
+      "atmosphere": "Sacred silence, curling incense smoke, the occasional deep resonance of the prayer bell"
+    },
+    {
+      "name": "Sunrise Cafe",
+      "type": "cafe",
+      "x": 6, "y": 18,
+      "width": 3, "height": 3,
+      "emoji": "\u2615", "capacity": 8,
+      "owner": "Lin Wei",
+      "description": "A warm neighborhood cafe with wooden tables, the smell of fresh pastries, and soft jazz music.",
+      "interior_objects": [
+        {"name": "Counter", "description": "Wooden counter with espresso machine and pastry display"},
+        {"name": "Corner Booth", "description": "Cozy booth by the window \u2014 Zhang Hao's favorite writing spot"},
+        {"name": "Bulletin Board", "description": "Community notices, lost & found, and event flyers"},
+        {"name": "Bookshelf", "description": "Small shelf of worn paperbacks for customers to borrow"}
+      ],
+      "items": ["coffee beans", "pastries", "newspapers", "ceramic cups", "jazz vinyl records"],
+      "atmosphere": "Warm wood tones, soft jazz, the aroma of fresh coffee and cinnamon"
+    },
+    {
+      "name": "Golden Wheat Bakery",
+      "type": "bakery",
+      "x": 14, "y": 18,
+      "width": 3, "height": 2,
+      "emoji": "\ud83c\udf5e", "capacity": 6,
+      "owner": null,
+      "description": "A cozy bakery that fills the street with the aroma of freshly baked bread and pastries every morning.",
+      "interior_objects": [
+        {"name": "Display Case", "description": "Glass case showing rows of golden croissants, buns, and cakes"},
+        {"name": "Stone Oven", "description": "A traditional stone oven visible through the open kitchen"},
+        {"name": "Flour Sacks", "description": "Stacked burlap sacks of premium wheat flour"}
+      ],
+      "items": ["bread loaves", "croissants", "red bean buns", "mooncakes", "flour"],
+      "atmosphere": "Warm and yeasty, the crackle of oven heat and the golden glow of fresh bread"
+    },
+    {
+      "name": "Town Hall",
+      "type": "townhall",
+      "x": 24, "y": 16,
+      "width": 5, "height": 4,
+      "emoji": "\ud83c\udfdb\ufe0f", "capacity": 20,
+      "owner": null,
+      "description": "The administrative center of AURA Town, with a grand entrance, meeting rooms, and a community bulletin board.",
+      "interior_objects": [
+        {"name": "Grand Lobby", "description": "Marble floors and a large town map on the wall"},
+        {"name": "Meeting Chamber", "description": "A round table with chairs for town council meetings"},
+        {"name": "Community Board", "description": "Official notices, upcoming events, and town proposals"},
+        {"name": "Records Room", "description": "Filing cabinets with town history and resident records"}
+      ],
+      "items": ["town records", "meeting minutes", "event calendars", "suggestion box", "town flag"],
+      "atmosphere": "Formal yet welcoming, echoing footsteps on marble, the hum of civic activity"
+    },
+    {
+      "name": "Town Library",
+      "type": "library",
+      "x": 38, "y": 18,
+      "width": 4, "height": 3,
+      "emoji": "\ud83d\udcda", "capacity": 10,
+      "owner": null,
+      "description": "A quiet two-story library with tall windows, reading nooks, and an extensive collection of books.",
+      "interior_objects": [
+        {"name": "Main Stacks", "description": "Tall wooden bookshelves organized by subject, from floor to ceiling"},
+        {"name": "Reading Alcove", "description": "Window seats with cushions and reading lamps"},
+        {"name": "Study Tables", "description": "Long oak tables with green-shaded desk lamps"},
+        {"name": "Card Catalog", "description": "A vintage wooden card catalog that still gets used alongside the computer"}
+      ],
+      "items": ["novels", "encyclopedias", "poetry collections", "local history books", "newspapers"],
+      "atmosphere": "Hushed reverence, the rustle of turning pages, warm sunlight through tall windows"
+    },
+    {
+      "name": "Wellness Pharmacy",
+      "type": "pharmacy",
+      "x": 48, "y": 18,
+      "width": 3, "height": 2,
+      "emoji": "\ud83d\udc8a", "capacity": 4,
+      "owner": null,
+      "description": "A small pharmacy offering medicine, health supplements, and friendly advice from the pharmacist.",
+      "interior_objects": [
+        {"name": "Medicine Counter", "description": "A counter with jars of traditional remedies and modern medicine"},
+        {"name": "Herb Cabinet", "description": "Dozens of small drawers labeled with Chinese characters for dried herbs"},
+        {"name": "Health Chart", "description": "A wall chart showing seasonal wellness tips"}
+      ],
+      "items": ["herbal remedies", "bandages", "vitamins", "tea blends", "essential oils"],
+      "atmosphere": "Clean and medicinal, the earthy scent of dried herbs mixed with antiseptic"
+    },
+    {
+      "name": "Town Park",
+      "type": "park",
+      "x": 20, "y": 22,
+      "width": 12, "height": 8,
+      "emoji": "\ud83c\udf33", "capacity": 30,
+      "owner": null,
+      "description": "A lovely green park with a pond, benches, walking paths, a gazebo for gatherings, and old oak trees.",
+      "interior_objects": [
+        {"name": "Koi Pond", "description": "A serene pond with colorful koi fish and lily pads"},
+        {"name": "Gazebo", "description": "A wooden gazebo used for community gatherings and music"},
+        {"name": "Old Oak Tree", "description": "A centuries-old oak with a bench carved around its trunk"},
+        {"name": "Walking Path", "description": "A winding stone path through flower beds and under tree canopies"}
+      ],
+      "items": ["park benches", "bird feeders", "lanterns", "flower beds", "stone bridge"],
+      "atmosphere": "Fresh air, birdsong, the gentle splash of koi and rustling of ancient oak leaves"
+    },
+    {
+      "name": "Chen's General Store",
+      "type": "shop",
+      "x": 6, "y": 34,
+      "width": 3, "height": 2,
+      "emoji": "\ud83c\udfea", "capacity": 6,
+      "owner": "Chen Mei",
+      "description": "A well-stocked general store selling groceries, household items, and locally made crafts.",
+      "interior_objects": [
+        {"name": "Main Shelves", "description": "Neatly organized shelves with groceries, snacks, and daily essentials"},
+        {"name": "Craft Corner", "description": "A display of handmade crafts, pottery, and woven goods from locals"},
+        {"name": "Checkout Counter", "description": "A wooden counter where Chen Mei chats with every customer"}
+      ],
+      "items": ["groceries", "notebooks", "candles", "soap", "local honey", "handmade pottery"],
+      "atmosphere": "Friendly and bustling, the clink of jars and Chen Mei's welcoming voice"
+    },
+    {
+      "name": "Art Gallery",
+      "type": "gallery",
+      "x": 14, "y": 34,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfa8", "capacity": 8,
+      "owner": null,
+      "description": "A contemporary art gallery featuring rotating exhibitions from local and visiting artists.",
+      "interior_objects": [
+        {"name": "Main Exhibition Wall", "description": "White walls with spotlit paintings and mixed-media pieces"},
+        {"name": "Sculpture Corner", "description": "A rotating display of sculptures and installations"},
+        {"name": "Guest Book", "description": "A book where visitors leave comments and sketches"}
+      ],
+      "items": ["paintings", "sculptures", "art catalogs", "postcards", "artist biographies"],
+      "atmosphere": "Contemplative silence, crisp white walls, the faint smell of oil paint and fresh canvas"
+    },
+    {
+      "name": "Town Square",
+      "type": "square",
+      "x": 22, "y": 34,
+      "width": 7, "height": 5,
+      "emoji": "\u26f2", "capacity": 40,
+      "owner": null,
+      "description": "The heart of the town with a grand fountain, bulletin board, market stalls, and space for community events.",
+      "interior_objects": [
+        {"name": "Grand Fountain", "description": "A three-tiered stone fountain that is the town's landmark"},
+        {"name": "Market Stalls", "description": "Colorful stalls selling produce, snacks, and handmade goods"},
+        {"name": "Bulletin Board", "description": "The town's main notice board for events, jobs, and announcements"},
+        {"name": "Street Musician's Corner", "description": "A cobblestone area where musicians perform in the evenings"}
+      ],
+      "items": ["fresh produce", "street food", "flowers", "handmade jewelry", "event flyers"],
+      "atmosphere": "Lively chatter, splashing fountain water, the smell of street food and fresh flowers"
+    },
+    {
+      "name": "AURA Academy",
+      "type": "school",
+      "x": 36, "y": 34,
+      "width": 4, "height": 3,
+      "emoji": "\ud83c\udfeb", "capacity": 15,
+      "owner": null,
+      "description": "A small academy offering classes in science, literature, philosophy, and the arts.",
+      "interior_objects": [
+        {"name": "Lecture Hall", "description": "Tiered seating facing a blackboard and projector screen"},
+        {"name": "Science Lab", "description": "Benches with microscopes, beakers, and plant specimens"},
+        {"name": "Art Studio", "description": "Easels, paint supplies, and student works on display"},
+        {"name": "Courtyard", "description": "An open courtyard with benches where students gather between classes"}
+      ],
+      "items": ["textbooks", "lab equipment", "paint supplies", "musical instruments", "globes"],
+      "atmosphere": "Youthful energy, chalk dust in the air, the murmur of students between classes"
+    },
+    {
+      "name": "Community Garden",
+      "type": "park",
+      "x": 46, "y": 34,
+      "width": 5, "height": 3,
+      "emoji": "\ud83c\udf3b", "capacity": 10,
+      "owner": null,
+      "description": "A shared garden where residents grow vegetables, herbs, and flowers together.",
+      "interior_objects": [
+        {"name": "Vegetable Plots", "description": "Raised beds with tomatoes, peppers, lettuce, and seasonal greens"},
+        {"name": "Herb Spiral", "description": "A spiral-shaped herb garden with basil, mint, rosemary, and more"},
+        {"name": "Tool Shed", "description": "A small wooden shed with gardening tools and watering cans"},
+        {"name": "Compost Bin", "description": "Community compost for organic waste recycling"}
+      ],
+      "items": ["gardening tools", "seed packets", "watering cans", "fresh herbs", "harvest baskets"],
+      "atmosphere": "Earthy and alive, the buzz of bees, the smell of fresh soil and blooming flowers"
+    },
+    {
+      "name": "Chen Mei's Home",
+      "type": "home",
+      "x": 6, "y": 44,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfe0", "capacity": 4,
+      "owner": "Chen Mei",
+      "description": "A tidy home behind the shop, with a small garden where herbs grow.",
+      "interior_objects": [
+        {"name": "Herb Garden", "description": "A small backyard patch with mint, basil, and medicinal herbs"},
+        {"name": "Kitchen Table", "description": "A sturdy table where she sorts inventory and shares meals with friends"},
+        {"name": "Account Ledger", "description": "A handwritten ledger tracking shop sales and community tabs"}
+      ],
+      "items": ["herb clippings", "recipe cards", "account books", "knitting supplies", "photo album"],
+      "atmosphere": "Homey and organized, the scent of fresh herbs drifting in from the garden"
+    },
+    {
+      "name": "Flower Garden",
+      "type": "park",
+      "x": 22, "y": 44,
+      "width": 5, "height": 4,
+      "emoji": "\ud83c\udf3a", "capacity": 12,
+      "owner": null,
+      "description": "A beautiful flower garden with colorful blooms, stone paths, and a small gazebo.",
+      "interior_objects": [
+        {"name": "Rose Archway", "description": "A wooden archway covered in climbing roses at the entrance"},
+        {"name": "Stone Path", "description": "A winding path through beds of chrysanthemums, peonies, and orchids"},
+        {"name": "Garden Gazebo", "description": "A small white gazebo perfect for reading or quiet conversation"},
+        {"name": "Butterfly Garden", "description": "A section planted with flowers that attract butterflies"}
+      ],
+      "items": ["flower bouquets", "garden stones", "wind chimes", "butterfly net", "garden journal"],
+      "atmosphere": "Fragrant and colorful, butterflies dancing among the blooms, gentle wind chimes"
+    },
+    {
+      "name": "Liu Yang's Home",
+      "type": "home",
+      "x": 42, "y": 44,
+      "width": 3, "height": 3,
+      "emoji": "\ud83c\udfe0", "capacity": 4,
+      "owner": "Liu Yang",
+      "description": "A small student apartment with posters of nature documentaries and a telescope by the window.",
+      "interior_objects": [
+        {"name": "Study Desk", "description": "A desk covered in textbooks, sticky notes, and a laptop"},
+        {"name": "Telescope", "description": "A telescope pointed at the night sky through the window"},
+        {"name": "Nature Posters", "description": "Walls covered with posters of forests, oceans, and endangered species"}
+      ],
+      "items": ["textbooks", "telescope", "plant specimens", "hiking boots", "field notebook"],
+      "atmosphere": "Youthful curiosity, sticky notes everywhere, starlight through the telescope lens"
+    },
+    {
+      "name": "Riverside Walk",
+      "type": "park",
+      "x": 54, "y": 14,
+      "width": 3, "height": 36,
+      "emoji": "\ud83c\udf0a", "capacity": 15,
+      "owner": null,
+      "description": "A scenic walking path along the river with willow trees, wooden bridges, and resting spots.",
+      "interior_objects": [
+        {"name": "Willow Grove", "description": "Weeping willows whose branches trail in the water"},
+        {"name": "Wooden Bridge", "description": "A charming arched bridge over a narrow part of the river"},
+        {"name": "Fishing Spot", "description": "A quiet bank with flat rocks perfect for sitting and fishing"},
+        {"name": "Sunset Bench", "description": "A bench facing west with the best sunset view in town"}
+      ],
+      "items": ["fishing rods", "skipping stones", "wildflowers", "binoculars", "picnic blankets"],
+      "atmosphere": "Peaceful flowing water, rustling willows, the golden light of late afternoon"
+    }
+  ]
+}

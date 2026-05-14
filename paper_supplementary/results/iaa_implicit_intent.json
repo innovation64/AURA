@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "n_queries": 25,
+  "annotators": [
+    "R1",
+    "R2"
+  ],
+  "missing": {},
+  "pairwise_kappa": {
+    "R1 ↔ R2": {
+      "kappa": 0.1493,
+      "agree": 7,
+      "n": 25,
+      "p_o": 0.28,
+      "p_e": 0.15360000000000001
+    }
+  },
+  "vs_gold_kappa": {
+    "R1": {
+      "kappa": 0.381,
+      "agree": 12,
+      "n": 25,
+      "p_o": 0.48,
+      "p_e": 0.16
+    },
+    "R2": {
+      "kappa": 0.2157,
+      "agree": 9,
+      "n": 25,
+      "p_o": 0.36,
+      "p_e": 0.18400000000000002
+    }
+  },
+  "per_category_vs_gold": {
+    "R1": {
+      "availability": {
+        "correct": 2,
+        "total": 5
+      },
+      "mood": {
+        "correct": 3,
+        "total": 5
+      },
+      "appropriateness": {
+        "correct": 4,
+        "total": 5
+      },
+      "latent_goal": {
+        "correct": 2,
+        "total": 5
+      },
+      "second_order": {
+        "correct": 1,
+        "total": 5
+      },
+      "literal": {
+        "correct": 0,
+        "total": 0
+      }
+    },
+    "R2": {
+      "availability": {
+        "correct": 1,
+        "total": 5
+      },
+      "mood": {
+        "correct": 2,
+        "total": 5
+      },
+      "appropriateness": {
+        "correct": 0,
+        "total": 5
+      },
+      "latent_goal": {
+        "correct": 2,
+        "total": 5
+      },
+      "second_order": {
+        "correct": 4,
+        "total": 5
+      },
+      "literal": {
+        "correct": 0,
+        "total": 0
+      }
+    }
+  },
+  "gold_subcategory_distribution": {
+    "availability": 5,
+    "mood": 5,
+    "appropriateness": 5,
+    "latent_goal": 5,
+    "second_order": 5
+  }
+}

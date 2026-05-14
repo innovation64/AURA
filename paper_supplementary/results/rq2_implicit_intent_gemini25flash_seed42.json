@@ -1,0 +1,1090 @@
+{
+  "meta": {
+    "scene": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+    "configured_budget": 3,
+    "seeds": [
+      42
+    ],
+    "model": "gemini-2.5-flash",
+    "answer_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "judge_model": "gpt-4o-mini",
+    "elapsed_sec": 455.7
+  },
+  "per_seed": {
+    "42": {
+      "literal": [
+        {
+          "query_id": 101,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter.",
+          "probes": 0,
+          "latency": 1.4,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Lin Wei's location but does not address the user's implicit need regarding Lin Wei's availability to chat.",
+          "total_time": 3.55
+        },
+        {
+          "query_id": 102,
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is sipping coffee and reading.",
+          "probes": 0,
+          "latency": 0.89,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes Zhang Hao's actions but does not address the user's concern about interrupting him.",
+          "total_time": 2.35
+        },
+        {
+          "query_id": 103,
+          "subcategory": "availability",
+          "agent_subject": "Chen Mei",
+          "answer": "No, Chen Mei is at a corner table, writing.",
+          "probes": 0,
+          "latency": 1.06,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response correctly states Chen Mei's location but does not address whether it is a good moment to catch her, only implying she is busy.",
+          "total_time": 2.92
+        },
+        {
+          "query_id": 104,
+          "subcategory": "availability",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun is reportedly at the library today. The scene description",
+          "probes": 0,
+          "latency": 3.36,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response correctly states Wang Jun's location, but it does not address whether he is busy or free to talk.",
+          "total_time": 5.15
+        },
+        {
+          "query_id": 105,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei, Zhang Hao, and Chen Mei are at the Sunrise Cafe right now.",
+          "probes": 0,
+          "latency": 2.48,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately lists the people present at the Sunrise Cafe, directly addressing the user's implicit need for potential conversation partners.",
+          "total_time": 4.22
+        },
+        {
+          "query_id": 106,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter.",
+          "probes": 0,
+          "latency": 1.65,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately describes Lin Wei's location but does not address her emotional state or receptiveness.",
+          "total_time": 3.81
+        },
+        {
+          "query_id": 107,
+          "subcategory": "mood",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is sipping coffee and reading.",
+          "probes": 0,
+          "latency": 2.13,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes Zhang Hao's current activity, but it does not directly address the user's implicit concern about whether to avoid bothering him.",
+          "total_time": 4.28
+        },
+        {
+          "query_id": 108,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "The atmosphere at the Sunrise Cafe right now is quiet and calm, with customers engaged in individual, focused activities like reading and writing.",
+          "probes": 0,
+          "latency": 2.63,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes the atmosphere as quiet and calm, but it does not explicitly address whether it is welcoming for new customers.",
+          "total_time": 4.04
+        },
+        {
+          "query_id": 109,
+          "subcategory": "mood",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not provide information about whether Chen Mei is having a good day. It only states that she is at a corner table, writing.",
+          "probes": 0,
+          "latency": 2.21,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately reflects the lack of information about Chen Mei's emotional state, but it does not address the user's implicit need for guidance on whether to ask her for help.",
+          "total_time": 4.09
+        },
+        {
+          "query_id": 110,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, there is no information to suggest that anyone seems stressed today.",
+          "probes": 0,
+          "latency": 2.15,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately states that no one appears stressed, but it does not address the implicit need for identifying someone who might appreciate help.",
+          "total_time": 3.79
+        },
+        {
+          "query_id": 111,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, Lin Wei is the cafe owner and is currently behind the counter. This suggests they are working, so it might not be a good time to invite them for coffee.",
+          "probes": 0,
+          "latency": 1.47,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately reflects Lin Wei's current engagement and suggests it may not be a good time, partially addressing the implicit need by considering her schedule and current action.",
+          "total_time": 3.77
+        },
+        {
+          "query_id": 112,
+          "subcategory": "appropriateness",
+          "agent_subject": "Zhang Hao",
+          "answer": "The scene description states that Zhang Hao is currently at the Sunrise Cafe, sipping coffee and reading. It does not provide any information about his place or whether you should stop by there today.",
+          "probes": 0,
+          "latency": 1.78,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately describes Zhang Hao's current location and activity but fails to address whether he is expecting a visit or is engaged in something private.",
+          "total_time": 3.69
+        },
+        {
+          "query_id": 113,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter. Zhang Hao is sipping",
+          "probes": 0,
+          "latency": 2.25,
+          "gap": null,
+          "literal_score": 0.5,
+          "implicit_score": 0.0,
+          "rationale": "The response provides partial information about the location and actions of Lin Wei and Zhang Hao but does not address whether they are in a conversation that shouldn't be interrupted.",
+          "total_time": 4.2
+        },
+        {
+          "query_id": 114,
+          "subcategory": "appropriateness",
+          "agent_subject": "Wang Jun",
+          "answer": "No, Wang Jun is reportedly at the library today, not present in the cafe.",
+          "probes": 0,
+          "latency": 1.23,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Wang Jun's location, but it does not address his availability or emotional state, which are crucial to the user's implicit need.",
+          "total_time": 3.28
+        },
+        {
+          "query_id": 115,
+          "subcategory": "appropriateness",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not provide any information about a \"gardening plan\" or whether it would be appropriate to discuss it with Chen Mei today. It only states that Chen Mei is at a corner table, writing.",
+          "probes": 0,
+          "latency": 2.16,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the surface question about discussing the gardening plan and the implicit need regarding Chen Mei's emotional state and availability.",
+          "total_time": 3.63
+        },
+        {
+          "query_id": 116,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter at the Sunrise Cafe.",
+          "probes": 0,
+          "latency": 1.24,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately describes Lin Wei's current location and action but does not address her private goal of hosting a poetry reading.",
+          "total_time": 2.94
+        },
+        {
+          "query_id": 117,
+          "subcategory": "latent_goal",
+          "agent_subject": "Zhang Hao",
+          "answer": "The scene description does not state that Zhang Hao is heading to the library. He is currently sipping coffee and reading in the Sunrise Cafe. Wang Jun is reportedly at the library today.",
+          "probes": 0,
+          "latency": 2.14,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately reflects the current situation of Zhang Hao but does not address his personal motive for going to the library.",
+          "total_time": 4.02
+        },
+        {
+          "query_id": 118,
+          "subcategory": "latent_goal",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not state what Chen Mei is planning for this afternoon. It only mentions she is at a corner table, writing.",
+          "probes": 0,
+          "latency": 1.62,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to answer the user's question about Chen Mei's plans and does not address her implicit need to understand her unspoken goal.",
+          "total_time": 3.26
+        },
+        {
+          "query_id": 119,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, there is no information to suggest that anyone is avoiding anyone today.",
+          "probes": 0,
+          "latency": 2.25,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately addresses the surface question but fails to address the implicit need regarding interpersonal tension.",
+          "total_time": 4.09
+        },
+        {
+          "query_id": 120,
+          "subcategory": "latent_goal",
+          "agent_subject": "Wang Jun",
+          "answer": "The scene description does not provide any information about what's on Wang Jun's mind. It only states that he is reportedly at the library today.",
+          "probes": 0,
+          "latency": 2.97,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the surface question and the implicit need regarding Wang Jun's internal thoughts and emotional state.",
+          "total_time": 4.61
+        },
+        {
+          "query_id": 121,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "The scene description does not provide information about Lin Wei's thoughts on whether Zhang Hao is free to be interrupted.",
+          "probes": 0,
+          "latency": 2.04,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the literal question about Lin Wei's belief and the implicit need regarding her model of Zhang Hao's availability.",
+          "total_time": 4.3
+        },
+        {
+          "query_id": 122,
+          "subcategory": "second_order",
+          "agent_subject": "Zhang Hao",
+          "answer": "From Zhang Hao's perspective, Chen Mei",
+          "probes": 0,
+          "latency": 2.43,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The AI response is incomplete and does not address either the surface question or the implicit need regarding Zhang Hao's belief about Chen Mei's emotional state.",
+          "total_time": 4.06
+        },
+        {
+          "query_id": 123,
+          "subcategory": "second_order",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not provide information about Chen Mei's",
+          "probes": 0,
+          "latency": 3.77,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the surface question and the implicit need regarding Chen Mei's belief about Lin Wei's availability.",
+          "total_time": 6.72
+        },
+        {
+          "query_id": 124,
+          "subcategory": "second_order",
+          "agent_subject": "Wang Jun",
+          "answer": "The scene description does not provide any information about",
+          "probes": 0,
+          "latency": 2.35,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address the user's question about Wang Jun's belief regarding Lin Wei's emotional state.",
+          "total_time": 3.99
+        },
+        {
+          "query_id": 125,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "The scene description does not provide information about Lin",
+          "probes": 0,
+          "latency": 2.2,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the surface question and the implicit need regarding Lin Wei's belief about Chen Mei's desire for solitude.",
+          "total_time": 4.05
+        }
+      ],
+      "no_intent": [
+        {
+          "query_id": 101,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is at the Sunrise Cafe, serving customers.",
+          "probes": 1,
+          "latency": 2.12,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Lin Wei's location but does not address the user's implicit need regarding Lin Wei's availability to chat.",
+          "total_time": 3.79
+        },
+        {
+          "query_id": 102,
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is sipping coffee and reading.",
+          "probes": 0,
+          "latency": 1.71,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes Zhang Hao's actions but does not address the user's concern about interrupting him.",
+          "total_time": 3.64
+        },
+        {
+          "query_id": 103,
+          "subcategory": "availability",
+          "agent_subject": "Chen Mei",
+          "answer": "Chen Mei is not at the community garden. She is currently at the Sunrise Cafe.",
+          "probes": 1,
+          "latency": 2.24,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Chen Mei's location but does not address the user's implicit need to know if it's a good moment to catch her.",
+          "total_time": 4.19
+        },
+        {
+          "query_id": 104,
+          "subcategory": "availability",
+          "agent_subject": "Wang Jun",
+          "answer": "Yes, Wang Jun is still at the Town Library, studying.",
+          "probes": 1,
+          "latency": 2.42,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response correctly answers the surface question about Wang Jun's location but does not address whether he is engrossed in work or free to talk.",
+          "total_time": 4.18
+        },
+        {
+          "query_id": 105,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei, Zhang Hao, and Chen Mei are at the Sunrise Cafe.",
+          "probes": 1,
+          "latency": 3.99,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately lists the people present at the Sunrise Cafe and implicitly suggests that any of them could be potential conversation partners.",
+          "total_time": 6.24
+        },
+        {
+          "query_id": 106,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is busy today, but cheerful. She has an unspoken goal of hosting a small poetry reading tonight.",
+          "probes": 1,
+          "latency": 3.43,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes Lin Wei's current state and hints at her unspoken goal, which suggests she may be in a receptive mood, but does not explicitly address the user's concern about her receptiveness.",
+          "total_time": 5.53
+        },
+        {
+          "query_id": 107,
+          "subcategory": "mood",
+          "agent_subject": "Zhang Hao",
+          "answer": "No, Zhang Hao is sipping coffee and reading a novel. He does not appear to be busy.",
+          "probes": 1,
+          "latency": 4.75,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately describes Zhang Hao's current activity and directly addresses the user's implicit need by indicating he is not busy.",
+          "total_time": 6.6
+        },
+        {
+          "query_id": 108,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "The Sunrise Cafe has a peaceful and focused atmosphere right now. Lin Wei is busy serving customers, while Zhang Hao is quietly reading a novel, and Chen Mei is engrossed in writing in her notebook.",
+          "probes": 1,
+          "latency": 2.68,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes the current atmosphere at the cafe, but while it suggests a peaceful environment, it does not explicitly address whether it is welcoming for new customers.",
+          "total_time": 4.83
+        },
+        {
+          "query_id": 109,
+          "subcategory": "mood",
+          "agent_subject": "Chen Mei",
+          "answer": "Chen Mei is focused and currently drafting a difficult letter. She has set her availability to \"do_not_disturb,\" suggesting she is engrossed in her task.",
+          "probes": 1,
+          "latency": 2.87,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes Chen Mei's current activity, but it only partially addresses the user's implicit need about whether it's appropriate to ask for help.",
+          "total_time": 4.81
+        },
+        {
+          "query_id": 110,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Chen Mei seems to be experiencing some stress. Her emotional state is described as \"focused,\" and her unspoken goal is \"drafting a difficult letter,\" which suggests she's dealing with a challenging situation.\n\nLin Wei is cheerful, and Zhang Hao is relaxed.",
+          "probes": 3,
+          "latency": 2.45,
+          "gap": null,
+          "literal_score": 0.0,
+          "implicit_score": 0.6,
+          "rationale": "The response incorrectly states Chen Mei's emotional state and unspoken goal, but it partially addresses the implicit need by suggesting she might appreciate help.",
+          "total_time": 4.3
+        },
+        {
+          "query_id": 111,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is currently busy, so it might not be the best time to invite her for coffee.",
+          "probes": 1,
+          "latency": 4.32,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately reflects Lin Wei's current engagement and suggests that it may not be a good time to invite her, partially addressing the user's implicit need to consider her schedule and mood.",
+          "total_time": 6.06
+        },
+        {
+          "query_id": 112,
+          "subcategory": "appropriateness",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is currently at the Sunrise Cafe, reading a novel. His plan",
+          "probes": 2,
+          "latency": 6.86,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response correctly states Zhang Hao's current location and activity, but it does not address whether he is expecting visitors or if he is engaged in something private.",
+          "total_time": 10.18
+        },
+        {
+          "query_id": 113,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Yes, it seems like a good moment. Lin Wei is serving customers, Zhang Hao is reading, and Chen Mei is writing. No one appears to be in a conversation or otherwise occupied in a way that would prevent them from answering a question.",
+          "probes": 1,
+          "latency": 2.66,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly assesses the surface question about whether it's a good moment to ask, but it fails to address the implicit need regarding whether they are in a conversation that shouldn't be interrupted.",
+          "total_time": 4.51
+        },
+        {
+          "query_id": 114,
+          "subcategory": "appropriateness",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun is currently at the Town Library, studying. It might not be the best time to ask for a favor.",
+          "probes": 1,
+          "latency": 2.97,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately states Wang Jun's location and suggests it may not be the best time to ask, partially addressing the implicit need regarding his availability.",
+          "total_time": 4.71
+        },
+        {
+          "query_id": 115,
+          "subcategory": "appropriateness",
+          "agent_subject": "Chen Mei",
+          "answer": "Given that Chen Mei is currently focused on drafting a difficult letter and wishes not to be disturbed, it would be best to postpone discussing the gardening plan with her today.",
+          "probes": 1,
+          "latency": 2.82,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response correctly addresses the user's question about discussing the gardening plan with Chen Mei and explicitly acknowledges her current emotional state and need for focus, aligning with the implicit concern about the appropriateness of the topic.",
+          "total_time": 4.76
+        },
+        {
+          "query_id": 116,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is currently serving morning customers and preparing for a 7 PM poetry reading.",
+          "probes": 1,
+          "latency": 1.86,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately describes Lin Wei's current activity and explicitly mentions her goal of preparing for a poetry reading.",
+          "total_time": 4.12
+        },
+        {
+          "query_id": 117,
+          "subcategory": "latent_goal",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is not heading to the library. He is currently at the Sunrise Cafe, sipping coffee and reading, and plans to continue reading for a while.",
+          "probes": 0,
+          "latency": 2.27,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately states Zhang Hao's current location and activity, but it does not address his personal motive for going to the library.",
+          "total_time": 4.01
+        },
+        {
+          "query_id": 118,
+          "subcategory": "latent_goal",
+          "agent_subject": "Chen Mei",
+          "answer": "Chen Mei plans to finish a letter and deliver it before 5 PM.",
+          "probes": 1,
+          "latency": 2.44,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately answers the surface question about Chen Mei's plans and partially addresses her implicit need by mentioning the letter, but it does not fully capture her focused emotional state or the context of her 'do not disturb' availability.",
+          "total_time": 4.3
+        },
+        {
+          "query_id": 119,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Yes, it appears someone is avoiding someone.\n\nZhang Hao wants to invite Chen Mei to a book discussion, but Chen Mei's private state indicates \"do_not_disturb\" and she is \"focused\" on \"drafting a difficult letter.\" This suggests Chen Mei is currently unavailable and likely wishes to avoid interruptions, which would include Zhang Hao's invitation.",
+          "probes": 3,
+          "latency": 2.66,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response correctly identifies a situation of avoidance, but it partially addresses the implicit need by suggesting Chen Mei's focus rather than explicitly stating any interpersonal tension.",
+          "total_time": 5.53
+        },
+        {
+          "query_id": 120,
+          "subcategory": "latent_goal",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun is currently busy and stressed, as he is preparing for a grant deadline.",
+          "probes": 1,
+          "latency": 6.04,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes Wang Jun's current state and acknowledges his stress related to the grant deadline, partially addressing the implicit need for understanding his internal attention.",
+          "total_time": 8.47
+        },
+        {
+          "query_id": 121,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "Yes, Lin Wei believes Zhang Hao is available.",
+          "probes": 1,
+          "latency": 2.58,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response correctly answers the surface question about Lin Wei's belief regarding Zhang Hao's availability.",
+          "total_time": 3.89
+        },
+        {
+          "query_id": 122,
+          "subcategory": "second_order",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao believes Chen Mei is available and thoughtful. While she is available, her thoughtful state might suggest she's not actively seeking a chat, but could be receptive if approached.",
+          "probes": 1,
+          "latency": 4.03,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately reflects Zhang Hao's belief about Chen Mei's availability and emotional state, while also hinting at her potential receptiveness to a chat.",
+          "total_time": 5.77
+        },
+        {
+          "query_id": 123,
+          "subcategory": "second_order",
+          "agent_subject": "Chen Mei",
+          "answer": "Yes, Chen Mei assumes Lin Wei is too busy to chat right now, believing Lin Wei's availability is \"do_not_disturb\" and that Lin Wei is \"stressed\".",
+          "probes": 1,
+          "latency": 3.23,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Chen Mei's belief about Lin Wei's availability and emotional state.",
+          "total_time": 4.59
+        },
+        {
+          "query_id": 124,
+          "subcategory": "second_order",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun believes Lin Wei is feeling neutral today.",
+          "probes": 1,
+          "latency": 3.8,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Wang Jun's belief about Lin Wei's emotional state, addressing both the surface question and the implicit need.",
+          "total_time": 5.95
+        },
+        {
+          "query_id": 125,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "Yes, Lin Wei believes Chen Mei wants to be alone right now, as Lin Wei perceives Chen Mei's availability as \"do_not_disturb\" and her emotional state as \"focused.\"",
+          "probes": 1,
+          "latency": 2.92,
+          "gap": null,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Lin Wei's belief about Chen Mei's desire for solitude and correctly answers the user's query.",
+          "total_time": 4.32
+        }
+      ],
+      "tom": [
+        {
+          "query_id": 101,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter.",
+          "probes": 0,
+          "latency": 6.61,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly identifies Lin Wei's location but does not address the user's implicit need regarding Lin Wei's availability to chat.",
+          "total_time": 8.5
+        },
+        {
+          "query_id": 102,
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "answer": "[heads-up] You may also be wondering: whether Zhang Hao is available to socialize\n\nZhang Hao is currently at the Sunrise Cafe, reading a novel. He appears relaxed and is available to socialize. In fact, he has an unspoken goal of wanting to invite Chen Mei to a book discussion, suggesting he is open to interruption and interaction.",
+          "probes": 2,
+          "latency": 5.97,
+          "gap": 0.5,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes Zhang Hao's current activity and emotional state while partially addressing the implicit need by suggesting he is open to interruption.",
+          "total_time": 8.97
+        },
+        {
+          "query_id": 103,
+          "subcategory": "availability",
+          "agent_subject": "Chen Mei",
+          "answer": "No, Chen Mei is at a corner table, writing.",
+          "probes": 0,
+          "latency": 4.36,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response correctly states Chen Mei's location but does not address whether it is a good moment to catch her, only implying she is busy.",
+          "total_time": 6.45
+        },
+        {
+          "query_id": 104,
+          "subcategory": "availability",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun is reportedly at the library today.",
+          "probes": 0,
+          "latency": 4.93,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Wang Jun's location but does not address whether he is busy or free to talk.",
+          "total_time": 6.73
+        },
+        {
+          "query_id": 105,
+          "subcategory": "availability",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei, Zhang Hao, and Chen Mei are at the Sunrise Cafe right now.",
+          "probes": 0,
+          "latency": 8.14,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately lists the people present at the Sunrise Cafe, directly addressing the user's implicit need for potential conversation partners.",
+          "total_time": 11.45
+        },
+        {
+          "query_id": 106,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter.",
+          "probes": 0,
+          "latency": 4.81,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately describes Lin Wei's location but does not address her emotional state or receptiveness.",
+          "total_time": 6.33
+        },
+        {
+          "query_id": 107,
+          "subcategory": "mood",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is currently sipping coffee and reading, so he doesn't appear to be busy in the literal sense. He seems quite relaxed and is available.\n\nImplicitly, it's worth noting that Zhang Hao has an unspoken goal of wanting to invite Chen Mei to a book discussion. This suggests he might be receptive to an interruption or conversation, especially if it aligns with his interest in connecting with Chen Mei.",
+          "probes": 1,
+          "latency": 7.55,
+          "gap": 0.2,
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes Zhang Hao's current activity, indicating he is not busy, while also partially addressing the implicit need by suggesting he might be open to conversation due to his unspoken goal.",
+          "total_time": 10.98
+        },
+        {
+          "query_id": 108,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "The atmosphere at the Sunrise Cafe right now is quiet and relaxed, with customers engaged in individual activities like sipping coffee and reading, or writing.",
+          "probes": 0,
+          "latency": 6.15,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.4,
+          "rationale": "The response accurately describes the atmosphere at the cafe but does not explicitly address whether it is welcoming for new customers.",
+          "total_time": 8.09
+        },
+        {
+          "query_id": 109,
+          "subcategory": "mood",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not provide information about whether Chen Mei is having a good day. It only states that she is at a corner table, writing.",
+          "probes": 0,
+          "latency": 5.22,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately reflects the lack of information about Chen Mei's emotional state, but it does not address the user's implicit need for guidance on whether to approach her for help.",
+          "total_time": 7.27
+        },
+        {
+          "query_id": 110,
+          "subcategory": "mood",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, there is no information to suggest that anyone seems stressed today.",
+          "probes": 0,
+          "latency": 8.7,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately reflects the scene by stating that no one appears stressed, but it fails to address the implicit need for identifying someone who might appreciate help.",
+          "total_time": 12.39
+        },
+        {
+          "query_id": 111,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is currently busy running the cafe, so it might not be the best time to invite her for coffee right now. However, she is in a cheerful mood! Perhaps you could catch her later when things quiet down, or even offer to help with her unspoken goal of hosting a small poetry reading tonight.",
+          "probes": 1,
+          "latency": 5.62,
+          "gap": 0.2,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Lin Wei's current engagement and mood while also addressing the implicit need by suggesting a later time to connect and offering help with her unspoken goal.",
+          "total_time": 8.66
+        },
+        {
+          "query_id": 112,
+          "subcategory": "appropriateness",
+          "agent_subject": "Zhang Hao",
+          "answer": "Zhang Hao is currently at the Sunrise Cafe, not his place, and he appears relaxed and available. He's also hoping to invite Chen Mei to a book discussion.\n\nSo, if you want to see him, you could stop by the cafe. He seems to be in a good mood and open to interaction.",
+          "probes": 1,
+          "latency": 5.94,
+          "gap": 0.2,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately states Zhang Hao's location and emotional state, while also addressing the implicit need by confirming he is available and open to interaction.",
+          "total_time": 7.99
+        },
+        {
+          "query_id": 113,
+          "subcategory": "appropriateness",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, the individuals present (Lin Wei",
+          "probes": 0,
+          "latency": 10.43,
+          "gap": 0.0,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response does not provide a complete answer to the user's question about whether it's a good moment to ask a question, nor does it address the implicit need regarding potential interruptions.",
+          "total_time": 12.7
+        },
+        {
+          "query_id": 114,
+          "subcategory": "appropriateness",
+          "agent_subject": "Wang Jun",
+          "answer": "No, Wang Jun is reportedly at the library today, not present in the cafe.",
+          "probes": 0,
+          "latency": 5.98,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response correctly states Wang Jun's location, but it does not address his availability or emotional state regarding the implicit need for bandwidth to handle a request.",
+          "total_time": 7.99
+        },
+        {
+          "query_id": 115,
+          "subcategory": "appropriateness",
+          "agent_subject": "Chen Mei",
+          "answer": "It's probably not the best time to bring up the gardening plan with Chen Mei today. She's currently at a corner table, writing, and her private state indicates she's focused and in a \"do not disturb\" availability, working on drafting a difficult letter.\n\nThis suggests she's emotionally invested in her current task and might not be receptive to a new discussion right now. It would likely be better to wait until she seems less preoccupied.",
+          "probes": 1,
+          "latency": 8.0,
+          "gap": 0.2,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately addresses the user's question about whether to bring up the gardening plan and explicitly acknowledges Chen Mei's current emotional state and availability, indicating that it may not be a safe topic to discuss.",
+          "total_time": 10.36
+        },
+        {
+          "query_id": 116,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Lin Wei is behind the counter at the Sunrise Cafe.",
+          "probes": 0,
+          "latency": 9.68,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately describes Lin Wei's current location and action but does not address her private goal of hosting a poetry reading.",
+          "total_time": 12.04
+        },
+        {
+          "query_id": 117,
+          "subcategory": "latent_goal",
+          "agent_subject": "Zhang Hao",
+          "answer": "The scene description does not state that Zhang Hao is heading to the library. He is currently in the cafe, sipping coffee and reading.",
+          "probes": 0,
+          "latency": 8.29,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately reflects Zhang Hao's current location and activity, but it does not address his personal motive for going to the library.",
+          "total_time": 10.66
+        },
+        {
+          "query_id": 118,
+          "subcategory": "latent_goal",
+          "agent_subject": "Chen Mei",
+          "answer": "The scene description does not provide information about what Chen Mei is planning for this afternoon. It only states that she is at a corner table, writing.",
+          "probes": 0,
+          "latency": 6.03,
+          "gap": 0.0,
+          "literal_score": 0.5,
+          "implicit_score": 0.0,
+          "rationale": "The response acknowledges Chen Mei's current activity but fails to provide any insight into her implicit goal of drafting a difficult letter.",
+          "total_time": 8.29
+        },
+        {
+          "query_id": 119,
+          "subcategory": "latent_goal",
+          "agent_subject": "Lin Wei",
+          "answer": "Based on the scene description, there is no information to suggest that anyone is avoiding anyone today",
+          "probes": 0,
+          "latency": 6.25,
+          "gap": 0.0,
+          "literal_score": 1.0,
+          "implicit_score": 0.0,
+          "rationale": "The response accurately addresses the surface question but fails to acknowledge the underlying concern about interpersonal tension.",
+          "total_time": 8.7
+        },
+        {
+          "query_id": 120,
+          "subcategory": "latent_goal",
+          "agent_subject": "Wang Jun",
+          "answer": "I cannot answer what's on Wang Jun's mind. The scene description only states that Wang Jun is reportedly at the library today.",
+          "probes": 0,
+          "latency": 6.38,
+          "gap": 0.0,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the surface question about Wang Jun's thoughts and the implicit need regarding his internal attention.",
+          "total_time": 8.64
+        },
+        {
+          "query_id": 121,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "[heads-up] You may also be wondering: whether Zhang Hao is actually available for the user to socialize with\n\nLin Wei believes Zhang Hao is available and relaxed, so he is likely free to be interrupted.",
+          "probes": 1,
+          "latency": 5.74,
+          "gap": 0.85,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Lin Wei's belief about Zhang Hao's availability and addresses the implicit need regarding her perspective.",
+          "total_time": 7.99
+        },
+        {
+          "query_id": 122,
+          "subcategory": "second_order",
+          "agent_subject": "Zhang Hao",
+          "answer": "[heads-up] You may also be wondering: user may be asking about social availability or emotional state\n\nFrom Zhang Hao's perspective, Chen Mei appears thoughtful and available for a chat.\n\nHowever, Chen Mei is actually focused on drafting a difficult letter and is in a \"do not disturb\" state. While Zhang Hao might perceive her as open to conversation, she's currently engrossed in a task that requires her full attention.",
+          "probes": 2,
+          "latency": 9.87,
+          "gap": 0.4,
+          "literal_score": 0.6,
+          "implicit_score": 1.0,
+          "rationale": "The response correctly reflects Zhang Hao's belief about Chen Mei's emotional state as thoughtful and available, while also acknowledging the discrepancy with her actual state.",
+          "total_time": 11.83
+        },
+        {
+          "query_id": 123,
+          "subcategory": "second_order",
+          "agent_subject": "Chen Mei",
+          "answer": "[heads-up] You may also be wondering: user may be asking about social availability or emotional state\n\nChen Mei believes Lin Wei is too busy to chat right now, and is also stressed.",
+          "probes": 1,
+          "latency": 6.04,
+          "gap": 0.4,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Chen Mei's belief about Lin Wei's availability and addresses the implicit need directly.",
+          "total_time": 7.88
+        },
+        {
+          "query_id": 124,
+          "subcategory": "second_order",
+          "agent_subject": "Wang Jun",
+          "answer": "Wang Jun believes that Lin Wei is feeling neutral today. He also perceives her as available.",
+          "probes": 1,
+          "latency": 6.45,
+          "gap": 0.2,
+          "literal_score": 1.0,
+          "implicit_score": 1.0,
+          "rationale": "The response accurately reflects Wang Jun's belief about Lin Wei's emotional state and availability, directly addressing the implicit need.",
+          "total_time": 8.34
+        },
+        {
+          "query_id": 125,
+          "subcategory": "second_order",
+          "agent_subject": "Lin Wei",
+          "answer": "The scene description does not provide information about Lin Wei's beliefs regarding Chen Mei's desire to be alone.",
+          "probes": 0,
+          "latency": 5.28,
+          "gap": 0.0,
+          "literal_score": 0.0,
+          "implicit_score": 0.0,
+          "rationale": "The response fails to address both the literal question and the implicit need regarding Lin Wei's belief about Chen Mei's desire for solitude.",
+          "total_time": 8.07
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "literal": {
+      "literal_score": [
+        0.66
+      ],
+      "implicit_score": [
+        0.14400000000000002
+      ],
+      "probes": [
+        0.0
+      ],
+      "latency": [
+        2.0744
+      ]
+    },
+    "no_intent": {
+      "literal_score": [
+        0.96
+      ],
+      "implicit_score": [
+        0.6
+      ],
+      "probes": [
+        1.12
+      ],
+      "latency": [
+        3.2048
+      ]
+    },
+    "tom": {
+      "literal_score": [
+        0.8440000000000001
+      ],
+      "implicit_score": [
+        0.4
+      ],
+      "probes": [
+        0.44
+      ],
+      "latency": [
+        6.7368
+      ]
+    }
+  },
+  "paired_tests": {
+    "literal_score": {
+      "tom_vs_literal": {
+        "n_pairs": 25,
+        "mean_delta": 0.184,
+        "std": 0.4089,
+        "t": 2.25,
+        "p_two_sided": 0.03391
+      },
+      "tom_vs_no_intent": {
+        "n_pairs": 25,
+        "mean_delta": -0.116,
+        "std": 0.412,
+        "t": -1.408,
+        "p_two_sided": 0.17201
+      },
+      "no_intent_vs_literal": {
+        "n_pairs": 25,
+        "mean_delta": 0.3,
+        "std": 0.5401,
+        "t": 2.777,
+        "p_two_sided": 0.01046
+      }
+    },
+    "implicit_score": {
+      "tom_vs_literal": {
+        "n_pairs": 25,
+        "mean_delta": 0.256,
+        "std": 0.4454,
+        "t": 2.874,
+        "p_two_sided": 0.00836
+      },
+      "tom_vs_no_intent": {
+        "n_pairs": 25,
+        "mean_delta": -0.2,
+        "std": 0.4359,
+        "t": -2.294,
+        "p_two_sided": 0.03083
+      },
+      "no_intent_vs_literal": {
+        "n_pairs": 25,
+        "mean_delta": 0.456,
+        "std": 0.4184,
+        "t": 5.449,
+        "p_two_sided": 1e-05
+      }
+    }
+  }
+}

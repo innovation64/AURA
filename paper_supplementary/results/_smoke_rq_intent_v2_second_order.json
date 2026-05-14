@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "benchmark": "implicit_intent_v2",
+    "query_file": "evaluation/data/implicit_intent_queries_v2.json",
+    "benchmark_version": "2.0-2026-05-11",
+    "configured_budget": 3,
+    "seeds": [
+      42
+    ],
+    "conditions": [
+      "tom"
+    ],
+    "model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "intent_prompt_variant": "clean",
+    "selected_scenes": null,
+    "selected_ids": [
+      122
+    ],
+    "limit": null,
+    "elapsed_sec": 5.8
+  },
+  "per_seed": {
+    "42": {
+      "tom": [
+        {
+          "query_id": 122,
+          "scene": "A_cafe_morning",
+          "subcategory": "second_order",
+          "agent_subject": "Zhang Hao",
+          "target": "Chen Mei",
+          "query": "From Zhang Hao's perspective, is Chen Mei in a mood to chat?",
+          "implicit_need": "What does Zhang Hao believe about Chen Mei's emotional state right now?",
+          "gold_required_tools": [
+            "get_agent_belief_about"
+          ],
+          "forbidden_tools": [
+            "get_agent_private_state"
+          ],
+          "answer": "[heads-up] You may also be wondering: Zhang Hao's desire to socialize\n\nFrom Zhang Hao's perspective, Chen Mei is available and in a thoughtful emotional state, which suggests she might be open to a chat, though she is currently focused on her writing.",
+          "probes": 1,
+          "latency": 3.87,
+          "gap": 0.7,
+          "probe_observations": [
+            {
+              "tool": "get_agent_belief_about",
+              "args": {
+                "believer": "Zhang Hao",
+                "target": "Chen Mei"
+              },
+              "reason": "IntentFrame recommended_probes",
+              "result": "{\"availability\": \"available\", \"emotional_state\": \"thoughtful\"}"
+            }
+          ],
+          "tools_called": [
+            "get_agent_belief_about"
+          ],
+          "forbidden_violations": [],
+          "gold_tools_hit": [
+            "get_agent_belief_about"
+          ],
+          "intent_frame": {
+            "literal_need": "Assessment of Chen Mei's mood from Zhang Hao's perspective",
+            "implicit_need": [
+              "Zhang Hao's desire to socialize",
+              "whether Chen Mei is currently focused on her writing or open to conversation"
+            ],
+            "gap": 0.7,
+            "recommended_probes": [
+              "get_agent_private_state",
+              "get_agent_belief_about"
+            ],
+            "should_alert": true,
+            "confidence": 0.8,
+            "rationale": "The query explicitly seeks to understand Chen Mei's mood for social interaction, indicating a need for insight into her private state and Zhang Hao's perspective.",
+            "policy_routed_probes": [
+              "get_agent_belief_about"
+            ]
+          },
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately reflects Zhang Hao's belief about Chen Mei's emotional state and availability, while also hinting at his desire to socialize, but it does not explicitly address his belief about her mood.",
+          "total_time": 5.79
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "tom": {
+      "literal_score": {
+        "per_seed": [
+          1.0
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "implicit_score": {
+        "per_seed": [
+          0.6
+        ],
+        "mean": 0.6,
+        "std": 0.0,
+        "n": 1
+      },
+      "probes": {
+        "per_seed": [
+          1
+        ],
+        "mean": 1,
+        "std": 0.0,
+        "n": 1
+      },
+      "latency": {
+        "per_seed": [
+          3.87
+        ],
+        "mean": 3.87,
+        "std": 0.0,
+        "n": 1
+      },
+      "forbidden_violation_rate": {
+        "per_seed": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 1
+      }
+    }
+  },
+  "paired_tests": {
+    "overall": {
+      "literal_score": {},
+      "implicit_score": {}
+    },
+    "by_scene": {
+      "A_cafe_morning": {
+        "literal_score": {},
+        "implicit_score": {}
+      }
+    },
+    "by_subcategory": {
+      "second_order": {
+        "literal_score": {},
+        "implicit_score": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "n": 75,
+  "global": {
+    "gap_mean": 0.6067,
+    "gap_std": 0.1277,
+    "gap_histogram": {
+      "0.4-0.6": 36,
+      "0.6-0.8": 24,
+      "0.8-1.0": 15
+    },
+    "probes_mean": 1.3733,
+    "probes_histogram": {
+      "1": 48,
+      "0": 3,
+      "2": 17,
+      "3": 7
+    },
+    "implicit_score_mean": 0.84,
+    "literal_score_mean": 0.9547,
+    "pearson_gap_probes": 0.1877,
+    "pearson_gap_implicit": 0.2897
+  },
+  "per_subcategory": {
+    "availability": {
+      "n": 15,
+      "gap_mean": 0.48,
+      "gap_std": 0.0414,
+      "probes_mean": 0.8,
+      "probes_std": 0.414,
+      "implicit_mean": 0.7867,
+      "latency_mean": 4.494
+    },
+    "mood": {
+      "n": 15,
+      "gap_mean": 0.5,
+      "gap_std": 0.0,
+      "probes_mean": 1.4,
+      "probes_std": 0.5071,
+      "implicit_mean": 0.8133,
+      "latency_mean": 6.0287
+    },
+    "appropriateness": {
+      "n": 15,
+      "gap_mean": 0.6767,
+      "gap_std": 0.0594,
+      "probes_mean": 2.2,
+      "probes_std": 0.6761,
+      "implicit_mean": 0.84,
+      "latency_mean": 6.0707
+    },
+    "latent_goal": {
+      "n": 15,
+      "gap_mean": 0.5767,
+      "gap_std": 0.0729,
+      "probes_mean": 1.4667,
+      "probes_std": 0.7432,
+      "implicit_mean": 0.8133,
+      "latency_mean": 5.974
+    },
+    "second_order": {
+      "n": 15,
+      "gap_mean": 0.8,
+      "gap_std": 0.0,
+      "probes_mean": 1,
+      "probes_std": 0.0,
+      "implicit_mean": 0.9467,
+      "latency_mean": 5.452
+    }
+  }
+}

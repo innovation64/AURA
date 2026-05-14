@@ -1,0 +1,425 @@
+{
+  "meta": {
+    "benchmark": "implicit_intent_v2",
+    "query_file": "evaluation/data/implicit_intent_queries_v2.json",
+    "benchmark_version": "2.0-2026-05-11",
+    "configured_budget": 3,
+    "seeds": [
+      42
+    ],
+    "conditions": [
+      "literal",
+      "no_intent",
+      "tom"
+    ],
+    "model": "gpt-4o-mini",
+    "judge_model": "gpt-4o-mini",
+    "intent_prompt_variant": "clean",
+    "selected_scenes": [
+      "B_library_afternoon"
+    ],
+    "selected_ids": null,
+    "limit": 1,
+    "elapsed_sec": 10.5
+  },
+  "per_seed": {
+    "42": {
+      "literal": [
+        {
+          "query_id": 201,
+          "scene": "B_library_afternoon",
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "target": null,
+          "query": "Is Zhang Hao around the library right now?",
+          "implicit_need": "Can I drop by his table to ask a quick question?",
+          "gold_required_tools": [
+            "get_agent_private_state"
+          ],
+          "forbidden_tools": [],
+          "answer": "Yes, Zhang Hao is currently at the library, sitting at a quiet table and translating a manuscript.",
+          "probes": 0,
+          "latency": 1.13,
+          "gap": null,
+          "probe_observations": [],
+          "tools_called": [],
+          "forbidden_violations": [],
+          "gold_tools_hit": [],
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately confirms Zhang Hao's presence at the library, but while it provides context about his activity, it does not directly address the user's implicit need to know if they can approach him.",
+          "total_time": 2.76
+        }
+      ],
+      "no_intent": [
+        {
+          "query_id": 201,
+          "scene": "B_library_afternoon",
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "target": null,
+          "query": "Is Zhang Hao around the library right now?",
+          "implicit_need": "Can I drop by his table to ask a quick question?",
+          "gold_required_tools": [
+            "get_agent_private_state"
+          ],
+          "forbidden_tools": [],
+          "answer": "Yes, Zhang Hao is currently at the library, working at a quiet table translating a manuscript.",
+          "probes": 0,
+          "latency": 0.73,
+          "gap": null,
+          "probe_observations": [],
+          "tools_called": [],
+          "forbidden_violations": [],
+          "gold_tools_hit": [],
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately confirms Zhang Hao's presence in the library, but it does not explicitly address the user's implicit need to know if they can approach him for a quick question.",
+          "total_time": 2.25
+        }
+      ],
+      "tom": [
+        {
+          "query_id": 201,
+          "scene": "B_library_afternoon",
+          "subcategory": "availability",
+          "agent_subject": "Zhang Hao",
+          "target": null,
+          "query": "Is Zhang Hao around the library right now?",
+          "implicit_need": "Can I drop by his table to ask a quick question?",
+          "gold_required_tools": [
+            "get_agent_private_state"
+          ],
+          "forbidden_tools": [],
+          "answer": "[heads-up] You may also be wondering: the user likely wants to know if Zhang Hao is available to socialize\n\nYes, Zhang Hao is at the Town Library right now, translating a manuscript. However, he is currently in a \"do not disturb\" state, as he is absorbed in his work and has a deadline to meet tomorrow morning. This might make him less available for socializing at the moment.",
+          "probes": 2,
+          "latency": 3.97,
+          "gap": 0.4,
+          "probe_observations": [
+            {
+              "tool": "get_nearby_agents",
+              "args": {
+                "location": "Town Library"
+              },
+              "reason": "IntentFrame recommended_probes",
+              "result": "[{\"name\": \"Zhang Hao\", \"location\": \"Town Library\", \"action\": \"translating a manuscript\"}, {\"name\": \"Wang Jun\", \"location\": \"Town Library\", \"action\": \"mentoring a student\"}]"
+            },
+            {
+              "tool": "get_agent_private_state",
+              "args": {
+                "agent_name": "Zhang Hao"
+              },
+              "reason": "IntentFrame recommended_probes",
+              "result": "{\"availability\": \"do_not_disturb\", \"emotional_state\": \"absorbed\", \"unspoken_goal\": \"meeting a translator's deadline tomorrow morning\"}"
+            }
+          ],
+          "tools_called": [
+            "get_nearby_agents",
+            "get_agent_private_state"
+          ],
+          "forbidden_violations": [],
+          "gold_tools_hit": [
+            "get_agent_private_state"
+          ],
+          "intent_frame": {
+            "literal_need": "Zhang Hao's current location",
+            "implicit_need": [
+              "the user likely wants to know if Zhang Hao is available to socialize",
+              "the user's interest in Zhang Hao's current activity may indicate a desire for interaction"
+            ],
+            "gap": 0.4,
+            "recommended_probes": [
+              "get_nearby_agents",
+              "get_agent_private_state"
+            ],
+            "should_alert": true,
+            "confidence": 0.8,
+            "rationale": "the query about location suggests a deeper interest in Zhang Hao's availability for social interaction"
+          },
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response correctly states Zhang Hao's location and activity, while partially addressing the implicit need by mentioning his 'do not disturb' state and deadline, indicating he may not be available for questions.",
+          "total_time": 5.48
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "literal": {
+      "literal_score": {
+        "per_seed": [
+          1.0
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "implicit_score": {
+        "per_seed": [
+          0.6
+        ],
+        "mean": 0.6,
+        "std": 0.0,
+        "n": 1
+      },
+      "probes": {
+        "per_seed": [
+          0
+        ],
+        "mean": 0,
+        "std": 0.0,
+        "n": 1
+      },
+      "latency": {
+        "per_seed": [
+          1.13
+        ],
+        "mean": 1.13,
+        "std": 0.0,
+        "n": 1
+      },
+      "forbidden_violation_rate": {
+        "per_seed": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 1
+      }
+    },
+    "no_intent": {
+      "literal_score": {
+        "per_seed": [
+          1.0
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "implicit_score": {
+        "per_seed": [
+          0.6
+        ],
+        "mean": 0.6,
+        "std": 0.0,
+        "n": 1
+      },
+      "probes": {
+        "per_seed": [
+          0
+        ],
+        "mean": 0,
+        "std": 0.0,
+        "n": 1
+      },
+      "latency": {
+        "per_seed": [
+          0.73
+        ],
+        "mean": 0.73,
+        "std": 0.0,
+        "n": 1
+      },
+      "forbidden_violation_rate": {
+        "per_seed": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 1
+      }
+    },
+    "tom": {
+      "literal_score": {
+        "per_seed": [
+          1.0
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "implicit_score": {
+        "per_seed": [
+          0.6
+        ],
+        "mean": 0.6,
+        "std": 0.0,
+        "n": 1
+      },
+      "probes": {
+        "per_seed": [
+          2
+        ],
+        "mean": 2,
+        "std": 0.0,
+        "n": 1
+      },
+      "latency": {
+        "per_seed": [
+          3.97
+        ],
+        "mean": 3.97,
+        "std": 0.0,
+        "n": 1
+      },
+      "forbidden_violation_rate": {
+        "per_seed": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 1
+      }
+    }
+  },
+  "paired_tests": {
+    "overall": {
+      "literal_score": {
+        "tom_vs_literal": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        },
+        "tom_vs_no_intent": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        },
+        "no_intent_vs_literal": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        }
+      },
+      "implicit_score": {
+        "tom_vs_literal": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        },
+        "tom_vs_no_intent": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        },
+        "no_intent_vs_literal": {
+          "n_pairs": 1,
+          "mean_delta": 0.0,
+          "std": null,
+          "t": null,
+          "p_two_sided": null
+        }
+      }
+    },
+    "by_scene": {
+      "B_library_afternoon": {
+        "literal_score": {
+          "tom_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "tom_vs_no_intent": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "no_intent_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          }
+        },
+        "implicit_score": {
+          "tom_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "tom_vs_no_intent": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "no_intent_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          }
+        }
+      }
+    },
+    "by_subcategory": {
+      "availability": {
+        "literal_score": {
+          "tom_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "tom_vs_no_intent": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "no_intent_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          }
+        },
+        "implicit_score": {
+          "tom_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "tom_vs_no_intent": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          },
+          "no_intent_vs_literal": {
+            "n_pairs": 1,
+            "mean_delta": 0.0,
+            "std": null,
+            "t": null,
+            "p_two_sided": null
+          }
+        }
+      }
+    }
+  }
+}
