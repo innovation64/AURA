@@ -390,6 +390,7 @@ class AURAAgent:
                     user_query=user_query,
                     raw_input=raw_input,
                     max_steps_override=explore_budget_override,
+                    preferred_tools=intent_frame.recommended_probes if intent_frame else None,
                 )
                 signals = list(signals) + exploration.extra_signals
 
@@ -662,7 +663,12 @@ class AURAAgent:
             return self._proactive_engine.get_cached_signals()
 
     async def run_async(self, raw_input: Any, user_query: Optional[str] = None) -> Interaction:
-        """Async version of run() — preferred when running in async context."""
+        """Async version of run() — preferred when running in async context.
+
+        Mirrors run()'s IntentInferrer stage so callers on the async path get
+        the same gap-routed Explore budget and IntentFrame metadata as the
+        sync path.
+        """
         signals = self.sense.ingest(raw_input)
 
         # Proactive probe signals
@@ -674,16 +680,58 @@ class AURAAgent:
             except Exception as e:
                 logger.debug("Async probe collection failed: %s", e)
 
-        # Explore
+        # Intent inference (env-mediated ToM) — same contract as run().
+        intent_frame: Optional[IntentFrame] = None
+        if self.intent is not None and user_query:
+            try:
+                preview_scene = self.scene.build(signals)
+                preview_memories = self.memory.recall(user_query) if hasattr(self.memory, "recall") else []
+                available_tools = (
+                    [t.name for t in self.tool_registry.list()
+                     if self.tool_registry.is_allowed(t.name)]
+                    if self.tool_registry is not None else []
+                )
+                intent_frame = self.intent.infer(
+                    user_query=user_query,
+                    scene=preview_scene,
+                    memories=preview_memories,
+                    available_tools=available_tools,
+                )
+            except Exception as e:
+                logger.warning("Intent inference failed (async): %s — continuing without intent", e)
+                intent_frame = None
+
+        # Explore with gap-routed budget when an IntentFrame is available.
         exploration: Optional[ExplorationOutcome] = None
         if self.explorer is not None:
-            exploration = self.explorer.explore(signals, user_query=user_query, raw_input=raw_input)
-            signals = list(signals) + exploration.extra_signals
+            explore_budget_override: Optional[int] = None
+            if intent_frame is not None:
+                explore_budget_override = intent_gap_to_budget(
+                    intent_frame.gap, self._config.explore_max_steps,
+                )
+            if explore_budget_override is None or explore_budget_override > 0:
+                exploration = self.explorer.explore(
+                    signals,
+                    user_query=user_query,
+                    raw_input=raw_input,
+                    max_steps_override=explore_budget_override,
+                    preferred_tools=intent_frame.recommended_probes if intent_frame else None,
+                )
+                signals = list(signals) + exploration.extra_signals
 
         scene_state = self.scene.build(signals)
         self.memory.update(scene_state)
         memories = self.memory.recall(user_query)
         reasoning = self.reason.plan(scene_state, memories, user_query)
+
+        if intent_frame is not None:
+            reasoning.metadata["intent"] = intent_frame_to_dict(intent_frame)
+            reasoning.metadata["intent_gap"] = intent_frame.gap
+            reasoning.metadata["intent_should_alert"] = intent_frame.should_alert
+            reasoning.metadata["intent_recommended_probes"] = intent_frame.recommended_probes
+            if exploration is not None:
+                reasoning.metadata["explore_budget_used"] = len(exploration.tool_results)
+
         action = self.actor.act(reasoning, scene_state)
         interaction = self.interactor.respond(action, scene_state)
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import inspect
 from dataclasses import dataclass, field
 from typing import Any, List, Optional, Sequence
 
@@ -61,6 +62,7 @@ class ExplorationState:
     raw_input: Any = None
     tool_results: List[ToolResult] = field(default_factory=list)
     available_tools: Sequence[str] = field(default_factory=list)
+    preferred_tools: Sequence[str] = field(default_factory=list)
 
     @property
     def tools_used(self) -> List[str]:
@@ -144,6 +146,7 @@ class Explorer:
         user_query: Optional[str] = None,
         raw_input: Any = None,
         max_steps_override: Optional[int] = None,
+        preferred_tools: Optional[Sequence[str]] = None,
     ) -> ExplorationOutcome:
         self.planner.reset()
         collected_signals: List[EnvironmentSignal] = list(signals)
@@ -151,7 +154,24 @@ class Explorer:
         decisions: List[ExplorationDecision] = []
 
         effective_max_steps = self.max_steps if max_steps_override is None else max_steps_override
+        preferred = [
+            name for name in (preferred_tools or [])
+            if self.registry.is_allowed(name) and self.registry.get(name)
+        ]
         for step in range(max(0, effective_max_steps)):
+            preferred_call = self._next_noarg_preferred_tool(preferred, tool_results)
+            if preferred_call is not None:
+                decision = ExplorationDecision(
+                    stop=False,
+                    rationale="IntentFrame recommended this no-argument probe.",
+                    tool_call=preferred_call,
+                )
+                decisions.append(decision)
+                result = self.registry.execute(preferred_call)
+                tool_results.append(result)
+                collected_signals.append(self._result_to_signal(result, user_query))
+                continue
+
             # FIX: Build state with ALL collected signals including latest tool results
             # Previously, planner could see stale state because tool_results were
             # added after the planner decision in the same iteration.
@@ -161,6 +181,7 @@ class Explorer:
                 raw_input=raw_input,
                 tool_results=tool_results,
                 available_tools=[tool.name for tool in self.registry.list() if self.registry.is_allowed(tool.name)],
+                preferred_tools=preferred,
             )
             decision = self.planner.decide(state)
             decisions.append(decision)
@@ -170,28 +191,51 @@ class Explorer:
 
             result = self.registry.execute(decision.tool_call)
             tool_results.append(result)
-
-            if result.ok:
-                # Score relevance: tool outputs with grounding info get high
-                # confidence, pure system metrics get lower confidence
-                conf = _signal_confidence(result, user_query)
-                sig = EnvironmentSignal(
-                    source=result.name,
-                    payload={"output": result.output},
-                    modality="tool",
-                    confidence=conf,
-                )
-            else:
-                sig = EnvironmentSignal(
-                    source=result.name,
-                    payload={"error": result.error},
-                    modality="tool",
-                    confidence=0.0,
-                )
-                logger.warning("Probe tool '%s' failed: %s", result.name, result.error)
-
-            # FIX: Immediately append signal so next iteration's state is up-to-date
-            collected_signals.append(sig)
+            collected_signals.append(self._result_to_signal(result, user_query))
 
         extra = [s for s in collected_signals[len(signals):] if s.confidence >= 0.5]
         return ExplorationOutcome(extra_signals=extra, tool_results=tool_results, decisions=decisions)
+
+    def _next_noarg_preferred_tool(
+        self,
+        preferred_tools: Sequence[str],
+        tool_results: Sequence[ToolResult],
+    ) -> Optional[ToolCall]:
+        used = {result.name for result in tool_results}
+        for name in preferred_tools:
+            if name in used:
+                continue
+            tool = self.registry.get(name)
+            if tool is None or not self.registry.is_allowed(name):
+                continue
+            try:
+                sig = inspect.signature(tool.handler)
+            except (TypeError, ValueError):
+                continue
+            required = [
+                param for param in sig.parameters.values()
+                if param.default is inspect.Signature.empty
+                and param.kind in (param.POSITIONAL_ONLY, param.POSITIONAL_OR_KEYWORD, param.KEYWORD_ONLY)
+            ]
+            if not required:
+                return ToolCall(name=name)
+        return None
+
+    @staticmethod
+    def _result_to_signal(result: ToolResult, query: Optional[str]) -> EnvironmentSignal:
+        if result.ok:
+            conf = _signal_confidence(result, query)
+            return EnvironmentSignal(
+                source=result.name,
+                payload={"output": result.output},
+                modality="tool",
+                confidence=conf,
+            )
+
+        logger.warning("Probe tool '%s' failed: %s", result.name, result.error)
+        return EnvironmentSignal(
+            source=result.name,
+            payload={"error": result.error},
+            modality="tool",
+            confidence=0.0,
+        )

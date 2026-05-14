@@ -210,6 +210,11 @@ class SmartPlanner(Planner):
             self._hint_queue = _derive_hints(
                 state.signals, state.user_query or ""
             )
+            preferred = set(state.preferred_tools or [])
+            if preferred:
+                self._hint_queue.sort(
+                    key=lambda h: (h.tool_name not in preferred, -h.priority)
+                )
 
         # Try each hint in priority order
         while self._hint_queue:
@@ -250,6 +255,10 @@ class SmartPlanner(Planner):
 
         # If a concrete hint can be derived for an available tool, explore.
         available = set(state.available_tools)
+        preferred = set(state.preferred_tools or [])
+        if preferred & available:
+            return True
+
         hints = _derive_hints(state.signals, state.user_query or "")
         for h in hints:
             if h.tool_name in available:

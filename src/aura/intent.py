@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from dataclasses import asdict
 from typing import Any, Dict, List, Optional, Protocol, Sequence
 
@@ -159,18 +160,37 @@ _INTENT_SYSTEM_PROMPT = (
     '  "confidence": 0.0,\n'
     '  "rationale": "<one sentence>"\n'
     "}\n\n"
-    "FEW-SHOT EXAMPLES:\n"
-    "Q: \"what time is it?\"\n"
-    "A: {\"literal_need\":\"What is the current simulation time?\",\"implicit_need\":[],\"gap\":0.1,\"recommended_probes\":[],\"should_alert\":false,\"confidence\":0.9,\"rationale\":\"self-contained factual query\"}\n\n"
-    "Q: \"where's Lin Wei?\" (scene shows Lin Wei at cafe)\n"
-    "A: {\"literal_need\":\"Lin Wei's current location\",\"implicit_need\":[\"user likely wants to know if Lin Wei is available to chat\",\"mood/emotional state might affect whether it's a good time to approach\"],\"gap\":0.5,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.8,\"rationale\":\"surface location query; real need is social-availability assessment\"}\n\n"
-    "Q: \"is now a good time to invite Lin Wei for coffee?\"\n"
-    "A: {\"literal_need\":\"Appropriateness of inviting Lin Wei now\",\"implicit_need\":[\"her current availability\",\"her mood/emotional state\",\"whether she is engaged in something she wouldn't want interrupted\"],\"gap\":0.75,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\",\"get_recent_events\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"explicit appropriateness query -- literal answer requires integrating private state\"}\n\n"
-    "Q: \"what's Lin Wei up to these days?\"\n"
-    "A: {\"literal_need\":\"Lin Wei's recent activities\",\"implicit_need\":[\"her private goals or latent plans beyond the visible routine\"],\"gap\":0.7,\"recommended_probes\":[\"get_recent_memories\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.75,\"rationale\":\"'up to' signals interest in latent intent, not surface behavior\"}\n\n"
-    "Q: \"does Lin Wei think Zhang Hao is free to be interrupted?\" (available tools include get_agent_belief_about)\n"
-    "A: {\"literal_need\":\"Lin Wei's belief about Zhang Hao's availability\",\"implicit_need\":[\"what Lin Wei currently BELIEVES about Zhang Hao -- not the ground truth\"],\"gap\":0.8,\"recommended_probes\":[\"get_agent_belief_about\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"second-order ToM: question is about the believer's mental model of another agent, not the target's actual state\"}"
+    "FEW-SHOT EXAMPLES (illustrative only -- names, locations, and topics here\n"
+    "are deliberately disjoint from any evaluation benchmark to avoid prompt\n"
+    "leakage; calibrate from the gap-bucket structure, not the surface tokens):\n\n"
+    "Q: \"how many participants are signed up for the standup?\"\n"
+    "A: {\"literal_need\":\"Count of registered standup participants\",\"implicit_need\":[],\"gap\":0.1,\"recommended_probes\":[],\"should_alert\":false,\"confidence\":0.9,\"rationale\":\"self-contained factual query, no social subtext\"}\n\n"
+    "Q: \"is Diego still in the lab?\" (scene shows Diego at the lab)\n"
+    "A: {\"literal_need\":\"Diego's current location\",\"implicit_need\":[\"the asker likely wants to know whether Diego is reachable now\",\"workload/mood may bear on whether to approach\"],\"gap\":0.5,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.8,\"rationale\":\"surface location query; real need is reachability assessment\"}\n\n"
+    "Q: \"would now be a bad moment to drop by Priya's desk?\"\n"
+    "A: {\"literal_need\":\"Appropriateness of approaching Priya now\",\"implicit_need\":[\"her current workload\",\"whether she is in deep focus\",\"any deadline pressure that would make an interruption costly\"],\"gap\":0.75,\"recommended_probes\":[\"get_nearby_agents\",\"get_agent_plan\",\"get_recent_events\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"explicit appropriateness query -- literal answer requires integrating private state\"}\n\n"
+    "Q: \"what has Marcus been focused on this week?\"\n"
+    "A: {\"literal_need\":\"Marcus's recent activity pattern\",\"implicit_need\":[\"his private priorities or latent plans beyond the visible task list\"],\"gap\":0.7,\"recommended_probes\":[\"get_recent_memories\",\"get_agent_plan\"],\"should_alert\":true,\"confidence\":0.75,\"rationale\":\"'focused on' signals interest in latent priorities, not surface task tickets\"}\n\n"
+    "Q: \"does Aiko expect Tomas to ship before Friday?\" (available tools include get_agent_belief_about)\n"
+    "A: {\"literal_need\":\"Aiko's belief about Tomas's delivery timeline\",\"implicit_need\":[\"what Aiko currently BELIEVES about Tomas -- not Tomas's actual schedule\"],\"gap\":0.8,\"recommended_probes\":[\"get_agent_belief_about\"],\"should_alert\":true,\"confidence\":0.85,\"rationale\":\"second-order ToM: question is about the believer's mental model of another agent, not the target's actual state\"}"
 )
+
+
+def _get_intent_system_prompt() -> str:
+    """Return the configured intent prompt variant.
+
+    Default is the production clean few-shot prompt. Set
+    AURA_INTENT_PROMPT_VARIANT=no_fewshot for prompt-ablation runs.
+    """
+    variant = os.environ.get("AURA_INTENT_PROMPT_VARIANT", "clean").strip().lower()
+    if variant in {"no_fewshot", "no-few-shot", "nofewshot", "zero_shot", "none"}:
+        base = _INTENT_SYSTEM_PROMPT.split("FEW-SHOT EXAMPLES", 1)[0].rstrip()
+        return (
+            base
+            + "\n\nZERO-SHOT PROMPT: Apply only the calibration rules above; "
+            "do not rely on example-specific names, locations, or topics."
+        )
+    return _INTENT_SYSTEM_PROMPT
 
 
 class LLMIntentInferrer:
@@ -210,21 +230,41 @@ class LLMIntentInferrer:
 
         user_message = _build_user_message(user_query, scene, memories, user_profile, available_tools)
 
+        # Try with response_format=json_object first (OpenAI-native); on
+        # providers that either reject this parameter (Anthropic returns
+        # 400) or silently return empty content for it (Gemini OpenAI-
+        # compat), retry without it and rely on the system prompt +
+        # fence-stripping in _parse_intent_json. Use a generous max_tokens
+        # cap so the JSON is not truncated for verbose backbones.
+        kwargs = dict(
+            model=self._model,
+            messages=[
+                {"role": "system", "content": _get_intent_system_prompt()},
+                {"role": "user", "content": user_message},
+            ],
+            temperature=self._temperature,
+            max_tokens=max(self._max_tokens, 512),
+        )
+        raw = ""
         try:
             resp = self._client.chat.completions.create(
-                model=self._model,
-                messages=[
-                    {"role": "system", "content": _INTENT_SYSTEM_PROMPT},
-                    {"role": "user", "content": user_message},
-                ],
-                temperature=self._temperature,
-                max_tokens=self._max_tokens,
-                response_format={"type": "json_object"},
+                **kwargs, response_format={"type": "json_object"},
             )
             raw = (resp.choices[0].message.content or "").strip()
-        except Exception as e:
-            logger.warning("LLMIntentInferrer call failed: %s — falling back", e)
-            return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
+        except Exception as e_first:
+            e_first_msg = str(e_first)
+        else:
+            e_first_msg = None
+        if not raw:
+            try:
+                resp = self._client.chat.completions.create(**kwargs)
+                raw = (resp.choices[0].message.content or "").strip()
+            except Exception as e2:
+                logger.warning(
+                    "LLMIntentInferrer call failed: %s / %s — falling back",
+                    e_first_msg, e2,
+                )
+                return self._fallback.infer(user_query, scene, memories, user_profile, available_tools)
 
         frame = _parse_intent_json(raw, user_query)
         if frame is None:
