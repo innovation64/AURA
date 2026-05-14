@@ -1,4 +1,4 @@
-# AURA — An Environment Agent for User–AI Alignment
+# AURA: Intent-Directed Probing for Implicit-Need Surfacing in Situated LLM Agents
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
