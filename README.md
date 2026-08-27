@@ -1,7 +1,15 @@
 # AURA: Intent-Directed Probing for Implicit-Need Surfacing in Situated LLM Agents
 
+[![arXiv](https://img.shields.io/badge/arXiv-2606.05557-b31b1b.svg)](https://arxiv.org/abs/2606.05557)
+[![EMNLP 2026](https://img.shields.io/badge/EMNLP%202026-Main%20Conference-2563eb.svg)](https://arxiv.org/abs/2606.05557)
+[![HuggingFace Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-aura--implicit--intent-ffcc4d.svg)](https://huggingface.co/datasets/innovation64/aura-implicit-intent)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> **Accepted to EMNLP 2026 (Main Conference).**
+> Paper: [arXiv:2606.05557](https://arxiv.org/abs/2606.05557) ·
+> Benchmark: [`innovation64/aura-implicit-intent`](https://huggingface.co/datasets/innovation64/aura-implicit-intent) ·
+> Citation: [see below](#citation)
 
 <p align="center">
   <img src="docs/assets/auratown-illustrated.png" alt="AURATown — illustrated bird's-eye view of the 5-agent social simulation testbed" width="860"/>
@@ -18,7 +26,7 @@ queries, AURA infers the user's **implicit information need**, decides
 how much environmental probing that need warrants, and pre-loads grounded
 context *before* reasoning begins.
 
-The defining mechanism is an **`IntentFrame`** — a learned theory-of-mind
+The defining mechanism is an **`IntentFrame`** — a prompted theory-of-mind
 structure that models the gap between what the user *asked* and what
 the user *wants* — on top of a deterministic `Perceive → Scene → Memory →
 Reason` pipeline.
@@ -45,7 +53,7 @@ flowchart LR
     U[Human User<br/>literal query q]:::human
     A[LLM Agents<br/>a_1 … a_N]:::agent
     E[(Environment<br/>scene + hidden private state)]:::env
-    EA[Environment Agent π_E<br/>IntentFrame + 7-stage pipeline]:::aura
+    EA[Environment Agent π_E<br/>IntentFrame + 8-stage pipeline]:::aura
 
     U -->|query| EA
     EA -->|grounded response + alert| U
@@ -199,10 +207,12 @@ Collaborative closes the loop with human attention-budget signals.
 
 ## Highlights
 
-- **IntentFrame** — learned literal/implicit gap estimation that routes
+- **IntentFrame** — literal/implicit gap estimation that routes
   per-query probe budget, tool preference, and proactive alerting.
-- **7-stage pluggable pipeline** — Sense · Scene · Memory · Reason ·
-  Explore · Act · Interact, every stage swappable via the backend
+  The paper's component ablation finds the **gap-derived budget ceiling**
+  is the load-bearing half; see [Which part actually works](#which-part-actually-works).
+- **8-stage pluggable pipeline** — Sense · Scene · Memory · IntentInferrer ·
+  Explore · Reason · Act · Interact, every stage swappable via the backend
   registry (`default`, `llm`, `bmam`, `model`).
 - **Bounded probe loop** — pre-reasoning tool-call loop with a hard
   ceiling (`explore_max_steps`) and domain-contextualised tool set.
@@ -217,6 +227,55 @@ Collaborative closes the loop with human attention-budget signals.
 - **Second-order ToM probe** — `get_agent_belief_about` tool lets one
   agent query another agent's beliefs about a third, for
   false-belief-style reasoning.
+
+---
+
+## Which part actually works
+
+The paper reports a component ablation that we think is the most useful
+finding for anyone building on this. The `IntentFrame` emits two signals:
+a gap-derived **budget ceiling** and a **recommended-probe shortlist**.
+Isolating them on the 100-query benchmark (implicit-need coverage,
+n = 299 query–seed cells):
+
+| Configuration | Coverage | Probes/query |
+|---|---:|---:|
+| NoIntent (ReAct-style, neither signal) | 0.734 | 1.11 |
+| **Budget ceiling only** (fixed probe order) | **0.828** | 1.20 |
+| Probe shortlist only | 0.812 | 1.74 |
+| Both (full `IntentFrame`) | 0.805 | 1.75 |
+
+The budget ceiling alone is both the most accurate and the cheapest arm;
+the full architecture is significantly *worse* than it (Δ = −0.023,
+p = 0.021). A bin-wise calibration analysis further finds gap correlates
+*negatively* (r = −0.33) with the marginal benefit of probing, so the gap
+score works as a **trigger** for whether to spend budget, not as a
+calibrated estimate of how much probing will help.
+
+**If you are deploying this, use gap-routed budgeting over a fixed probe
+order** (`intent_backend="llm"`, then a deterministic tool order rather
+than `recommended_probes`). The LLM shortlist is dispensable, and on our
+registry slightly harmful, once budget routing is in place.
+
+Scope conditions, null results (FANToM, LoCoMo, GAIA), and the human
+evaluation — which does **not** show a human-perceptible advantage over
+the NoIntent baseline — are reported in the paper's Limitations and
+appendices.
+
+---
+
+## Citation
+
+```bibtex
+@inproceedings{li2026aura,
+  title     = {{AURA}: Intent-Directed Probing for Implicit-Need Surfacing in Situated {LLM} Agents},
+  author    = {Li, Yang and Liu, Jiaxiang and Cai, Jiang and Xu, Mingkun},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2026},
+  note      = {arXiv:2606.05557},
+  url       = {https://arxiv.org/abs/2606.05557}
+}
+```
 
 ---
 
@@ -290,7 +349,7 @@ aura-server --host 0.0.0.0 --port 8000
 |-----------|----------------------------------------------|-------------|
 | `default` | Stub implementations, no external calls      | None        |
 | `llm`     | OpenAI-compatible LLM for all stages         | API key     |
-| `bmam`    | Bridge to [BMAM](https://github.com/) five-brain-region system | BMAM server |
+| `bmam`    | Bridge to [BMAM](https://arxiv.org/abs/2601.20465) five-brain-region system | BMAM server |
 | `model`   | Neural plasticity memory layer               | API key     |
 
 Select with `AURAConfig(backend=...)` or the `--backend` CLI flag.
@@ -385,8 +444,11 @@ python -m experiments.run_feedback_convergence  # collaborative loop
 ```
 
 A companion multi-agent testbed (**AURATown**, 5 agents, social
-simulation with hidden private state) and an implicit-intent benchmark
-(25 queries × 5 subcategories) live in the sibling evaluation project.
+simulation with hidden private state) and the implicit-intent benchmark
+(100 queries across 4 scenes × 5 subcategories, plus a 25-query pilot)
+are released on the HuggingFace Hub as
+[`innovation64/aura-implicit-intent`](https://huggingface.co/datasets/innovation64/aura-implicit-intent);
+per-seed run records and IAA materials are under `paper_supplementary/`.
 
 ## License
 
