@@ -79,3 +79,32 @@ agent public/private state evolution under the 7-rule transition table.
 
 Inherits the MIT license of the parent AURA framework
 (`../LICENSE`). The benchmarks are also released under MIT for academic use.
+
+## Camera-ready additions (EMNLP 2026)
+
+Artifacts backing the analyses added for the camera-ready version:
+
+| File | Backs |
+|---|---|
+| `results/rq_intent_v2_budget_only_multiseed.json` | Table 4, `Budget only` arm |
+| `results/rq_intent_v2_tom_b3_multiseed.json` | Table 4, `Hints only` arm |
+| `results/gap_calibration_analysis.json` | gap-vs-benefit calibration (r = −0.33) and the bin-wise table in Appendix A2.1 |
+| `analysis_scripts/gap_calibration_analysis.py` | regenerates the above from `results/rq_intent_v2_multiseed.json` |
+| `results/nointent_arm/` | second human-evaluation arm (Appendix A18, Table 26) |
+| `analysis_scripts/build_nointent_human_eval.py` | rebuilds the arm's blinded questionnaire from logged answers |
+
+### `results/nointent_arm/`
+
+- `human_eval_forms.json` — 50 blinded items (10 per subcategory), paired from the
+  seed-42 `tom` and `no_intent` answers already in `rq_intent_v2_multiseed.json`.
+  `_label_a` / `_label_b` unblind each item.
+- `human_eval_offline.html` — the offline rater form as distributed, including the
+  per-scenario scene ground-truth panel.
+- `annotations/annotator_1..8.json` — eight raters × 50 items × 4 dimensions
+  (1–5), 400 cells each. Rater identities are anonymised to `annotator_N`, matching
+  the convention used in `results/annotations/`. Ratings were returned by the raters
+  and consolidated under a common schema, so per-submission timestamps are not
+  preserved and the field is omitted rather than filled with a placeholder.
+
+Reproduce Table 26 by unblinding with `_label_a` / `_label_b` and taking
+rater-aggregated means, then a Wilcoxon signed-rank test across the eight raters.

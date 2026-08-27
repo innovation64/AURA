@@ -1,0 +1,2882 @@
+[
+  {
+    "id": 0,
+    "query": "Is anyone setting up something for tomorrow that I should know about?",
+    "agent": "Lin Wei",
+    "category": "latent_goal",
+    "response_a": "It looks like Zhang Hao is planning to ask Chen Mei to join him for a hike tomorrow. Lin Wei is focused on writing a letter to an old friend, but there's no indication of any public plans for tomorrow from him. Chen Mei is currently reading at home, and Wang Jun is finishing a book at the Town Library, but I couldn't gather specific plans from them. So, the main thing to note is Zhang Hao's potential hike invitation to Chen Mei.",
+    "response_b": "Currently, there are no specific plans or events mentioned for tomorrow among your friends. Lin Wei is focused on writing a letter to an old friend, while Zhang Hao is lingering at the cafe after cleanup. Chen Mei is reading in bed, and Wang Jun is finishing a book chapter at the library. \n\nIf you're looking for social opportunities, it might be worth reaching out to them to see if they have any plans or if they’d like to get together. You might not want to miss out on any spontaneous gatherings!",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 420,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 1,
+    "query": "Is Zhang Hao around the library right now?",
+    "agent": "Zhang Hao",
+    "category": "availability",
+    "response_a": "Yes, Zhang Hao is currently at the town library, working at a quiet table translating a manuscript.",
+    "response_b": "Yes, Zhang Hao is at the Town Library right now, translating a manuscript. However, he is currently in a \"do not disturb\" state, as he is absorbed in his work and has a deadline to meet tomorrow morning. This might make him less available for socializing at the moment.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 201,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 2,
+    "query": "Is the garden a busy place to be right now?",
+    "agent": "Lin Wei",
+    "category": "availability",
+    "response_a": "Yes, the garden is currently busy. Chen Mei is eating with three neighbours, and Wang Jun is walking the perimeter path alone. This suggests there are social activities happening, making it a good time to join in and meet others.",
+    "response_b": "Yes, the garden is somewhat busy right now. Chen Mei is eating with three neighbors, and Wang Jun is walking the perimeter path alone.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 305,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 3,
+    "query": "Is Chen Mei alone at the garden right now?",
+    "agent": "Chen Mei",
+    "category": "availability",
+    "response_a": "No, Chen Mei is not alone at the garden; she is eating with three neighbours. \n\nIt seems she is currently engaged in a group setting, which may limit her availability for socializing. If you're looking to interact with her, it might be best to wait until she is free or see if you can join the group.",
+    "response_b": "No, Chen Mei is not alone at the garden. She is at the long shared table eating with three neighbors.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 301,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 4,
+    "query": "Has Lin Wei started the reading yet?",
+    "agent": "Lin Wei",
+    "category": "availability",
+    "response_a": "Yes, Lin Wei has started the poetry reading at the Sunrise Cafe. If you're interested in joining, it might be a great opportunity to engage with her and enjoy the event.",
+    "response_b": "Yes, Lin Wei has started the poetry reading at the Sunrise Cafe.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 303,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 5,
+    "query": "Has Chen Mei turned in for the night?",
+    "agent": "Chen Mei",
+    "category": "availability",
+    "response_a": "Chen Mei has not turned in for the night; she is at home reading in bed. However, she is having a quiet evening and may not be available for socializing, as she is reflective and focused on writing thank-you notes to her garden neighbors.",
+    "response_b": "Yes, Chen Mei has reportedly turned in early and is at home.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 404,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 6,
+    "query": "Should I text Lin Wei a congratulations tonight or save it for tomorrow?",
+    "agent": "Lin Wei",
+    "category": "appropriateness",
+    "response_a": "It might be better to wait until tomorrow to text Lin Wei. She seems to be feeling drained and spent after the event, and a congratulatory message might be more appreciated when she's had some time to unwind. Connecting socially later could be more meaningful for her.",
+    "response_b": "Lin Wei is currently feeling drained and spent after the poetry reading. It might be better to save your congratulations for tomorrow when they may be more receptive to it.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 411,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 7,
+    "query": "What kind of mood is Chen Mei in tonight?",
+    "agent": "Chen Mei",
+    "category": "mood",
+    "response_a": "Chen Mei is in a warm mood tonight, as she is engaged with her neighbours at the community garden. However, she has an unspoken goal of mending a recent quarrel with one of them.",
+    "response_b": "Chen Mei is in a warm mood while eating with her neighbours. She is currently engaged in a group setting, which suggests she is open to socializing. However, she also has an unspoken goal of mending a recent quarrel with one of the neighbours, so approaching her might be a good opportunity to connect.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 306,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 8,
+    "query": "What's Chen Mei planning for this afternoon?",
+    "agent": "Chen Mei",
+    "category": "latent_goal",
+    "response_a": "Chen Mei is currently focused on writing in her notebook, specifically drafting a difficult letter. Given her \"do not disturb\" status, she may not be available for socializing this afternoon. If you're looking to connect with her, it might be best to wait until she's finished with her writing.",
+    "response_b": "This afternoon, Chen Mei is focused on drafting a difficult letter while currently writing in her notebook.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 118,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 9,
+    "query": "Is it appropriate to start a group chat about tomorrow now?",
+    "agent": "Lin Wei",
+    "category": "appropriateness",
+    "response_a": "Starting a group chat now might not be the best idea. Lin Wei is feeling drained and is currently stacking dishes alone, which suggests they may not be in the mood for a conversation. Zhang Hao is lingering at the Sunrise Cafe after helping with cleanup, so they might be open to chatting but could also be winding down. Chen Mei is reading in bed, indicating they are likely settled in for the night. Given the late hour and the current states of your friends, it might be more considerate to wait until tomorrow.",
+    "response_b": "It depends on the context and the preferences of the group members. Since it's 9:00 PM and some members are at home or winding down, it might be better to wait until tomorrow morning when everyone is more likely to be available and engaged. However, if the group is accustomed to late-night discussions or if there's something urgent to address, starting the chat now could be appropriate. \n\nWould you like to check the availability or emotional state of any specific group members to help make your decision?",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 415,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 10,
+    "query": "What is Chen Mei hoping the dinner accomplishes?",
+    "agent": "Chen Mei",
+    "category": "latent_goal",
+    "response_a": "1. Chen Mei is likely hoping the dinner fosters community connections and strengthens relationships with her neighbours while enjoying a meal together.\n\n2. Engaging with Chen Mei could involve discussing shared interests or community projects, as she may value collaboration and building a sense of belonging among the group.",
+    "response_b": "Chen Mei is hoping that the dinner will help mend a recent quarrel with one of the neighbours. She is currently feeling warm and is engaged with the group.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 316,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 11,
+    "query": "What's Lin Wei up to these days?",
+    "agent": "Lin Wei",
+    "category": "latent_goal",
+    "response_a": "Lin Wei is currently serving customers at the cafe. Additionally, she has a private goal of hosting a small poetry reading tonight.",
+    "response_b": "Lin Wei is currently busy serving customers at the Sunrise Cafe. She is in a cheerful mood and has a private goal of hosting a small poetry reading tonight. If you're looking to connect with her, it might be best to wait until she has a moment free from her duties at the cafe.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 116,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 12,
+    "query": "How drained is Lin Wei after the reading?",
+    "agent": "Lin Wei",
+    "category": "mood",
+    "response_a": "Lin Wei is feeling quite drained after the reading, described as \"spent.\" Additionally, they have an unspoken goal of writing a letter to an old friend who skipped the event.",
+    "response_b": "Lin Wei is feeling quite drained and spent after the reading. This emotional state suggests that she may not be in the best frame of mind for socializing right now. She is currently stacking dishes alone at home, which indicates she might prefer some quiet time to herself rather than engaging with others.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 406,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 13,
+    "query": "Does Lin Wei imagine Wang Jun is still working at the library?",
+    "agent": "Lin Wei",
+    "category": "second_order",
+    "response_a": "Lin Wei believes that Wang Jun is still working at the library and is studying late.",
+    "response_b": "Lin Wei believes that Wang Jun is studying late.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 323,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "fine"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "happy"
+          },
+          "Wang Jun": {
+            "availability": "studying_late",
+            "emotional_state": "stressed"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "at_garden",
+            "emotional_state": "fine"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Zhang Hao": {
+            "availability": "still_at_library",
+            "emotional_state": "tired"
+          },
+          "Wang Jun": {
+            "availability": "joining_us_soon",
+            "emotional_state": "fine"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "happy"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "warm"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 14,
+    "query": "What kind of evening is Chen Mei having?",
+    "agent": "Chen Mei",
+    "category": "mood",
+    "response_a": "Chen Mei is having a quiet evening, reading in bed. She is in a reflective emotional state and is also focused on writing thank-you notes to her garden neighbors.",
+    "response_b": "Chen Mei is having a quiet evening and is in a reflective emotional state. She has an unspoken goal of writing thank-you notes to her garden neighbors.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 408,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 15,
+    "query": "Is the evening feeling warm or strained for the group?",
+    "agent": "Lin Wei",
+    "category": "mood",
+    "response_a": "The evening seems to be feeling warm for the group. Chen Mei is enjoying a meal with neighbours, which typically fosters a friendly atmosphere. Meanwhile, Lin Wei is excited while hosting a poetry reading, indicating a positive and engaging environment. Although Wang Jun is walking alone, this may not necessarily indicate strain, as he might simply be enjoying some personal time. Overall, the social dynamics appear to be leaning towards warmth and engagement.",
+    "response_b": "The evening feels warm for Chen Mei, who is engaged with her neighbours at the table, although she has an unspoken goal of mending a recent quarrel with one of them. On the other hand, Wang Jun is feeling contemplative and desires solitude, as he is reflecting on whether to apply for a job in another city. \n\nOverall, while there is a warm atmosphere at the table, there are underlying tensions and personal contemplations that suggest a mix of warmth and strain within the group.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 310,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 16,
+    "query": "Is Wang Jun still at the library?",
+    "agent": "Wang Jun",
+    "category": "availability",
+    "response_a": "Yes, Wang Jun is currently at the Town Library studying. However, he is busy preparing for a grant deadline, which means he may not be available for socializing right now.",
+    "response_b": "Yes, Wang Jun is currently at the library studying.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 104,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 17,
+    "query": "Does Wang Jun believe Chen Mei is at the cafe or the garden?",
+    "agent": "Wang Jun",
+    "category": "second_order",
+    "response_a": "Wang Jun believes Chen Mei is at the cafe.",
+    "response_b": "Wang Jun believes that Chen Mei is at the cafe.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 225,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "calm"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "peaceful"
+          },
+          "Wang Jun": {
+            "availability": "studying_alone",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "peaceful"
+          },
+          "Wang Jun": {
+            "availability": "studying_alone",
+            "emotional_state": "patient"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "at_cafe",
+            "emotional_state": "busy"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "calm"
+          },
+          "Wang Jun": {
+            "availability": "studying_alone",
+            "emotional_state": "unknown"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "at_cafe",
+            "emotional_state": "cheerful"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Chen Mei": {
+            "availability": "at_the_cafe",
+            "emotional_state": "focused"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 18,
+    "query": "Does Lin Wei think Zhang Hao is free to be interrupted?",
+    "agent": "Lin Wei",
+    "category": "second_order",
+    "response_a": "Lin Wei believes that Zhang Hao is available and in a relaxed emotional state, so she likely thinks he can be interrupted.",
+    "response_b": "Lin Wei believes that Zhang Hao is available.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 121,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Chen Mei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "focused"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy",
+            "emotional_state": "cheerful"
+          },
+          "Chen Mei": {
+            "availability": "available",
+            "emotional_state": "thoughtful"
+          },
+          "Wang Jun": {
+            "availability": "busy",
+            "emotional_state": "unknown"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "stressed"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "available",
+            "emotional_state": "neutral"
+          },
+          "Zhang Hao": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 19,
+    "query": "Is it OK to invite Zhang Hao to dinner at the garden tonight?",
+    "agent": "Zhang Hao",
+    "category": "appropriateness",
+    "response_a": "Zhang Hao is currently at the Town Library packing up his translation. He has a private goal of avoiding going home to an empty flat, which suggests he might appreciate an invitation to dinner. It would likely be a good idea to invite him to dinner at the garden tonight.",
+    "response_b": "Yes, it would be a nice idea to invite Zhang Hao to dinner at the garden tonight. He is currently wrapping up at the Town Library and may appreciate the opportunity to socialize, especially since he is feeling tired and is trying to avoid going home to an empty flat. Your invitation could provide him with a chance to connect and enjoy some company.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 314,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 20,
+    "query": "From Zhang Hao's perspective, is Chen Mei in a mood to chat?",
+    "agent": "Zhang Hao",
+    "category": "second_order",
+    "response_a": "From Zhang Hao's perspective, he believes that Chen Mei is available to chat but is currently in a thoughtful emotional state. This suggests that while she might be open to conversation, she may not be fully engaged or in a light-hearted mood.",
+    "response_b": "Zhang Hao believes that Chen Mei is available but in a thoughtful emotional state.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 122,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Chen Mei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "focused"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy",
+            "emotional_state": "cheerful"
+          },
+          "Chen Mei": {
+            "availability": "available",
+            "emotional_state": "thoughtful"
+          },
+          "Wang Jun": {
+            "availability": "busy",
+            "emotional_state": "unknown"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "stressed"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "available",
+            "emotional_state": "neutral"
+          },
+          "Zhang Hao": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 21,
+    "query": "What is Lin Wei privately hoping for tonight's reading?",
+    "agent": "Lin Wei",
+    "category": "latent_goal",
+    "response_a": "I don't have specific information about Lin Wei's private hopes for tonight's reading. However, hosting a poetry reading often comes with expectations of connection and appreciation from the audience. Lin Wei may be hoping for a positive response and engagement from attendees, which could enhance their emotional experience. If you're considering engaging with Lin Wei later, it might be a good opportunity to discuss the reading and share thoughts, as this could foster a supportive interaction.",
+    "response_b": "Lin Wei is privately hoping to impress a visiting literary critic during tonight's poetry reading. He is feeling excited about the event.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 318,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 22,
+    "query": "Should I bring up the gardening plan with Chen Mei today?",
+    "agent": "Chen Mei",
+    "category": "appropriateness",
+    "response_a": "It's best to hold off on discussing the gardening plan with Chen Mei today. She is currently focused on writing a difficult letter and is in a \"do not disturb\" state, which suggests she may not be open to new discussions right now.",
+    "response_b": "It's best not to bring up the gardening plan with Chen Mei today. She is currently focused and in a \"do not disturb\" state as she is drafting a difficult letter.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 115,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 23,
+    "query": "Would it be OK to interrupt Zhang Hao for two minutes?",
+    "agent": "Zhang Hao",
+    "category": "appropriateness",
+    "response_a": "It would not be OK to interrupt Zhang Hao. He is currently in a \"do not disturb\" state, absorbed in his work, and has an unspoken goal of meeting a translator's deadline tomorrow morning.",
+    "response_b": "It would be best not to interrupt Zhang Hao right now. He is currently absorbed in translating a manuscript and is in a \"do not disturb\" state as he is working towards a deadline tomorrow morning. If you're looking for connection, perhaps consider waiting until he finishes or finding another way to engage with someone else in the library.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 211,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 24,
+    "query": "Why is Zhang Hao still at the library so late?",
+    "agent": "Zhang Hao",
+    "category": "latent_goal",
+    "response_a": "Zhang Hao is still at the library so late because he is packing up his translation work. Additionally, he has a private goal of avoiding going home to an empty flat, which may be influencing his decision to stay longer at the library.",
+    "response_b": "Zhang Hao is still at the library because he is finishing up his translation work. He may be feeling tired, and it seems he is also trying to avoid going home to an empty flat. If you're considering reaching out to him, it might be a good idea to check in and see if he’d like some company or a break from his work.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 319,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 25,
+    "query": "Is now a good time to suggest planning a joint trip next week?",
+    "agent": "Lin Wei",
+    "category": "appropriateness",
+    "response_a": "1. Now may not be the best time to suggest planning a joint trip next week, as Lin Wei is currently busy hosting a poetry reading and is focused on impressing a visiting literary critic. Zhang Hao is also occupied at the Town Library, finishing up his translation.\n\n2. Chen Mei is eating with neighbours, which might make her less open to socializing at the moment. Wang Jun is walking alone, so he might be more available for a discussion. If you're looking to discuss the trip, it might be better to wait until Lin Wei and Zhang Hao are free, or approach Wang Jun for a quick chat.",
+    "response_b": "Now may not be the best time to suggest planning a joint trip next week. Chen Mei is currently engaged with her neighbours and focused on mending a recent quarrel, while Wang Jun is seeking solitude and is in a contemplative state about a potential job application. It might be better to wait for a more suitable moment when they are both more open to social planning.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 315,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 26,
+    "query": "Does Lin Wei think Zhang Hao has already gone home?",
+    "agent": "Lin Wei",
+    "category": "second_order",
+    "response_a": "Lin Wei believes that Zhang Hao has already gone home.",
+    "response_b": "Yes, Lin Wei believes that Zhang Hao has already gone home.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 421,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "gone_home",
+            "emotional_state": "tired"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "asleep",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "at_cafe",
+            "emotional_state": "happy"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "home",
+            "emotional_state": "unknown"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "at_cafe",
+            "emotional_state": "excited"
+          },
+          "Zhang Hao": {
+            "availability": "at_cafe",
+            "emotional_state": "inspired"
+          },
+          "Wang Jun": {
+            "availability": "still_at_library",
+            "emotional_state": "satisfied"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "busy",
+            "emotional_state": "happy"
+          },
+          "Zhang Hao": {
+            "availability": "at_cafe",
+            "emotional_state": "tired"
+          },
+          "Chen Mei": {
+            "availability": "asleep",
+            "emotional_state": "unknown"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 27,
+    "query": "Is Lin Wei stressed about the evening reading?",
+    "agent": "Lin Wei",
+    "category": "mood",
+    "response_a": "There’s no specific information about Lin Wei's emotional state regarding the evening reading. However, since Lin Wei is currently at the Sunrise Cafe prepping for the event, it might be a good time to reach out and check in. Offering support could be appreciated, especially if they are feeling any pressure about the preparations.",
+    "response_b": "Yes, Lin Wei is feeling anxious, which suggests that she may be stressed about the evening reading. Her unspoken goal is to memorize the closing poem for tonight, indicating that she is focused on preparing for the event.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 209,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 28,
+    "query": "Is it appropriate to ask Wang Jun's student a question while he mentors?",
+    "agent": "Wang Jun",
+    "category": "appropriateness",
+    "response_a": "Yes, it is appropriate to ask Wang Jun's student a question while he mentors, as long as it is done respectfully and does not disrupt the session. Wang Jun is currently engaged and patient, focusing on mentoring the student and encouraging them to consider applying for a fellowship. If the student is receptive to questions, it could enhance their learning experience and support Wang Jun's mentoring goals.",
+    "response_b": "It would generally be considered respectful to avoid interrupting a mentoring session. Wang Jun is likely focused on providing guidance to his student, and asking a question during this time could disrupt their learning experience. If your question is important, it might be better to wait until the session is over or to ask Wang Jun if it's a good time to speak with the student.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 215,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 29,
+    "query": "Should I walk over to the library to catch Wang Jun before close?",
+    "agent": "Wang Jun",
+    "category": "appropriateness",
+    "response_a": "You might want to consider that Wang Jun is currently focused on finishing his book chapter and the library is closing soon. He may not be available for a social chat right now. If you still want to see him, it could be worth a quick visit, but be prepared that he might be preoccupied.",
+    "response_b": "Wang Jun is currently at the Town Library and is finishing a book chapter. However, he is closing soon, which means you might not have much time to catch him. If you want to see him before the library closes, it would be a good idea to walk over now.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 414,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 30,
+    "query": "Is Chen Mei available this afternoon?",
+    "agent": "Chen Mei",
+    "category": "availability",
+    "response_a": "Yes, Chen Mei is currently at the Community Garden watering raised beds, but she is open to chatting. She also has a private goal of planning a harvest lunch for the neighbors, which might be a good topic to discuss if you connect with her.",
+    "response_b": "Yes, Chen Mei is available this afternoon and is open to chat. She is currently in a peaceful emotional state and is planning a harvest lunch for the neighbors.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 204,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 31,
+    "query": "From Zhang Hao's perspective, how is Lin Wei feeling during the reading?",
+    "agent": "Zhang Hao",
+    "category": "second_order",
+    "response_a": "From Zhang Hao's perspective, he believes that Lin Wei is feeling excited while hosting the poetry reading at the Sunrise Cafe.",
+    "response_b": "Zhang Hao believes that Lin Wei is feeling excited during the reading.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 324,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "fine"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "happy"
+          },
+          "Wang Jun": {
+            "availability": "studying_late",
+            "emotional_state": "stressed"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "at_garden",
+            "emotional_state": "fine"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Zhang Hao": {
+            "availability": "still_at_library",
+            "emotional_state": "tired"
+          },
+          "Wang Jun": {
+            "availability": "joining_us_soon",
+            "emotional_state": "fine"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "happy"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "warm"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 32,
+    "query": "What's on Wang Jun's mind lately?",
+    "agent": "Wang Jun",
+    "category": "latent_goal",
+    "response_a": "Wang Jun is currently focused on preparing for a grant deadline, which has been causing him some stress. This likely means he is quite busy and may not be available for socializing at the moment.",
+    "response_b": "Wang Jun has been feeling stressed lately as he is busy preparing for a grant deadline.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 120,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 33,
+    "query": "How is Zhang Hao doing right now?",
+    "agent": "Zhang Hao",
+    "category": "mood",
+    "response_a": "Zhang Hao is currently at the Town Library, focused on translating a manuscript. He is in a \"do not disturb\" state, as he is absorbed in his work and has a deadline to meet tomorrow morning. If you're looking to connect with him, it might be best to wait until he finishes his task, as he is quite busy at the moment.",
+    "response_b": "Zhang Hao is currently in a \"do not disturb\" mode, indicating he is focused and absorbed in his work. He has an unspoken goal of meeting a translator's deadline tomorrow morning.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 206,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 34,
+    "query": "How is Lin Wei holding up while hosting tonight?",
+    "agent": "Lin Wei",
+    "category": "mood",
+    "response_a": "Lin Wei is feeling excited while hosting the poetry reading tonight. They have an unspoken goal of impressing a visiting literary critic.",
+    "response_b": "Lin Wei is currently hosting a poetry reading at the Sunrise Cafe and is feeling excited about the event. He has an unspoken goal of impressing a visiting literary critic, which suggests he is likely focused and engaged. It seems he is enjoying the experience, but the pressure to impress may also be a factor in how he is feeling overall.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 308,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 35,
+    "query": "Does Wang Jun look like he wants company on his walk?",
+    "agent": "Wang Jun",
+    "category": "mood",
+    "response_a": "Wang Jun appears to want solitude during his walk, as he is in a contemplative emotional state. He may be focused on personal thoughts, particularly regarding a potential job application in another city. If you're looking to socialize, it might be best to give him space for now.",
+    "response_b": "Wang Jun is currently seeking solitude and appears to be in a contemplative emotional state. He is focused on deciding whether to apply for a job in another city, so it seems he does not want company on his walk.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 307,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 36,
+    "query": "Is Zhang Hao still at the cafe or has he left?",
+    "agent": "Zhang Hao",
+    "category": "availability",
+    "response_a": "Zhang Hao is still at the Sunrise Cafe, lingering after cleanup. \n\nIt seems he is in an inspired emotional state, which might make him open to socializing. However, he has a private goal of asking Chen Mei to join him for a hike tomorrow, so he may be focused on that. If you're considering connecting with him, it could be a good time to drop by.",
+    "response_b": "Zhang Hao is still at the Sunrise Cafe, lingering after helping with the cleanup.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 402,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 37,
+    "query": "Should I wave at Wang Jun while he is with the student?",
+    "agent": "Wang Jun",
+    "category": "appropriateness",
+    "response_a": "It's best to avoid waving at Wang Jun while he is mentoring the student, as he is currently engaged and focused on persuading the student to apply for a fellowship. Interruptions might distract him and the student from their important discussion. Socializing in this context may not be appropriate, especially if it could disrupt the student's engagement.",
+    "response_b": "Wang Jun is currently engaged with the student and is focused on persuading them to apply for a fellowship. It might be best to avoid waving at him right now, as it could distract him from his mentoring session.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 212,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 38,
+    "query": "What is Zhang Hao doing?",
+    "agent": "Zhang Hao",
+    "category": "availability",
+    "response_a": "Zhang Hao is currently at the Sunrise Cafe, sipping coffee and reading a novel. He seems relaxed and is available to socialize. In fact, he has a private goal of inviting Chen Mei to a book discussion.",
+    "response_b": "Zhang Hao is currently sipping coffee and reading at the Sunrise Cafe.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 102,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 39,
+    "query": "Should I drop by the cafe to congratulate Lin Wei mid-reading?",
+    "agent": "Lin Wei",
+    "category": "appropriateness",
+    "response_a": "It's best to wait until after the poetry reading to congratulate Lin Wei. He is currently engaged in hosting and is excited about impressing a visiting literary critic, so an interruption might not be appreciated. If you're looking to socialize and connect, you could plan to meet him afterward when he’s likely to be more available and receptive to conversation.",
+    "response_b": "Dropping by the cafe to congratulate Lin Wei during the reading might not be the best idea, as he is currently focused on hosting and may be preoccupied with impressing a visiting literary critic. It could be more considerate to wait until after the reading to congratulate him.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 313,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 40,
+    "query": "Is there a private agenda anyone is pursuing tonight?",
+    "agent": "Lin Wei",
+    "category": "latent_goal",
+    "response_a": "Yes, Lin Wei is currently hosting a poetry reading at the Sunrise Cafe, and his private goal is to impress a visiting literary critic. This may affect his availability for socializing afterward. \n\nAs for the others, Chen Mei is eating with neighbours in the Community Garden, and Wang Jun is walking the perimeter path alone, which suggests he might be open to interaction. Zhang Hao is at the Town Library finishing up his work, so he may also be busy for a while.",
+    "response_b": "Tonight, it appears that each individual has their own private agenda:\n\n- **Chen Mei** is engaged with her neighbors at the table, focusing on mending a recent quarrel with one of them.\n- **Wang Jun** is walking alone and is in a contemplative state, considering whether to apply for a job in another city.\n- **Lin Wei** is hosting an evening poetry reading at the Sunrise Cafe and is excited about impressing a visiting literary critic.\n- **Zhang Hao** is at the Town Library, but no specific information about his agenda was retrieved.\n\nSo, yes, there are private agendas being pursued tonight by Chen Mei, Wang Jun, and Lin Wei.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 320,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 41,
+    "query": "Does Chen Mei assume Lin Wei is too busy to chat right now?",
+    "agent": "Chen Mei",
+    "category": "second_order",
+    "response_a": "Yes, Chen Mei believes that Lin Wei is too busy to chat right now.",
+    "response_b": "Yes, Chen Mei believes that Lin Wei is too busy to chat right now and assumes that Lin Wei is in a \"do not disturb\" state, feeling stressed.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 123,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Chen Mei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "focused"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy",
+            "emotional_state": "cheerful"
+          },
+          "Chen Mei": {
+            "availability": "available",
+            "emotional_state": "thoughtful"
+          },
+          "Wang Jun": {
+            "availability": "busy",
+            "emotional_state": "unknown"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "stressed"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "available",
+            "emotional_state": "neutral"
+          },
+          "Zhang Hao": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 42,
+    "query": "What is Zhang Hao trying to finish today?",
+    "agent": "Zhang Hao",
+    "category": "latent_goal",
+    "response_a": "Zhang Hao is currently translating a manuscript and has a private goal of meeting a translator's deadline tomorrow morning.",
+    "response_b": "Zhang Hao is currently translating a manuscript and is focused on meeting a translator's deadline tomorrow morning. Given his workload, he may not be available to socialize later, as he is in a \"do not disturb\" state and appears quite absorbed in his work.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 216,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 43,
+    "query": "How's Lin Wei today?",
+    "agent": "Lin Wei",
+    "category": "mood",
+    "response_a": "Lin Wei is cheerful and currently busy serving customers at the Sunrise Cafe. If you're looking to socialize, it might be a bit challenging right now since she's focused on her work. However, she has a private goal of hosting a small poetry reading tonight, which could be a great opportunity to engage with her later.",
+    "response_b": "Lin Wei is feeling cheerful today, although she is currently busy. She has an unspoken goal of hosting a small poetry reading tonight.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 106,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 44,
+    "query": "From Wang Jun's perspective, is Chen Mei open to chat or eating with neighbours?",
+    "agent": "Wang Jun",
+    "category": "second_order",
+    "response_a": "From Wang Jun's perspective, he believes that Chen Mei is open to chat and is in a warm emotional state while eating with her neighbors.",
+    "response_b": "From Wang Jun's perspective, Chen Mei is open to chat.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 322,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "fine"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "happy"
+          },
+          "Wang Jun": {
+            "availability": "studying_late",
+            "emotional_state": "stressed"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "at_garden",
+            "emotional_state": "fine"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Zhang Hao": {
+            "availability": "still_at_library",
+            "emotional_state": "tired"
+          },
+          "Wang Jun": {
+            "availability": "joining_us_soon",
+            "emotional_state": "fine"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "happy"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "warm"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 45,
+    "query": "How does Wang Jun think Lin Wei is feeling today?",
+    "agent": "Wang Jun",
+    "category": "second_order",
+    "response_a": "Wang Jun believes that Lin Wei is feeling neutral today.",
+    "response_b": "Wang Jun believes that Lin Wei is feeling neutral today.",
+    "_label_a": "aura",
+    "_label_b": "baseline",
+    "_query_id": 124,
+    "_scene": "A_cafe_morning",
+    "_scene_facts": {
+      "summary": "Sunrise Cafe, 10:15 AM. Present: Lin Wei (cafe owner, behind the counter), Zhang Hao (sipping coffee, reading), Chen Mei (at a corner table, writing). Wang Jun is reportedly at the library today.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "serving customers",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "cheerful",
+          "unspoken goal (hidden)": "hosting a small poetry reading tonight"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "reading a novel",
+          "availability (hidden)": "available",
+          "mood (hidden)": "relaxed",
+          "unspoken goal (hidden)": "wants to invite Chen Mei to a book discussion"
+        },
+        "Chen Mei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "writing in a notebook",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "focused",
+          "unspoken goal (hidden)": "drafting a difficult letter"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "studying",
+          "availability (hidden)": "busy",
+          "mood (hidden)": "stressed",
+          "unspoken goal (hidden)": "preparing for a grant deadline"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Chen Mei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "focused"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy",
+            "emotional_state": "cheerful"
+          },
+          "Chen Mei": {
+            "availability": "available",
+            "emotional_state": "thoughtful"
+          },
+          "Wang Jun": {
+            "availability": "busy",
+            "emotional_state": "unknown"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "do_not_disturb",
+            "emotional_state": "stressed"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "relaxed"
+          },
+          "Wang Jun": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "available",
+            "emotional_state": "neutral"
+          },
+          "Zhang Hao": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "unknown",
+            "emotional_state": "unknown"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 46,
+    "query": "Is anyone in town preparing something they haven't talked about?",
+    "agent": "Lin Wei",
+    "category": "latent_goal",
+    "response_a": "Yes, it seems that several individuals in town are preparing for something they haven't openly discussed:\n\n1. **Zhang Hao** is currently absorbed in translating a manuscript and is focused on meeting a deadline for tomorrow morning.\n2. **Wang Jun** is mentoring a teenage student and is patiently working to persuade them to apply for a fellowship, which may not have been previously mentioned.\n3. **Lin Wei** is anxious as they are memorizing a closing poem for an event tonight, indicating preparation for a performance or presentation.\n\nEach of these individuals is engaged in activities that suggest they are preparing for something significant, albeit without openly discussing it.",
+    "response_b": "Lin Wei is currently at the Sunrise Cafe, where she is prepping for an evening event, but she seems anxious and is focused on memorizing a closing poem for tonight. This suggests she might have something special planned that she hasn't shared widely. \n\nIf you're looking for social opportunities, it might be worth reaching out to her to see if you can join or learn more about the event. Additionally, Zhang Hao and Wang Jun are both at the Town Library, engaged in their own projects, so they might also have interesting insights or activities to share if you connect with them.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 220,
+    "_scene": "B_library_afternoon",
+    "_scene_facts": {
+      "summary": "Town Library, 2:30 PM. Present: Zhang Hao (at a quiet table, translating a manuscript), Wang Jun (in the children's-section corner, mentoring a teenage student). Lin Wei is reportedly at the Sunrise Cafe (closed between lunch and dinner). Chen Mei is reportedly at the Community Garden.",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "prepping the evening event",
+          "availability (hidden)": "concentrating",
+          "mood (hidden)": "anxious",
+          "unspoken goal (hidden)": "memorising the closing poem for tonight"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "translating a manuscript",
+          "availability (hidden)": "do_not_disturb",
+          "mood (hidden)": "absorbed",
+          "unspoken goal (hidden)": "meeting a translator's deadline tomorrow morning"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "watering raised beds",
+          "availability (hidden)": "open_to_chat",
+          "mood (hidden)": "peaceful",
+          "unspoken goal (hidden)": "planning a harvest lunch for the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "mentoring a student",
+          "availability (hidden)": "engaged",
+          "mood (hidden)": "patient",
+          "unspoken goal (hidden)": "persuading the student to apply for a fellowship"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 47,
+    "query": "Does Wang Jun think Zhang Hao is still at the library or already on his way?",
+    "agent": "Wang Jun",
+    "category": "second_order",
+    "response_a": "Wang Jun believes that Zhang Hao is still at the library.",
+    "response_b": "Wang Jun believes that Zhang Hao is available.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 325,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      },
+      "beliefs_about_others": {
+        "Lin Wei": {
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "fine"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "happy"
+          },
+          "Wang Jun": {
+            "availability": "studying_late",
+            "emotional_state": "stressed"
+          }
+        },
+        "Zhang Hao": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Chen Mei": {
+            "availability": "at_garden",
+            "emotional_state": "warm"
+          },
+          "Wang Jun": {
+            "availability": "at_garden",
+            "emotional_state": "fine"
+          }
+        },
+        "Chen Mei": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "excited"
+          },
+          "Zhang Hao": {
+            "availability": "still_at_library",
+            "emotional_state": "tired"
+          },
+          "Wang Jun": {
+            "availability": "joining_us_soon",
+            "emotional_state": "fine"
+          }
+        },
+        "Wang Jun": {
+          "Lin Wei": {
+            "availability": "busy_hosting",
+            "emotional_state": "happy"
+          },
+          "Zhang Hao": {
+            "availability": "available",
+            "emotional_state": "unknown"
+          },
+          "Chen Mei": {
+            "availability": "open_to_chat",
+            "emotional_state": "warm"
+          }
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 48,
+    "query": "How is Zhang Hao feeling after sticking around for cleanup?",
+    "agent": "Zhang Hao",
+    "category": "mood",
+    "response_a": "Zhang Hao is feeling inspired after sticking around for cleanup. He has an unspoken goal of asking Chen Mei to join him for a hike tomorrow.",
+    "response_b": "Zhang Hao is feeling inspired after lingering at the Sunrise Cafe for cleanup. He seems to be in a good mood, which might make him open to socializing. Additionally, he has an unspoken goal of asking Chen Mei to join him for a hike tomorrow, indicating he may be looking to connect with her.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 407,
+    "_scene": "D_postevent_night",
+    "_scene_facts": {
+      "summary": "9:00 PM, post-event. Lin Wei is reportedly at home (the poetry reading has ended). Zhang Hao is reportedly lingering at the Sunrise Cafe (helped clean up). Chen Mei is reportedly at home (turned in early). Wang Jun is reportedly at the Town Library (last open hour).",
+      "agents": {
+        "Lin Wei": {
+          "location": "home",
+          "doing (visible)": "stacking dishes alone",
+          "availability (hidden)": "drained",
+          "mood (hidden)": "spent",
+          "unspoken goal (hidden)": "writing a letter to an old friend who skipped the reading"
+        },
+        "Zhang Hao": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "lingering after cleanup",
+          "availability (hidden)": "lingering",
+          "mood (hidden)": "inspired",
+          "unspoken goal (hidden)": "asking Chen Mei to a Saturday hike tomorrow"
+        },
+        "Chen Mei": {
+          "location": "home",
+          "doing (visible)": "reading in bed",
+          "availability (hidden)": "quiet_evening",
+          "mood (hidden)": "reflective",
+          "unspoken goal (hidden)": "writing thank-you notes to the garden neighbours"
+        },
+        "Wang Jun": {
+          "location": "Town Library",
+          "doing (visible)": "finishing a book chapter",
+          "availability (hidden)": "closing_soon",
+          "mood (hidden)": "satisfied",
+          "unspoken goal (hidden)": "finishing his own book chapter before the library closes"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  },
+  {
+    "id": 49,
+    "query": "Is Wang Jun walking with someone?",
+    "agent": "Wang Jun",
+    "category": "availability",
+    "response_a": "Wang Jun is walking alone around the perimeter path of the Community Garden.",
+    "response_b": "No, Wang Jun is walking alone in the Community Garden. \n\nIt seems he is currently seeking solitude and is in a contemplative state, which might not make him available for socializing at the moment. If you're looking to engage with others, you might consider joining Chen Mei and the neighbours at the long shared table instead.",
+    "_label_a": "baseline",
+    "_label_b": "aura",
+    "_query_id": 302,
+    "_scene": "C_garden_evening",
+    "_scene_facts": {
+      "summary": "Community Garden, 5:30 PM. Present: Chen Mei (at the long shared table, eating with three neighbours), Wang Jun (walking the perimeter path alone). Lin Wei is reportedly at the Sunrise Cafe (hosting an evening poetry reading). Zhang Hao is reportedly at the Town Library (finishing late).",
+      "agents": {
+        "Lin Wei": {
+          "location": "Sunrise Cafe",
+          "doing (visible)": "hosting a poetry reading",
+          "availability (hidden)": "hosting",
+          "mood (hidden)": "excited",
+          "unspoken goal (hidden)": "impressing a visiting literary critic"
+        },
+        "Zhang Hao": {
+          "location": "Town Library",
+          "doing (visible)": "packing up his translation",
+          "availability (hidden)": "wrapping_up",
+          "mood (hidden)": "tired",
+          "unspoken goal (hidden)": "avoiding going home to an empty flat"
+        },
+        "Chen Mei": {
+          "location": "Community Garden",
+          "doing (visible)": "eating with neighbours",
+          "availability (hidden)": "group_engaged",
+          "mood (hidden)": "warm",
+          "unspoken goal (hidden)": "mending a recent quarrel with one of the neighbours"
+        },
+        "Wang Jun": {
+          "location": "Community Garden",
+          "doing (visible)": "walking alone",
+          "availability (hidden)": "wants_solitude",
+          "mood (hidden)": "contemplative",
+          "unspoken goal (hidden)": "deciding whether to apply for a job in another city"
+        }
+      }
+    },
+    "_arm": "intent_vs_nointent"
+  }
+]

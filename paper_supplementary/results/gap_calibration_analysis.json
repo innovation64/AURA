@@ -1,0 +1,78 @@
+{
+  "source_file": "evaluation/results/rq_intent_v2_multiseed.json",
+  "source_note": "Full-coverage multiseed file: rq_intent_v2_multiseed.json. Scenes covered: ['A_cafe_morning', 'B_library_afternoon', 'C_garden_evening', 'D_postevent_night'] (4 of 4). Subcategories: ['appropriateness', 'availability', 'latent_goal', 'mood', 'second_order']. Model: gpt-4o-mini, seeds: [42, 123, 456].",
+  "n_pairs": 300,
+  "gap_range_observed": [
+    0.4,
+    0.8
+  ],
+  "unique_gap_values": [
+    0.4,
+    0.5,
+    0.6,
+    0.65,
+    0.7,
+    0.8
+  ],
+  "pearson_gap_benefit": -0.3308,
+  "spearman_gap_benefit": -0.3218,
+  "bin_width": 0.1,
+  "bins": [
+    {
+      "range": [
+        0.4,
+        0.5
+      ],
+      "n": 108,
+      "mean_benefit": 0.1667,
+      "std": 0.2672,
+      "ci95": [
+        0.1163,
+        0.2171
+      ]
+    },
+    {
+      "range": [
+        0.5,
+        0.6
+      ],
+      "n": 84,
+      "mean_benefit": 0.0476,
+      "std": 0.205,
+      "ci95": [
+        0.0038,
+        0.0915
+      ]
+    },
+    {
+      "range": [
+        0.6,
+        0.7
+      ],
+      "n": 77,
+      "mean_benefit": 0.0104,
+      "std": 0.2337,
+      "ci95": [
+        -0.0418,
+        0.0626
+      ]
+    },
+    {
+      "range": [
+        0.7,
+        0.8
+      ],
+      "n": 31,
+      "mean_benefit": -0.0452,
+      "std": 0.1434,
+      "ci95": [
+        -0.0956,
+        0.0053
+      ]
+    }
+  ],
+  "bin_means_non_decreasing": false,
+  "n_inversions": 3,
+  "degenerate_flat_bins": false,
+  "small_n_bins": []
+}
