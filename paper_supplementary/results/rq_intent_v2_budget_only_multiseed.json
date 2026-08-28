@@ -9129,9 +9129,9 @@
             "get_agent_private_state"
           ],
           "forbidden_tools": [],
-          "answer": "[heads-up] You may also be wondering: the user may want to know if there are people to socialize with\n\nYes, the garden is somewhat busy right now. Chen Mei is at the long shared table eating with three neighbours, which suggests a lively atmosphere. However, Wang Jun is walking the perimeter path alone, indicating that not everyone is looking to socialize. \n\nIf you're looking for social opportunities, you might consider joining Chen Mei and her neighbours at the table, as they seem engaged and open to interaction.",
+          "answer": "[heads-up] You may also be wondering: the user may want to know if there are opportunities to socialize\n\nYes, the garden is somewhat busy right now. Chen Mei is at the long shared table eating with three neighbours, which indicates a social atmosphere. However, Wang Jun is walking the perimeter path alone and prefers solitude at the moment.\n\nIf you're considering visiting, you might find a lively interaction with Chen Mei and her neighbours, but Wang Jun's presence suggests that not everyone is looking to socialize.",
           "probes": 2,
-          "latency": 4.47,
+          "latency": 7.8,
           "gap": 0.4,
           "probe_observations": [
             {
@@ -9162,25 +9162,26 @@
           "intent_frame": {
             "literal_need": "Current busyness of the garden",
             "implicit_need": [
-              "the user may want to know if there are people to socialize with",
-              "the user's earlier desire to socialize suggests they are looking for social opportunities"
+              "the user may want to know if there are opportunities to socialize",
+              "the presence and availability of others may influence the user's decision to visit"
             ],
             "gap": 0.4,
             "recommended_probes": [
               "get_nearby_agents"
             ],
             "should_alert": true,
-            "confidence": 0.8,
-            "rationale": "The query about busyness implies a need for social interaction, which requires understanding the presence and availability of others.",
+            "confidence": 0.75,
+            "rationale": "The query about busyness suggests an interest in social interaction, which requires understanding the presence and state of nearby agents.",
             "policy_routed_probes": [
               "get_agent_private_state",
               "get_agent_private_state"
             ]
           },
-          "literal_score": null,
-          "implicit_score": null,
-          "rationale": "judge error: APITimeoutError: Request timed out.",
-          "total_time": 616.36
+          "literal_score": 1.0,
+          "implicit_score": 0.6,
+          "rationale": "The response accurately describes the current activity in the garden, indicating a busy atmosphere, while also partially addressing the user's implicit need for social interaction versus solitude.",
+          "total_time": 9.36,
+          "_rerun_note": "judge timed out on the original run; this cell was re-executed 2026-08-27"
         },
         {
           "query_id": 306,
